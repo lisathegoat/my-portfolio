@@ -5,7 +5,7 @@ export const nav = {
 
 export const home = {
   hero: {
-    intro: 'Hi, ich bin Lisa',
+    intro: 'Hi, ich bin Lisa.',
     introSub: 'Produkt-Designerin aus Berlin.',
     wordmark: 'Portfolio',
     skillsetLabel: 'Skillset',

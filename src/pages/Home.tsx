@@ -45,11 +45,11 @@ function StarAnchor({ visible, onEnter, onLeave }: {
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
     >
-      <span className="text-grey/40">
-        <StarSVG size={16} />
-      </span>
       <span className="font-body text-[11px] text-grey/40 uppercase tracking-[0.15em] whitespace-nowrap">
         Design Erfahrung
+      </span>
+      <span className="text-grey/40">
+        <StarSVG size={16} />
       </span>
       <DropdownPanel visible={visible} />
     </div>
@@ -106,11 +106,15 @@ export default function Home() {
       <Nav />
 
       {/* ── Hero ──────────────────────────────────────────────────────── */}
-      <section className="flex flex-col items-center gap-10 px-8 pt-6 pb-16">
+      <section
+        className="flex flex-col items-center justify-center gap-14 px-8"
+        style={{ minHeight: 'calc(100svh - 68px - 110px)' }}
+      >
 
         {/* Intro text */}
-        <p className="font-body text-body-lg text-center leading-[1.4]">
-          <span className="text-accent">{home.hero.intro} </span>
+        <p className="font-body text-body-lg text-center leading-[1.6]">
+          <span className="text-accent">{home.hero.intro}</span>
+          <br />
           <span className="text-grey">{home.hero.introSub}</span>
         </p>
 
@@ -154,12 +158,13 @@ export default function Home() {
             />
           </div>
 
-          {/* o star — bottom-right of "o", no transform (anchor = bottom-right corner) */}
+          {/* o star — bottom-right of "o"; translate(-100%,0) anchors right edge to oPos.x */}
           <div
             className="absolute"
             style={{
               left: oPos.x,
               top: oPos.y,
+              transform: 'translate(-100%, 0)',
             }}
           >
             <StarAnchor
