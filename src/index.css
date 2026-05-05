@@ -19,7 +19,6 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Neue Montreal self-hosted — drop font files into /public/fonts/ if available */
   @font-face {
     font-family: 'Neue Montreal';
     src: url('/fonts/NeueMontreal-Regular.woff2') format('woff2');
@@ -44,8 +43,9 @@
     font-weight: 400;
   }
 
+  /* pill = fully round on all sides — rounded-full fixes the rounded-l naming collision */
   .tag {
-    @apply font-body text-body-sm border rounded-l px-m py-2 leading-[1.3] whitespace-nowrap transition-colors duration-200;
+    @apply font-body text-body-sm border rounded-full px-[16px] py-[8px] leading-[1.3] whitespace-nowrap transition-colors duration-200;
   }
 
   .tag-default {
@@ -57,11 +57,11 @@
   }
 
   .btn-primary {
-    @apply font-body text-body-md border border-light text-light rounded-xxl px-xl py-4 transition-all duration-200 hover:bg-light hover:text-dark;
+    @apply font-body text-body-md border border-light text-light rounded-full px-[32px] py-[16px] transition-all duration-200 hover:bg-light hover:text-dark;
   }
 
   .btn-accent {
-    @apply font-body text-body-md border border-accent text-accent rounded-xxl px-xl py-4 transition-all duration-200 hover:bg-accent hover:text-dark;
+    @apply font-body text-body-md border border-accent text-accent rounded-full px-[32px] py-[16px] transition-all duration-200 hover:bg-accent hover:text-dark;
   }
 
   .section-label {
@@ -69,6 +69,6 @@
   }
 
   .placeholder-block {
-    @apply border border-dashed border-grey/40 rounded-m px-m py-3 text-grey/60 text-body-sm font-body italic;
+    @apply border border-dashed border-grey/40 rounded-[16px] px-[16px] py-3 text-grey/60 text-body-sm font-body italic;
   }
 }

@@ -28,13 +28,13 @@ export default {
         'label': ['12px', { lineHeight: '1', letterSpacing: '0.12em' }],
       },
       borderRadius: {
-        's': '8px',
-        'm': '16px',
-        'l': '24px',
-        'xl': '32px',
-        '2xl': '48px',
-        'xxl': '64px',
+        // 's' and 'l' removed — conflict with Tailwind's rounded-s/rounded-l (side-only utilities)
+        // Use rounded-[8px] / rounded-[24px] inline, or rounded-full for pills
+        'pill': '9999px',
+        'panel': '16px',
         'card': '80px',
+        'xxl': '64px',
+        'xl2': '32px',
       },
       spacing: {
         's': '8px',

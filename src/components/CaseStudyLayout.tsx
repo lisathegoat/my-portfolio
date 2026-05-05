@@ -41,7 +41,7 @@ export default function CaseStudyLayout({ title, meta, children }: CaseStudyLayo
               {meta.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="font-body text-body-sm border border-grey/40 text-grey rounded-l px-m py-1"
+                  className="font-body text-body-sm border border-grey/40 text-grey rounded-full px-[16px] py-[6px]"
                 >
                   {tag}
                 </span>

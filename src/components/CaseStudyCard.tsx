@@ -49,11 +49,11 @@ export default function CaseStudyCard({
         </p>
 
         {/* Tags */}
-        <div className="flex flex-wrap gap-s items-center">
+        <div className="flex flex-wrap gap-2 items-center">
           {tags.map((tag) => (
             <span
               key={tag}
-              className={`font-body text-body-sm border rounded-l px-m py-2 transition-colors duration-200 whitespace-nowrap ${
+              className={`font-body text-body-sm border rounded-full px-[16px] py-[8px] transition-colors duration-200 whitespace-nowrap ${
                 hovered
                   ? 'border-accent text-accent'
                   : 'border-grey text-grey'

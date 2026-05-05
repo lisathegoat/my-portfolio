@@ -5,7 +5,7 @@ interface PlaceholderProps {
 
 export function InlinePlaceholder({ text, className = '' }: PlaceholderProps) {
   return (
-    <span className={`inline-block border border-dashed border-grey/50 rounded-s px-3 py-1 text-grey/60 font-body text-body-sm italic ${className}`}>
+    <span className={`inline-block border border-dashed border-grey/50 rounded-[8px] px-3 py-1 text-grey/60 font-body text-body-sm italic ${className}`}>
       {text}
     </span>
   )
@@ -13,7 +13,7 @@ export function InlinePlaceholder({ text, className = '' }: PlaceholderProps) {
 
 export function BlockPlaceholder({ text, className = '' }: PlaceholderProps) {
   return (
-    <div className={`border border-dashed border-grey/40 rounded-m px-m py-4 text-grey/50 font-body text-body-sm italic ${className}`}>
+    <div className={`border border-dashed border-grey/40 rounded-[16px] px-[16px] py-4 text-grey/50 font-body text-body-sm italic ${className}`}>
       {text}
     </div>
   )

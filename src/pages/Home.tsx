@@ -1,69 +1,62 @@
-import { useState } from 'react'
+import { useState, useRef, useLayoutEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import CaseStudyCard from '../components/CaseStudyCard'
 import { home, caseStudies, about } from '../content'
 
-// ── Decorative star SVG ──────────────────────────────────────────────────────
-function StarSVG({ className = '' }: { className?: string }) {
+// ── Star SVG ─────────────────────────────────────────────────────────────────
+function StarSVG({ size = 20 }: { size?: number }) {
   return (
-    <svg
-      className={className}
-      viewBox="0 0 24 24"
-      fill="currentColor"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
       <path d="M12 0L13.8 10.2L24 12L13.8 13.8L12 24L10.2 13.8L0 12L10.2 10.2L12 0Z" />
     </svg>
   )
 }
 
-// ── Hoverable star with dropdown opening LEFT ────────────────────────────────
-interface StarDropdownProps {
-  /** which side of the star the panel opens toward */
-  panelAnchor: 'left' | 'right'
-  /** vertical anchor of the panel */
-  panelVertical: 'top' | 'bottom'
-}
-
-function StarDropdown({ panelAnchor, panelVertical }: StarDropdownProps) {
-  const [open, setOpen] = useState(false)
-
-  const panelH = panelVertical === 'top' ? 'bottom-full mb-3' : 'top-full mt-3'
-  const panelX =
-    panelAnchor === 'left'
-      ? 'right-0'   // panel right-edge aligns with star, extends leftward
-      : 'left-0'    // panel left-edge aligns with star, extends rightward
-
+// ── Dropdown panel (div, never inline) ───────────────────────────────────────
+function DropdownPanel({ visible }: { visible: boolean }) {
+  if (!visible) return null
   return (
-    <span
-      className="relative inline-flex items-center gap-1.5 cursor-pointer select-none"
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+    <div
+      className="absolute z-50 w-[260px] bg-[#1e1e1e] border border-white/10 rounded-[16px] p-5 shadow-2xl"
+      // Opens downward; right:0 aligns panel's right edge to star's right, extending left
+      style={{ top: '100%', right: 0, marginTop: 8 }}
     >
-      <StarSVG className="w-5 h-5 text-grey/50 hover:text-accent transition-colors duration-150 shrink-0" />
-      <span className="font-body text-[13px] text-grey/50 uppercase tracking-[0.12em] leading-none whitespace-nowrap">
+      <p className="font-body text-[11px] text-grey uppercase tracking-[0.15em] mb-3 leading-none">
         Design Erfahrung
-      </span>
-
-      {/* Dropdown panel */}
-      {open && (
-        <span
-          className={`absolute ${panelH} ${panelX} z-50 w-[280px] bg-[#1a1a1a] border border-white/10 rounded-l p-5 shadow-2xl pointer-events-none`}
-        >
-          <span className="block font-body text-[13px] text-grey uppercase tracking-[0.12em] mb-3 leading-none">
-            Design Erfahrung
-          </span>
-          <span className="block font-body text-body-sm text-light/70 leading-[1.6]">
-            Mit mittlerweile mehr als 5 Jahren Erfahrung habe ich über 65 Projekte in den Bereichen Interface-, Web- und Anwendungsdesign begleitet und realisiert.
-          </span>
-        </span>
-      )}
-    </span>
+      </p>
+      <p className="font-body text-[14px] text-light/70 leading-[1.6]">
+        Mit mittlerweile mehr als 5 Jahren Erfahrung habe ich über 65 Projekte in den Bereichen
+        Interface-, Web- und Anwendungsdesign begleitet und realisiert.
+      </p>
+    </div>
   )
 }
 
-// ── Projects ─────────────────────────────────────────────────────────────────
+// ── Star + label (always a div, never inline) ────────────────────────────────
+function StarAnchor({ visible, onEnter, onLeave }: {
+  visible: boolean
+  onEnter: () => void
+  onLeave: () => void
+}) {
+  return (
+    <div
+      className="relative flex items-center gap-1.5 cursor-pointer select-none"
+      onMouseEnter={onEnter}
+      onMouseLeave={onLeave}
+    >
+      <span className="text-grey/40">
+        <StarSVG size={16} />
+      </span>
+      <span className="font-body text-[11px] text-grey/40 uppercase tracking-[0.15em] whitespace-nowrap">
+        Design Erfahrung
+      </span>
+      <DropdownPanel visible={visible} />
+    </div>
+  )
+}
+
+// ── Projects list ─────────────────────────────────────────────────────────────
 const projects = [
   caseStudies.fyta,
   caseStudies.probe,
@@ -73,6 +66,41 @@ const projects = [
 
 // ── Page ─────────────────────────────────────────────────────────────────────
 export default function Home() {
+  const [activeDropdown, setActiveDropdown] = useState<'p' | 'o' | null>(null)
+
+  // Refs on the individual letters to compute star positions
+  const wordmarkRef = useRef<HTMLHeadingElement>(null)
+  const pRef = useRef<HTMLSpanElement>(null)
+  const oRef = useRef<HTMLSpanElement>(null)
+
+  // Star positions relative to the wordmark container (px)
+  const [pPos, setPPos] = useState({ x: 0, y: 0 })
+  const [oPos, setOPos] = useState({ x: 0, y: 0 })
+
+  const computePositions = useCallback(() => {
+    if (!wordmarkRef.current || !pRef.current || !oRef.current) return
+    const base = wordmarkRef.current.getBoundingClientRect()
+    const p = pRef.current.getBoundingClientRect()
+    const o = oRef.current.getBoundingClientRect()
+
+    // P star: top-left corner of the letter "P"
+    setPPos({
+      x: p.left - base.left,
+      y: p.top - base.top,
+    })
+    // o star: bottom-right corner of the letter "o"
+    setOPos({
+      x: o.right - base.left,
+      y: o.bottom - base.top,
+    })
+  }, [])
+
+  useLayoutEffect(() => {
+    computePositions()
+    window.addEventListener('resize', computePositions)
+    return () => window.removeEventListener('resize', computePositions)
+  }, [computePositions])
+
   return (
     <div className="bg-dark text-light min-h-screen">
       <Nav />
@@ -86,52 +114,76 @@ export default function Home() {
           <span className="text-grey">{home.hero.introSub}</span>
         </p>
 
-        {/* Wordmark — centered, stars on P (top-left) and o (bottom-right) */}
-        <div className="relative w-full flex items-center justify-center overflow-visible">
+        {/* Wordmark + stars ─────────────────────────────────────── */}
+        {/*
+          The h1 is the positioning parent (position: relative).
+          Stars are absolute-positioned div siblings rendered INSIDE the h1's
+          bounding box but as separate DOM nodes — no inline span tricks.
+          Dropdown panels open downward so they never overlap "Portfolio".
+        */}
+        <div
+          ref={wordmarkRef}
+          className="relative w-full flex items-center justify-center"
+        >
+          {/* The wordmark text — letter spans are refs only, no children */}
           <h1
-            className="font-title-italic text-accent text-center leading-none whitespace-nowrap"
+            className="font-title-italic text-accent text-center leading-none whitespace-nowrap pointer-events-none"
             style={{
               fontSize: 'clamp(72px, 15vw, 220px)',
               letterSpacing: '-0.09em',
             }}
           >
-            {/* P — star at top-left, dropdown opens LEFT (panel extends leftward from star) */}
-            <span className="relative" style={{ display: 'inline' }}>
-              <span
-                className="absolute z-20 flex items-start"
-                style={{ top: '-0.35em', left: '-0.1em' }}
-              >
-                <StarDropdown panelAnchor="left" panelVertical="bottom" />
-              </span>
-              P
-            </span>
-            {/* remaining letters */}
+            <span ref={pRef}>P</span>
             ortfoli
-            {/* o — star at bottom-right, dropdown opens LEFT */}
-            <span className="relative" style={{ display: 'inline' }}>
-              o
-              <span
-                className="absolute z-20 flex items-end"
-                style={{ bottom: '-0.35em', right: '-0.2em' }}
-              >
-                <StarDropdown panelAnchor="left" panelVertical="top" />
-              </span>
-            </span>
+            <span ref={oRef}>o</span>
           </h1>
+
+          {/* P star — top-left of "P", translate so anchor = top-left corner */}
+          <div
+            className="absolute"
+            style={{
+              left: pPos.x,
+              top: pPos.y,
+              transform: 'translate(-100%, -100%)',
+            }}
+          >
+            <StarAnchor
+              visible={activeDropdown === 'p'}
+              onEnter={() => setActiveDropdown('p')}
+              onLeave={() => setActiveDropdown(null)}
+            />
+          </div>
+
+          {/* o star — bottom-right of "o", no transform (anchor = bottom-right corner) */}
+          <div
+            className="absolute"
+            style={{
+              left: oPos.x,
+              top: oPos.y,
+            }}
+          >
+            <StarAnchor
+              visible={activeDropdown === 'o'}
+              onEnter={() => setActiveDropdown('o')}
+              onLeave={() => setActiveDropdown(null)}
+            />
+          </div>
         </div>
 
         {/* Profile photo pill */}
         <div
           className="overflow-hidden bg-grey/20 shrink-0"
-          style={{ width: 'clamp(240px, 25vw, 357px)', height: 'clamp(138px, 14.4vw, 206px)', borderRadius: '100px' }}
+          style={{
+            width: 'clamp(220px, 24vw, 357px)',
+            height: 'clamp(128px, 14vw, 206px)',
+            borderRadius: '100px',
+          }}
         >
           <img
             src="/images/profile.jpg"
             alt="Lisa"
             className="w-full h-full object-cover object-top"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).style.display = 'none'
-            }}
+            onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
           />
         </div>
       </section>
@@ -144,12 +196,9 @@ export default function Home() {
           <h2 className="font-title-italic text-title-lg text-light leading-[1.1] tracking-[-0.05em]">
             {home.work.heading}
           </h2>
-          {/* Filter tags */}
-          <div className="hidden sm:flex flex-wrap gap-3 items-center pb-1">
+          <div className="hidden sm:flex flex-wrap gap-2 items-center pb-1">
             {home.work.filters.map((f) => (
-              <span key={f} className="tag-default">
-                {f}
-              </span>
+              <span key={f} className="tag-default">{f}</span>
             ))}
           </div>
         </div>
@@ -173,9 +222,8 @@ export default function Home() {
       {/* ── Footer ────────────────────────────────────────────────────── */}
       <footer className="border-t border-grey/20 px-8 py-12 flex flex-col gap-8">
 
-        {/* Project links */}
         <div className="flex flex-col gap-3">
-          <span className="font-body text-body-sm font-bold text-light tracking-wide uppercase text-[13px]">
+          <span className="font-body text-[11px] font-bold text-light uppercase tracking-[0.15em]">
             {home.footer.projectsLabel}
           </span>
           <div className="flex flex-wrap gap-x-8 gap-y-2">
@@ -191,7 +239,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Large email */}
         <a
           href={`mailto:${home.footer.email}`}
           className="font-title-italic text-accent leading-[1.1] tracking-[-0.05em] hover:opacity-75 transition-opacity break-all"
@@ -200,15 +247,9 @@ export default function Home() {
           {home.footer.email}
         </a>
 
-        {/* About tagline */}
         <div className="flex items-start justify-between gap-8 pt-4 border-t border-grey/10">
-          <p className="font-body text-body-sm text-grey max-w-md">
-            {about.bio[0]}
-          </p>
-          <Link
-            to="/about"
-            className="font-body text-body-sm text-grey hover:text-light transition-colors shrink-0"
-          >
+          <p className="font-body text-body-sm text-grey max-w-md">{about.bio[0]}</p>
+          <Link to="/about" className="font-body text-body-sm text-grey hover:text-light transition-colors shrink-0 ml-8">
             About →
           </Link>
         </div>

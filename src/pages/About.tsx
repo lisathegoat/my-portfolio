@@ -8,15 +8,15 @@ export default function About() {
       <Nav />
 
       {/* Header */}
-      <section className="px-xl pt-[160px] pb-[80px] max-w-[1400px] mx-auto">
+      <section className="px-[32px] pt-[160px] pb-[80px] max-w-[1400px] mx-auto">
         <h1 className="font-title-italic text-title-xl md:text-[clamp(64px,8vw,150px)] leading-[1.05] tracking-[-0.04em] text-light max-w-[900px]">
           {about.intro}
         </h1>
       </section>
 
       {/* Bio */}
-      <section className="px-xl pb-[80px] max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-xxl items-start">
+      <section className="px-[32px] pb-[80px] max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[64px] items-start">
           <span className="section-label pt-2">Bio</span>
           <div className="flex flex-col gap-6">
             {about.bio.map((para, i) => (
@@ -29,10 +29,10 @@ export default function About() {
       </section>
 
       {/* Skills */}
-      <section className="px-xl pb-[80px] max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-xxl items-start">
+      <section className="px-[32px] pb-[80px] max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[64px] items-start">
           <span className="section-label pt-2">Skills</span>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-xl">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-[32px]">
             {about.skills.map((group) => (
               <div key={group.category} className="flex flex-col gap-4">
                 <span className="font-body text-body-sm text-grey uppercase tracking-[0.08em]">
@@ -52,8 +52,8 @@ export default function About() {
       </section>
 
       {/* Education */}
-      <section className="px-xl pb-[80px] max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-xxl items-start">
+      <section className="px-[32px] pb-[80px] max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-[64px] items-start">
           <span className="section-label pt-2">Ausbildung</span>
           <div className="flex flex-col gap-6">
             {about.education.map((edu, i) => (
@@ -67,8 +67,8 @@ export default function About() {
       </section>
 
       {/* Contact */}
-      <section className="px-xl pb-[120px] max-w-[1400px] mx-auto">
-        <div className="border border-white/10 rounded-xxl p-xxl flex flex-col gap-8">
+      <section className="px-[32px] pb-[120px] max-w-[1400px] mx-auto">
+        <div className="border border-white/10 rounded-[32px] p-[48px] flex flex-col gap-8">
           <div className="flex flex-col gap-4">
             <h2 className="font-title-italic text-title-sm text-light">
               {about.contact.headline}
