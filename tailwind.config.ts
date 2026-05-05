@@ -8,8 +8,7 @@ export default {
         dark: '#1D1D1D',
         light: '#FFFFFF',
         grey: '#BBBBBB',
-        accent: '#C9FF42',
-        'accent-light': '#F3FFAB',
+        accent: '#F3FFAB',
         blue: '#78ADC4',
       },
       fontFamily: {

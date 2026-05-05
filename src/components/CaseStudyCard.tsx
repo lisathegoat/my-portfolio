@@ -9,6 +9,7 @@ interface CaseStudyCardProps {
   tags: string[]
   imageFolder: string
   imageName?: string
+  isPlaceholder?: boolean
 }
 
 export default function CaseStudyCard({
@@ -18,17 +19,13 @@ export default function CaseStudyCard({
   tags,
   imageFolder,
   imageName,
+  isPlaceholder = false,
 }: CaseStudyCardProps) {
   const [hovered, setHovered] = useState(false)
   const imageSrc = imageName ? `${imageFolder}${imageName}` : null
 
-  return (
-    <Link
-      to={slug}
-      className="group flex flex-col gap-l cursor-pointer w-full"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
+  const inner = (
+    <>
       {/* Image */}
       <div className="relative w-full aspect-[4/3] overflow-hidden rounded-card">
         {imageSrc ? (
@@ -43,26 +40,28 @@ export default function CaseStudyCard({
       </div>
 
       {/* Meta */}
-      <div className={`flex flex-col gap-${hovered ? 's' : 'm'} transition-all duration-200`}>
-        {/* Title row + tags */}
-        <div className="flex flex-wrap items-start gap-s">
-          <h3 className={`font-title-italic text-title-sm text-light flex-1 min-w-0 transition-colors duration-200 ${hovered ? 'text-accent-light' : 'text-light'}`}>
-            {title}
-          </h3>
-          <div className={`flex flex-wrap gap-s items-center ${hovered ? 'justify-start' : 'justify-end'} flex-shrink-0`}>
-            {tags.map((tag) => (
-              <span
-                key={tag}
-                className={`font-body text-body-sm border rounded-l px-m py-2 transition-colors duration-200 whitespace-nowrap ${
-                  hovered
-                    ? 'border-accent-light text-accent-light'
-                    : 'border-grey text-grey'
-                }`}
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
+      <div className="flex flex-col gap-m">
+        {/* Title — Neue Montreal 32px as per Figma */}
+        <p className={`font-body text-body-lg leading-[1.3] transition-colors duration-200 ${
+          hovered ? 'text-accent' : 'text-light'
+        }`}>
+          {title}
+        </p>
+
+        {/* Tags */}
+        <div className="flex flex-wrap gap-s items-center">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className={`font-body text-body-sm border rounded-l px-m py-2 transition-colors duration-200 whitespace-nowrap ${
+                hovered
+                  ? 'border-accent text-accent'
+                  : 'border-grey text-grey'
+              }`}
+            >
+              {tag}
+            </span>
+          ))}
         </div>
 
         {/* Description — visible on hover */}
@@ -74,6 +73,29 @@ export default function CaseStudyCard({
           {description}
         </p>
       </div>
+    </>
+  )
+
+  if (isPlaceholder) {
+    return (
+      <div
+        className="group flex flex-col gap-l opacity-50"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        {inner}
+      </div>
+    )
+  }
+
+  return (
+    <Link
+      to={slug}
+      className="group flex flex-col gap-l cursor-pointer"
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      {inner}
     </Link>
   )
 }

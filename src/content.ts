@@ -5,20 +5,19 @@ export const nav = {
 
 export const home = {
   hero: {
-    greeting: 'Willkommen',
-    headline: 'Lisa',
-    subline: 'Senior Product Designerin',
-    tagline: 'Komplexe Systeme. Klares Interface. Konsequente Logik.',
-    cta: 'Projekte ansehen',
-    ctaAbout: 'Über mich',
+    intro: 'Hi, ich bin Lisa',
+    introSub: 'Produkt-Designerin aus Berlin.',
+    wordmark: 'Portfolio',
+    skillsetLabel: 'Skillset',
+    superkraftLabel: 'Superkraft?',
   },
   work: {
-    label: 'Ausgewählte Projekte',
+    heading: 'Projekte',
+    filters: ['Ui/Ux', 'App', 'Webdesign', 'Branding', 'Konzeption'],
   },
-  about: {
-    label: 'About',
-    text: 'Gutes Design fällt nicht auf — es funktioniert einfach. Ich bin Produktdesignerin in Berlin und gestalte komplexe Systeme von der Logik bis ins Detail.',
-    cta: 'Mehr erfahren',
+  footer: {
+    projectsLabel: 'My Projects',
+    email: 'lisa@fyta.de',
   },
 }
 
@@ -171,6 +170,19 @@ export const caseStudies = {
     validation: 'Der klickbare Prototyp wurde mit Expert:innen aus dem schulischen und therapeutischen Kontext reflektiert. Besonders positiv bewertet: unmittelbare Rückmeldungen, selbstständiges Arbeiten, einfache Integration in den Unterricht.',
     results: 'Prototyp entwickelt und mit Fachexpert:innen validiert. Positives Feedback auf alle drei Kernfunktionen.',
     learning: 'Im Verlauf dieses Projekts wurde mir besonders bewusst, wie viel Verantwortung Design trägt, wenn es darum geht, Unterstützung zugänglich zu machen, ohne auszugrenzen. Inklusion im Design sollte nicht nur in spezifischen Projekten mitgedacht werden — sondern als konzeptionelle Haltung generell eine Rolle spielen.',
+  },
+
+  placeholder: {
+    slug: '#',
+    title: 'Nächstes Projekt',
+    shortTitle: 'Nächstes Projekt',
+    description: '[PLACEHOLDER — Projektbeschreibung folgt]',
+    tags: ['Konzeption'],
+    meta: {
+      role: '',
+      status: 'Coming soon',
+      imageFolder: '',
+    },
   },
 }
 
