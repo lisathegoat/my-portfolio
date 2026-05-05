@@ -15,15 +15,17 @@ export default {
         title: ['"Times New Roman"', 'Times', 'serif'],
         body: ['"Neue Montreal"', '"DM Sans"', 'system-ui', 'sans-serif'],
       },
+      // Golden ratio type scale (φ = 1.618), base 16px
+      // 16 → 20 → 26 → 32 → 52 → 84 → 136
       fontSize: {
-        'title-xl': ['150px', { lineHeight: '1.1', letterSpacing: '-0.033em' }],
-        'title-lg': ['92px', { lineHeight: '1.1', letterSpacing: '-0.054em' }],
-        'title-md': ['72px', { lineHeight: '1.05', letterSpacing: '-0.04em' }],
-        'title-sm': ['40px', { lineHeight: '1', letterSpacing: '-0.05em' }],
-        'body-lg': ['32px', { lineHeight: '1.3' }],
-        'body-md': ['24px', { lineHeight: '1.3' }],
-        'body-sm': ['18px', { lineHeight: '1.3' }],
-        'label': ['16px', { lineHeight: '1', letterSpacing: '0.1em' }],
+        'title-xl': ['136px', { lineHeight: '1.05', letterSpacing: '-0.04em' }], // 84 × φ
+        'title-lg': ['84px', { lineHeight: '1.1', letterSpacing: '-0.05em' }],   // 52 × φ
+        'title-md': ['52px', { lineHeight: '1.1', letterSpacing: '-0.04em' }],   // 32 × φ
+        'title-sm': ['32px', { lineHeight: '1.1', letterSpacing: '-0.04em' }],   // 20 × φ
+        'body-lg': ['26px', { lineHeight: '1.4' }],                              // 16 × φ
+        'body-md': ['20px', { lineHeight: '1.4' }],
+        'body-sm': ['16px', { lineHeight: '1.5' }],
+        'label': ['12px', { lineHeight: '1', letterSpacing: '0.12em' }],
       },
       borderRadius: {
         's': '8px',
