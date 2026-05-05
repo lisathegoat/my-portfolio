@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #1D1D1D;
+    color: #FFFFFF;
+    font-family: 'Neue Montreal', 'DM Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Neue Montreal self-hosted — drop font files into /public/fonts/ if available */
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('/fonts/NeueMontreal-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Neue Montreal';
+    src: url('/fonts/NeueMontreal-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+}
+
+@layer components {
+  .font-title-italic {
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  .tag {
+    @apply font-body text-body-sm border rounded-l px-m py-2 leading-[1.3] whitespace-nowrap transition-colors duration-200;
+  }
+
+  .tag-default {
+    @apply tag border-grey text-grey;
+  }
+
+  .tag-accent {
+    @apply tag border-accent-light text-accent-light;
+  }
+
+  .btn-primary {
+    @apply font-body text-body-md border border-light text-light rounded-xxl px-xl py-4 transition-all duration-200 hover:bg-light hover:text-dark;
+  }
+
+  .btn-accent {
+    @apply font-body text-body-md border border-accent text-accent rounded-xxl px-xl py-4 transition-all duration-200 hover:bg-accent hover:text-dark;
+  }
+
+  .section-label {
+    @apply font-body text-label font-medium uppercase tracking-[0.1em] text-grey;
+  }
+
+  .placeholder-block {
+    @apply border border-dashed border-grey/40 rounded-m px-m py-3 text-grey/60 text-body-sm font-body italic;
+  }
+}
