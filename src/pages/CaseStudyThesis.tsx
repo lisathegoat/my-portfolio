@@ -41,7 +41,7 @@ export default function CaseStudyThesis() {
             ))}
           </div>
 
-          <img src={`${folder}02.png`} alt="Barrieren-Diagramm" className="w-full rounded-card object-cover" />
+          <img src={`${folder}01.png`} alt="Barrieren-Diagramm" className="w-full rounded-card object-cover" />
         </div>
       </CaseSection>
 
@@ -56,7 +56,7 @@ export default function CaseStudyThesis() {
       <CaseSection label="Ideation">
         <div className="flex flex-col gap-8">
           <p className="font-body text-body-md text-light/80">{cs.design.ideation}</p>
-          <img src={`${folder}03-1.png`} alt="Ideation" className="w-full rounded-card object-cover" />
+          <img src={`${folder}02.png`} alt="Ideation" className="w-full rounded-card object-cover" />
         </div>
       </CaseSection>
 
@@ -72,6 +72,8 @@ export default function CaseStudyThesis() {
               </div>
             ))}
           </div>
+
+          <img src={`${folder}03-1.png`} alt="Entwurf" className="w-full rounded-card object-cover" />
 
           {/* Feature screens */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
