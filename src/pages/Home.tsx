@@ -45,11 +45,11 @@ function StarAnchor({ visible, onEnter, onLeave }: {
       onMouseEnter={onEnter}
       onMouseLeave={onLeave}
     >
-      <span className="font-body text-[11px] text-grey/40 uppercase tracking-[0.15em] whitespace-nowrap">
-        Design Erfahrung
-      </span>
       <span className="text-grey/40">
         <StarSVG size={16} />
+      </span>
+      <span className="font-body text-[11px] text-grey/40 uppercase tracking-[0.15em] whitespace-nowrap">
+        Design Erfahrung
       </span>
       <DropdownPanel visible={visible} />
     </div>
@@ -142,13 +142,13 @@ export default function Home() {
             <span ref={oRef}>o</span>
           </h1>
 
-          {/* P star — top-left of "P", translate so anchor = top-left corner */}
+          {/* P star — right edge at left of "P", vertically centered on cap height */}
           <div
             className="absolute"
             style={{
               left: pPos.x,
               top: pPos.y,
-              transform: 'translate(-100%, -100%)',
+              transform: 'translate(-100%, -50%)',
             }}
           >
             <StarAnchor
@@ -158,13 +158,13 @@ export default function Home() {
             />
           </div>
 
-          {/* o star — bottom-right of "o"; translate(-100%,0) anchors right edge to oPos.x */}
+          {/* o star — right edge at right of "o", bottom of component at o baseline */}
           <div
             className="absolute"
             style={{
               left: oPos.x,
               top: oPos.y,
-              transform: 'translate(-100%, 0)',
+              transform: 'translate(-100%, -100%)',
             }}
           >
             <StarAnchor
