@@ -1,5 +1,5 @@
 import CaseStudyLayout, { CaseSection } from '../components/CaseStudyLayout'
-import { ImagePlaceholder, BlockPlaceholder } from '../components/Placeholder'
+import { ImagePlaceholder } from '../components/Placeholder'
 import { caseStudies } from '../content'
 
 const cs = caseStudies.fyta
@@ -25,9 +25,8 @@ export default function CaseStudyFyta() {
       {/* Challenge */}
       <CaseSection label="Herausforderung">
         <div className="flex flex-col gap-6">
-          {cs.challenge.intro.split('\n\n').map((para, i) => (
-            <p key={i} className="font-body text-body-md text-light/80">{para}</p>
-          ))}
+          <h3 className="font-body text-body-lg font-medium text-light">{cs.challenge.heading}</h3>
+          <p className="font-body text-body-md text-light/80">{cs.challenge.body}</p>
           <ul className="flex flex-col gap-4 pl-0 mt-2">
             {cs.challenge.points.map((point, i) => (
               <li key={i} className="flex gap-4 items-start">
@@ -36,6 +35,16 @@ export default function CaseStudyFyta() {
               </li>
             ))}
           </ul>
+          {/* Complexity model grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+            {cs.challenge.complexityModel.map((item, i) => (
+              <div key={i} className="flex flex-col gap-1 p-6 border border-white/10 rounded-xl">
+                <span className="font-body text-body-md font-medium text-light">{item.label}</span>
+                <span className="font-body text-body-sm text-light/70">{item.sub}</span>
+                {item.note && <span className="font-body text-body-sm text-light/40">{item.note}</span>}
+              </div>
+            ))}
+          </div>
         </div>
       </CaseSection>
 
@@ -129,20 +138,28 @@ export default function CaseStudyFyta() {
         </div>
       </CaseSection>
 
+      {/* UI-Entscheidungen */}
+      <CaseSection label="UI-Entscheidungen">
+        <div className="flex flex-col gap-xxl">
+          {cs.uiDecisions.map((decision, i) => (
+            <div key={i} className="flex flex-col gap-4">
+              <h3 className="font-body text-body-md font-medium text-light">{decision.title}</h3>
+              <p className="font-body text-body-md text-light/70">{decision.body}</p>
+              <ImagePlaceholder aspectRatio="hero" />
+            </div>
+          ))}
+        </div>
+      </CaseSection>
+
       {/* Business Impact */}
       <CaseSection label="Business Impact">
-        <div className="flex flex-col gap-4">
-          {cs.impact.items.map((item, i) => {
-            const isPlaceholder = item.includes('[PLACEHOLDER')
-            return isPlaceholder ? (
-              <BlockPlaceholder key={i} text={item} />
-            ) : (
-              <div key={i} className="flex gap-4 items-start">
-                <span className="font-body text-body-sm text-accent mt-1 shrink-0">—</span>
-                <p className="font-body text-body-md text-light/80">{item}</p>
-              </div>
-            )
-          })}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {cs.impact.cards.map((card, i) => (
+            <div key={i} className="flex flex-col gap-3 border border-white/10 rounded-xl p-6">
+              <span className="font-body text-body-md font-medium text-accent">{card.title}</span>
+              <p className="font-body text-body-md text-light/70">{card.body}</p>
+            </div>
+          ))}
         </div>
       </CaseSection>
 

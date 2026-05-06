@@ -43,115 +43,138 @@ export const caseStudies = {
       cover: 'cover.png',
     },
     intro: 'FYTA verbindet Pflanzenpflege mit sensorbasierten Daten — die App übersetzt Messwerte aus Boden, Licht und Umgebung in konkrete Pflegehinweise. Bis zur Einführung der neuen Sensoren kannte die App genau ein Modell: ein Sensor, eine Pflanze, ein Topf.\n\nAls Head of Product Design habe ich die Erweiterung des Sensor-Portfolios von Grund auf verantwortet — von der Systemlogik im Backend bis zum finalen UI. Das Projekt war kein Feature-Update. Es war der Umbau eines Einzelprodukts zu einem skalierbaren Ökosystem.',
-    research: 'Da für die neuen Sensoren kein vergleichbares Onboarding existierte, nahm die Recherche eine andere Form an als klassische Nutzerforschung. Ich analysierte, an welchen Stellen der bestehende Beam-Flow strukturell versagt, sobald man ihn auf neue Sensortypen überträgt — und welche mentalen Modelle dabei zusammenbrechen. Support-Anfragen aus der Beam-Zeit gaben Aufschluss darüber, wo Nutzer:innen beim Setup grundsätzlich ins Stocken geraten. Parallel dazu arbeitete ich eng mit dem Tech-Team zusammen, um Edge Cases zu erfassen, die das Backend bereits kannte, aber im UI noch nie adressiert worden waren.',
-    definition: 'Die zentrale Herausforderung war nicht das UI — sondern das Aufbrechen eines eingefahrenen mentalen Modells. Der Beam hatte Nutzer:innen genau eine Logik gelehrt: ein Sensor, eine Pflanze. Alle neuen Sensoren brachen diese Logik. Das Onboarding musste nicht nur erklären, wie ein Sensor verbunden wird — sondern warum manche Konfigurationen überhaupt erst sinnvoll sind.',
-    design: 'Ziel war ein Onboarding-System, das mit dem Produkt-Ökosystem mitwächst — ohne bei jedem neuen Sensor neu gedacht werden zu müssen. Neben klarem UI lag der Fokus auf zwei Dingen: Komplexität so früh wie möglich abfangen, bevor sie sich im System festschreibt, und Nutzer:innen nur die Informationen zeigen, die in diesem Moment relevant sind.',
+    research: 'Für die neuen Sensoren gab es kein vergleichbares Onboarding. Ich analysierte, wo der bestehende Beam-Flow strukturell versagt, sobald man ihn auf neue Sensortypen überträgt, und wertete Support-Anfragen aus der Beam-Zeit aus. Das Tech-Team kannte Edge Cases, die das Backend längst berücksichtigte — im UI aber nie sichtbar geworden waren.',
+    definition: 'Das Problem war kein fehlendes Feature — es war ein mentales Modell, das nicht mehr passte. Der Beam hatte Nutzer:innen eine einzige Logik gelehrt. Alle neuen Sensoren brachen sie.',
+    design: 'Ziel war ein Onboarding-System, das mit dem Ökosystem mitwächst — ohne bei jedem neuen Sensor neu gedacht werden zu müssen. Komplexität früh abfangen. Nur zeigen, was in diesem Moment relevant ist.',
     challenge: {
-      intro: 'Mit jedem neuen Sensor wuchs nicht nur das Portfolio — sondern die Komplexität dahinter. Unterschiedliche Sensortypen, variierende Nutzungskontexte und neue Zuordnungslogiken machten das bestehende mentale Modell der App zunehmend unbrauchbar.\n\nAus systemischer Sicht ergaben sich drei zentrale Herausforderungen:',
+      heading: 'Von einem Sensor zu einem Ökosystem',
+      body: 'Mit jedem neuen Sensor wuchs die Komplexität dahinter. Drei Herausforderungen ergaben sich daraus:',
       points: [
         'Sensoren können unabhängig von Pflanzen angebunden werden — das bisherige Onboarding kannte diesen Zustand nicht.',
-        'Technische Einschränkungen der Sensorik müssen berücksichtigt werden, ohne Nutzer:innen mit Details zu belasten.',
-        'Unterschiedliche Konfigurationen erzeugen zahlreiche Edge Cases, die im bisherigen Onboarding schlicht nicht existierten.',
+        'Technische Einschränkungen müssen berücksichtigt werden, ohne Nutzer:innen mit Details zu belasten.',
+        'Unterschiedliche Konfigurationen erzeugen zahlreiche Edge Cases, die im bisherigen Onboarding nicht existierten.',
+      ],
+      complexityModel: [
+        { label: 'Eins zu eins', sub: 'Einzelne Topfpflanze', note: 'Ausgangspunkt' },
+        { label: 'Eins zu vielen', sub: 'Für Garten und Rasen', note: 'Erweiterung' },
+        { label: 'Viele zu viele', sub: 'Topfpflanzen Gruppen', note: '' },
       ],
     },
     hmw: 'Wie lässt sich ein Onboarding gestalten, das mit einem wachsenden Sensor-Ökosystem skaliert — ohne dass Nutzer:innen die Komplexität dahinter spüren?',
-    deepDive: 'Bodensensoren wie Beam oder Mini liefern nur dann zuverlässige Daten, wenn alle zugeordneten Pflanzen im selben Substrat und Topf wachsen. Für Nutzer:innen ist das nicht intuitiv — es ist eine technische Einschränkung, die das Design lösen muss, bevor sie zum Problem wird. Ich habe die Zuordnungslogik zunächst als Flowchart modelliert, um alle Abhängigkeiten und Edge Cases sichtbar zu machen, bevor der erste Screen entworfen wurde.',
-    iteration: 'Bevor wir beim Info-Screen mit anschließender Inline-Validierung landeten, haben wir einen einfacheren Weg in Betracht gezogen: Pflanzen frei auswählen lassen — und erst nach der Konfiguration auf Inkompatibilitäten hinweisen.\n\nDas Problem: Nutzer:innen hätten bereits Entscheidungen getroffen, bevor das System eingreift. Korrekturen am Ende eines Flows erzeugen Frust — und das Gefühl, etwas falsch gemacht zu haben, obwohl die App es hätte verhindern können.\n\nDie Entscheidung für einen vorgelagerten Info-Screen war kein Kompromiss. Sie war die einzige Variante, die Fehler verhindert, bevor sie entstehen.',
+    deepDive: 'Bodensensoren liefern nur zuverlässige Daten, wenn alle zugeordneten Pflanzen im selben Substrat wachsen — für Nutzer:innen nicht intuitiv. Ich habe die Zuordnungslogik zunächst als Flowchart modelliert, um Abhängigkeiten und Edge Cases sichtbar zu machen, bevor der erste Screen entworfen wurde.',
+    iteration: 'Früh erwogen: Pflanzen frei auswählen lassen und erst danach auf Inkompatibilitäten hinweisen. Das Problem — Korrekturen am Ende eines Flows erzeugen Frust und das Gefühl, etwas falsch gemacht zu haben, obwohl die App es hätte verhindern können.\n\nDie Entscheidung für einen vorgelagerten Info-Screen war kein Kompromiss. Sie war die einzige Variante, die Fehler verhindert, bevor sie entstehen.',
     uxDecision: {
-      intro: 'Die folgenden Screens zeigen einen verkürzten User Flow: wie das System Nutzer:innen durch einen vorgelagerten Info-Screen auf die Auswahl vorbereitet — was passiert, wenn die Auswahl inkompatibel ist — und welche Handlungsoptionen das System dann anbietet.',
+      intro: 'Die folgenden Screens zeigen, wie das System Nutzer:innen durch einen vorgelagerten Info-Screen vorbereitet, bei inkompatiblen Pflanzen eingreift — und welche Handlungsoptionen es dann anbietet.',
       annotations: [
-        { screen: 'Screen 1', label: 'Info-Screen — Nutzer:innen erhalten vor der Auswahl die Kompatibilitätsregeln.' },
-        { screen: 'Screen 2', label: 'Inkompatibilität erkannt — das System erklärt, warum zwei Pflanzen nicht zusammenpassen.' },
+        { screen: 'Screen 1', label: 'Info-Screen — Kompatibilitätsregeln vor der Auswahl.' },
+        { screen: 'Screen 2', label: 'Inkompatibilität erkannt — das System erklärt warum.' },
         { screen: 'Screen 3', label: 'Handlungsoptionen — Auswahl anpassen oder Einstellungen korrigieren.' },
       ],
     },
     furtherTouchpoints: {
-      intro: 'Das Onboarding war nur der Einstiegspunkt. Damit Nutzer:innen das neue Sensor-Modell wirklich verstehen — nicht nur beim Setup, sondern im täglichen Gebrauch — habe ich zentrale Touchpoints in der bestehenden App neu konzipiert.',
+      intro: 'Das Onboarding war nur der Einstiegspunkt. Ich habe zentrale Touchpoints in der bestehenden App neu konzipiert, damit Nutzer:innen das neue Sensor-Modell auch im täglichen Gebrauch verstehen.',
       items: [
         {
           title: 'Sensorübersicht',
           body: '„My Devices" entkoppelt Sensoren erstmals von einzelnen Pflanzen und gibt Nutzer:innen einen eigenständigen Überblick über alle Geräte, deren aktuellen Status und den Zeitpunkt der letzten Synchronisation.',
         },
         {
-          title: 'Empty States',
-          body: 'Pflanzenprofile ohne Sensor zeigen keine leere Fläche — sie erklären, was ein Sensor dort leisten würde, und empfehlen konkret, welche Kombination für diesen Pflanzentyp, Standort und Kontext sinnvoll ist.',
+          title: 'Erklärende Empty States',
+          body: 'Ein leeres Profil ohne Sensor erklärt nichts. Es muss zeigen, was fehlt — und warum es relevant ist.',
         },
         {
-          title: 'Statuskommunikation',
-          body: 'Die App hatte keine klare Definition, ab wann Sensordaten als veraltet gelten. Ich habe diese interne Grenze — 24 Stunden ohne Sync — explizit im UI sichtbar gemacht und Statusmeldungen vereinheitlicht. Ist ein Sensor out of sync, überträgt sich das auf alle abhängigen Parameter: Sie werden ausgegraut statt mit Statusfarben angezeigt — um Fehlinterpretationen zu vermeiden.',
+          title: 'Überarbeitete Statuskommunikation',
+          body: 'Die App hatte eine interne Grenze für veraltete Daten — 24 Stunden ohne Sync. Nutzer:innen sahen sie nie. Ist ein Sensor out of sync, werden alle abhängigen Parameter ausgegraut, um Fehlinterpretationen zu vermeiden.',
         },
       ],
     },
+    uiDecisions: [
+      {
+        title: 'Produkt-Renderings statt Illustrationen',
+        body: 'Nutzer:innen erkennen ihren Sensor sofort wieder — auch wenn sie ihn zum ersten Mal in der Hand halten. Renderings skalieren mit dem wachsenden Portfolio.',
+      },
+      {
+        title: 'Loading & Feedback States',
+        body: 'Pairing und Sync brauchen Zeit — eigene Animationen machen Systemzustände lesbar und verhindern, dass Nutzer:innen in Unsicherheit abbrechen.',
+      },
+      {
+        title: 'Illustrative Ebene für Nutzungskontexte',
+        body: 'Manche Kontexte — ein Gartenbeet, ein Rasen, ein Hochbeet — lassen sich mit einem Rendering allein nicht vermitteln. Illustrationen ergänzen dort, ohne die visuelle Sprache zu brechen.',
+      },
+    ],
     impact: {
-      items: [
-        'Weniger fehlerhafte Setups: Validierungsfehler werden abgefangen, bevor sie sich ins System schreiben — und bevor Nutzer:innen bemerken, dass etwas schiefgelaufen ist.',
-        'Verlässlichere Pflegeempfehlungen: Nur korrekte Sensor-Pflanzen-Zuordnungen liefern Daten, auf denen Pflegeempfehlungen tatsächlich basieren können.',
-        'Reduziertes Support-Aufkommen: [PLACEHOLDER — Ticket-Volumen aus Intercom eintragen]',
-        'Stabilität in Multi-Sensor Setups: Validierte Konfigurationen verhindern, dass sich Fehler in komplexeren Multi-Sensor-Umgebungen unbemerkt fortsetzen.',
+      cards: [
+        { title: 'Weniger fehlerhafte Setups', body: 'Validierungsfehler werden abgefangen, bevor sie sich ins System schreiben.' },
+        { title: 'Verlässlichere Pflegeempfehlungen', body: 'Nur korrekte Sensor-Pflanzen-Zuordnungen liefern Daten, auf denen Empfehlungen basieren können.' },
+        { title: 'Reduziertes Support-Aufkommen', body: 'Setup-bedingte Anfragen, die vor dem Launch regelmäßig auftraten, sind seitdem nicht mehr eingegangen.' },
+        { title: 'Stabilität in Multi-Sensor Setups', body: 'Validierte Konfigurationen verhindern Folgefehler in komplexeren Umgebungen.' },
       ],
     },
-    reflection: 'Das größte Learning war keine UI-Entscheidung — es war das Verständnis, dass gutes Onboarding bei hardware-nahen Produkten Systemdenken voraussetzt, nicht nur Gestaltung. Die schwierigsten Probleme lagen nicht im Interface, sondern in der Frage: Welche Komplexität darf ich sichtbar machen — und welche muss ich schlucken?',
+    reflection: 'Das größte Learning war keine UI-Entscheidung. Onboarding bei hardware-nahen Produkten beginnt nicht am Interface — sondern am System dahinter. Die schwierigsten Fragen waren konzeptioneller Natur: Welche Komplexität darf ich zeigen — und welche muss das Design schlucken?',
   },
 
   probe: {
     slug: '/projekte/soil-probe-diagnostic',
     title: 'FYTA – Soil Probe Diagnostic',
     shortTitle: 'Probe Diagnostic',
-    description: 'Ein Diagnose-Flow, der Nutzer:innen hilft, beschädigte Soil Probes zu erkennen — und gleichzeitig Missbrauch für Garantieansprüche verhindert.',
-    tags: ['UI/UX', 'System Design', 'Abuse Prevention', 'Hardware'],
+    description: 'Wenn ein Soil Probe defekt ist, liefert die App Daten — aber keine richtigen. Ein Self-Service-Diagnose-Flow, der Nutzer:innen ermöglicht, den Zustand ihrer Probes selbst zu prüfen.',
+    tags: ['UI/UX', 'System Design', 'Self-Service UX', 'Hardware'],
     meta: {
       role: 'Head of Product Design',
-      status: 'Shipped [DATUM EINTRAGEN]',
+      status: 'Shipped',
       imageFolder: '/images/probe-diagnostic/',
       cover: 'cover.png',
     },
-    intro: 'Sensoren messen nur so gut, wie sie eingesetzt werden. Wenn ein Beam-Probe beschädigt ist oder falsch sitzt, liefert die App Daten — aber keine richtigen. Nutzer:innen merken das nicht sofort. Das ist das Problem.\n\nAls Head of Product Design habe ich einen Diagnose-Flow entwickelt, der Nutzer:innen hilft, den Zustand ihrer Soil Probes zu prüfen — und der gleichzeitig verhindert, dass das System für falsche Ergebnisse missbraucht wird.',
-    challenge: 'Ein beschädigter oder falsch eingesetzter Soil Probe erzeugt keine offensichtlichen Fehler — er erzeugt plausible, aber falsche Messwerte. Nutzer:innen vertrauen diesen Werten und pflegen ihre Pflanzen entsprechend falsch.\n\nDas Diagnose-Feature löst zwei Probleme gleichzeitig: Es hilft legitimen Nutzer:innen, echte Hardware-Fehler zu erkennen. Und es verhindert, dass das System von Nutzer:innen ausgenutzt wird, die Diagnoseergebnisse als Hebel für Garantieansprüche missbrauchen.',
-    myRole: 'Ich habe den gesamten Diagnose-Flow konzipiert und gestaltet — von der Systemlogik und den Abuse-Prevention-Gates bis zum finalen UI. Die Arbeit entstand in enger Zusammenarbeit mit dem Tech-Team und dem Product Manager.',
+    intro: 'Wenn ein Soil Probe defekt ist, liefert die App Daten — aber keine richtigen. Das Problem: Von außen sieht alles normal aus.\n\nAls Head of Product Design habe ich einen Diagnose-Flow entwickelt, der Nutzer:innen ermöglicht, den Zustand ihrer Soil Probes selbst zu prüfen — ohne Umweg über den Support.',
+    challenge: {
+      heading: 'Falsche Daten, die sich richtig anfühlen',
+      body: 'Nutzer:innen meldeten fehlerhafte Bodenfeuchtigkeitswerte — ihre Pflanzen wurden falsch gepflegt, ohne dass sie es wussten. Das führte zu hohem Support-Aufkommen und Vertrauensverlust in die Produktdaten.\n\nDas eigentliche Problem: Wir konnten nicht unterscheiden, ob die Ursache ein defekter Probe war oder eine fehlerhafte Kalibrierung. Beides erzeugt dasselbe Symptom — braucht aber grundlegend verschiedene Lösungen. Jeder Fall musste manuell untersucht werden.',
+    },
+    myRole: 'Ich habe den gesamten Diagnose-Flow konzipiert und gestaltet — vom ersten Konzept bis zum finalen UI, in enger Zusammenarbeit mit dem Tech-Team und dem Product Manager.',
     process: {
       steps: [
         {
-          label: 'Step 1 — Problem modellieren',
-          body: 'Bevor der erste Screen entworfen wurde, habe ich die möglichen Abuse-Vektoren kartiert: schnelles Wiederholen des Tests, erzwungene Bedingungen, mehrere Accounts.',
+          label: 'Warum der Probe-Test zuerst',
+          body: 'Ein defekter Probe lässt sich nicht kalibrieren — er muss ersetzt werden. Der Probe-Test ist Fail-Fast-Logik: Er klärt die grundlegendste Frage, bevor weitere Schritte folgen.',
         },
         {
-          label: 'Step 2 — Connection first, fail fast',
-          body: 'Verbindung prüfen, bevor der eigentliche Test beginnt. Wenn die Probe nicht verbunden ist, gibt es keinen Test.',
+          label: 'Verbindung zuerst',
+          body: 'Verbindung zum Sensor herstellen, bevor Nutzer:innen irgendetwas physisch vorbereiten. Wenn der Sensor nicht erreichbar ist, erfahren Nutzer:innen das sofort — bevor sie ein Glas Wasser bereitstellen und zwei Minuten investieren.',
         },
         {
-          label: 'Step 3 — Vier Abuse-Prevention-Gates',
-          body: '',
-          gates: [
-            'Backend-verifizierte Ergebnisse',
-            '90-Tage-Cooldown',
-            'Account-Level-Limits',
-            'Historischer Feuchtigkeits-Crosscheck: Das System vergleicht das aktuelle Ergebnis mit historischen Messwerten. Ein abrupter Cliff-Edge ist ein Missbrauchssignal. Ein graduelles Degradationsmuster ist ein echter Hardware-Defekt. Keine neue Hardware nötig — nur vorhandene Daten.',
-          ],
+          label: 'Der Test — einfach und zugänglich',
+          body: 'Ein Glas Wasser, beide Probes eintauchen, Live-Messung pro Probe, klares Ergebnis: passed oder failed. Das Wort „Gefäß" wurde bewusst verworfen — zu klinisch. Sprache ist hier genauso wichtig wie UI.',
         },
         {
-          label: 'Step 4 — Kein Probe-Naming',
+          label: 'Kein Probe-Naming',
           body: 'FYTA liefert immer beide Probes als Paar — einzelne Namen erzeugen Verwechslungspotenzial ohne Nutzen.',
         },
       ],
     },
-    keyDecision: 'Der historische Feuchtigkeits-Crosscheck nutzt Daten, die bereits existieren. Ein Sensor, dessen Feuchtigkeitskurve abrupt auf null springt, zeigt ein anderes Muster als einer, der langsam degradiert. Diese Unterscheidung passiert im Backend, unsichtbar für Nutzer:innen — ohne einen einzigen zusätzlichen Schritt im Flow.\n\nTrade-off: Bei sehr neuen Sensoren (unter ~2 Wochen Nutzung) greift dieser Gate nicht. Akzeptiert — neue Sensoren haben ein geringeres Missbrauchspotenzial.',
+    keyDecision: {
+      heading: 'Self-Service statt Support-Schleife',
+      body: 'Der eigentliche Shift war nicht ein einzelner Screen — sondern das Modell dahinter. Vorher: Nutzer:innen schildern das Problem, warten, werden manuell untersucht. Nachher: Nutzer:innen führen den Test selbst durch — und im Fehlerfall ist der Support-Request bereits vorbereitet.\n\nDie Entscheidung, den Flow so zugänglich zu machen (ein Glas Wasser, zwei Minuten, klare Schritte), war keine Vereinfachung um der Vereinfachung willen. Sie war die Voraussetzung dafür, dass das Modell funktioniert.\n\nTrade-off: Der Probe-Test löst nur die Hardware-Seite. Wenn beide Probes bestehen, die Messwerte aber trotzdem falsch sind, liegt die Ursache wahrscheinlich in der Kalibrierung — ein separater Flow, der noch in Planung ist.',
+    },
     results: {
-      placeholder: '[PLACEHOLDER — Feature shipped [DATUM EINTRAGEN]. Post-launch-Daten folgen.]',
+      note: 'Feature shipped. Post-launch-Daten folgen.',
       metrics: [
-        'Retry-Rate innerhalb des Cooldown-Fensters',
-        'Connection-Failure-Drop-off',
-        'Support-Tickets: fehlerhafte Diagnoseergebnisse',
-        'Cooldown-Beschwerden',
+        'Support-Tickets: fehlerhafte Messwerte — Baseline 3 Monate vor Launch vs. nach Launch',
+        'Flow-Completion-Rate — Wie viele Nutzer:innen kommen bis zum Ergebnis-Screen?',
+        'Connection-Failure-Drop-off — Zeigt, ob der Fail-Fast-Schritt funktioniert',
+        'Support-Request-Nutzung nach Failed Result — Wird das vorbereitete Formular tatsächlich genutzt?',
       ],
     },
-    learning: 'Wenn ein Feature Konsequenzen hat — Garantieansprüche, Austausch, Erstattung — wird es ausgenutzt. Gutes Abuse-Prevention-Design bestraft nicht alle Nutzer:innen für das Verhalten weniger. Es schichtet Hürden so, dass legitime Flows unberührt bleiben — und Missbrauch teuer wird, ohne sichtbar zu sein.',
+    learning: {
+      heading: 'Hardware braucht Klarheit, keine Abstraktion',
+      body: 'Support-Aufwand entsteht nicht nur, wenn etwas kaputt ist — er entsteht, wenn Nutzer:innen keine Möglichkeit haben, selbst herauszufinden, was los ist. Ein Self-Service-Flow ist ein Vertrauensangebot: Wir geben dir die Mittel, es selbst zu überprüfen.\n\nDas zweite Learning: „Ein Glas Wasser" statt „ein geeignetes Gefäß" ist kein Stilproblem. Es ist der Unterschied zwischen einem Test, den jemand sofort versteht — und einem, bei dem jemand kurz zögert.',
+    },
   },
 
   thesis: {
     slug: '/projekte/inklusive-lern-app',
     title: 'Inklusive Lern-App für Lesen & Schreiben im Schulalltag',
     shortTitle: 'Inklusive Lern-App',
-    description: 'Konzeption und Gestaltung einer digitalen Lernanwendung, die inklusives Lernen fördert, Lehrkräfte entlastet und Schüler:innen individuell beim Schriftspracherwerb unterstützt.',
+    description: 'Konzeption einer digitalen Lernanwendung, die inklusives Lernen fördert, Lehrkräfte entlastet und Schüler:innen individuell beim Schriftspracherwerb unterstützt.',
     tags: ['Branding', 'UI/UX', 'Design System', 'Konzeption'],
     meta: {
       role: 'UX/UI Designer, Konzeption (Masterarbeit)',
@@ -159,7 +182,7 @@ export const caseStudies = {
       imageFolder: '/images/masterthesis/',
       cover: 'cover.png',
     },
-    intro: 'Lesen und Schreiben sind grundlegende Kompetenzen für Bildung und gesellschaftliche Teilhabe. Kinder mit Lese- und Rechtschreibschwierigkeiten stoßen im Schulalltag jedoch häufig auf Barrieren — fachlich, emotional und sozial.\n\nZiel meiner Masterarbeit war die Konzeption und Gestaltung einer digitalen Lernanwendung, die inklusives Lernen fördert, Lehrkräfte entlastet und Schüler:innen individuell beim Schriftspracherwerb unterstützt.',
+    intro: 'Lesen und Schreiben sind grundlegende Kompetenzen für gesellschaftliche Teilhabe. Kinder mit Lese- und Rechtschreibschwierigkeiten stoßen im Schulalltag jedoch häufig auf Barrieren — fachlich, emotional und sozial.\n\nZiel meiner Masterarbeit war die Konzeption einer digitalen Lernanwendung, die inklusives Lernen fördert, Lehrkräfte entlastet und Schüler:innen individuell beim Schriftspracherwerb unterstützt.',
     research: {
       body: 'Lesen- und Schreibkompetenzen sind entscheidend für gesellschaftliche Teilhabe. Kinder mit Lese- und Rechtschreibschwierigkeiten erleben Schule jedoch häufig nicht als Ort des Lernens, sondern als tägliche Überforderung.\n\nBesonders herausfordernd war die Erkenntnis, dass explizite Hilfestellungen für Kinder mit LRS im Unterricht oft nicht unterstützend wirken, sondern zusätzliche Stigmatisierung erzeugen. Diese Einsicht führte zu einem grundlegenden Umdenken in meiner Arbeit.',
       barriers: [
@@ -173,26 +196,17 @@ export const caseStudies = {
     definition: 'Wie lässt sich eine App entwickeln, die alle Schüler:innen unterstützt — ohne auszugrenzen — und gleichzeitig praxisnah in den Unterricht integrierbar ist?',
     design: {
       heading: 'Hauptfunktionen',
-      intro: 'Die Funktionen der App sind darauf ausgelegt, selbstständiges Lernen zu ermöglichen, die Selbstwirksamkeit der Schüler:innen zu stärken und Lehrkräfte durch adaptive Inhalte und automatisiertes Feedback zu entlasten.',
+      intro: 'Die Funktionen sind darauf ausgelegt, selbstständiges Lernen zu ermöglichen und Lehrkräfte zu entlasten — ohne dass die App zwischen Kindern unterscheidet.',
       ideation: 'Ausgehend von dieser Fragestellung entwickelte ich das Konzept einer App, die nicht zwischen „mit" und „ohne LRS" unterscheidet, sondern sich flexibel an unterschiedliche Lernstände anpasst und im gesamten Klassenverband genutzt werden kann.',
       features: [
-        { title: 'Lesehelfer', body: 'Unterstützung beim Vorlesen und Mitlesen von Texten.' },
-        { title: 'Feedbackgestützter Rechtschreibchecker', body: 'Direkte, erklärende Rückmeldungen statt bloßer Fehleranzeigen. Das „a in Vater lässt sich durch das a in Vater ableiten" — Feedback, das erklärt, nicht nur markiert.' },
-        { title: 'Digitaler Karteikasten', body: 'Individuelles Worttraining mit Lernfortschrittsanzeige.' },
+        { title: 'Lesehelfer', body: 'Unterstützt beim Vorlesen und Mitlesen — Kinder können dem Unterricht folgen, ohne aufzufallen.' },
+        { title: 'Feedbackgestützter Rechtschreibchecker', body: 'Erklärende Rückmeldungen statt bloßer Fehleranzeigen. Feedback, das erklärt, nicht nur markiert.' },
+        { title: 'Digitaler Karteikasten', body: 'Individuelles Worttraining mit Lernfortschrittsanzeige — Fortschritte sichtbar, aber nur für das Kind selbst.' },
       ],
     },
     validation: {
       heading: 'Nutzer-Feedback',
-      body: 'Der klickbare Prototyp wurde in Figma entwickelt und mit Expert:innen aus dem schulischen und therapeutischen Kontext reflektiert. Besonders positiv bewertet wurden die unmittelbaren Rückmeldungen, die Möglichkeit zum selbstständigen Arbeiten und die einfache Integration in den Unterricht.',
-    },
-    results: {
-      heading: 'Trainieren',
-      metrics: [
-        { label: 'Wörter pro Minute', value: '9' },
-        { label: 'Trainierte Karteikarten', value: '36' },
-        { label: 'Abgeschlossene Karteikarten', value: '14' },
-        { label: 'Zeit trainiert', value: '25 Min.' },
-      ],
+      body: 'Den klickbaren Prototyp habe ich mit Expert:innen aus dem schulischen und therapeutischen Kontext getestet und besprochen. Besonders positiv: unmittelbare Rückmeldungen, selbstständiges Arbeiten, einfache Integration in den Unterricht.',
     },
     learning: {
       heading: 'Inklusion im Design',

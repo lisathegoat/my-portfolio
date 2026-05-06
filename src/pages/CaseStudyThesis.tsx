@@ -105,21 +105,6 @@ export default function CaseStudyThesis() {
         </div>
       </CaseSection>
 
-      {/* Ergebnis — metrics */}
-      <CaseSection label={cs.results.heading}>
-        <div className="flex flex-col gap-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {cs.results.metrics.map((m) => (
-              <div key={m.label} className="flex flex-col gap-2 p-6 border border-white/10 rounded-xl">
-                <span className="font-title-italic text-title-sm text-accent leading-none">{m.value}</span>
-                <span className="font-body text-body-sm text-light/50">{m.label}</span>
-              </div>
-            ))}
-          </div>
-          <img src={`${folder}07.png`} alt="Ergebnisse" className="w-full rounded-card object-cover" />
-        </div>
-      </CaseSection>
-
       {/* Reflexion */}
       <CaseSection label="Reflexion">
         <div className="flex flex-col gap-4">
