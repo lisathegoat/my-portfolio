@@ -11,7 +11,7 @@ export default function CaseStudyThesis() {
       meta={{ role: cs.meta.role, tags: cs.tags, status: cs.meta.status }}
     >
       {/* Hero image */}
-      <img src={`${folder}01.png`} alt="Inklusive Lern-App" className="w-full rounded-card object-cover mb-xxl" />
+      <img src={`${folder}hero.jpg.png`} alt="Inklusive Lern-App" className="w-full rounded-card object-cover mb-xxl" />
 
       {/* Intro */}
       <CaseSection label="Intro">

@@ -11,7 +11,7 @@ export default function CaseStudyProbe() {
       meta={{ role: cs.meta.role, tags: cs.tags, status: cs.meta.status }}
     >
       {/* Hero image */}
-      <ImagePlaceholder aspectRatio="hero" label="Soil Probe Diagnostic — Hero" className="w-full mb-xxl" />
+      <img src="/images/probe-diagnostic/hero.jpg" alt="Soil Probe Diagnostic" className="w-full rounded-card object-cover mb-xxl" />
 
       {/* Intro */}
       <CaseSection label="Intro">

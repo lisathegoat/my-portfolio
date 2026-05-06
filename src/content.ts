@@ -103,6 +103,7 @@ export const caseStudies = {
       role: 'Head of Product Design',
       status: 'Shipped [DATUM EINTRAGEN]',
       imageFolder: '/images/probe-diagnostic/',
+      cover: 'cover.png',
     },
     intro: 'Sensoren messen nur so gut, wie sie eingesetzt werden. Wenn ein Beam-Probe beschädigt ist oder falsch sitzt, liefert die App Daten — aber keine richtigen. Nutzer:innen merken das nicht sofort. Das ist das Problem.\n\nAls Head of Product Design habe ich einen Diagnose-Flow entwickelt, der Nutzer:innen hilft, den Zustand ihrer Soil Probes zu prüfen — und der gleichzeitig verhindert, dass das System für falsche Ergebnisse missbraucht wird.',
     challenge: 'Ein beschädigter oder falsch eingesetzter Soil Probe erzeugt keine offensichtlichen Fehler — er erzeugt plausible, aber falsche Messwerte. Nutzer:innen vertrauen diesen Werten und pflegen ihre Pflanzen entsprechend falsch.\n\nDas Diagnose-Feature löst zwei Probleme gleichzeitig: Es hilft legitimen Nutzer:innen, echte Hardware-Fehler zu erkennen. Und es verhindert, dass das System von Nutzer:innen ausgenutzt wird, die Diagnoseergebnisse als Hebel für Garantieansprüche missbrauchen.',
@@ -156,6 +157,7 @@ export const caseStudies = {
       role: 'UX/UI Designer, Konzeption (Masterarbeit)',
       status: 'Abgeschlossen',
       imageFolder: '/images/masterthesis/',
+      cover: 'cover.png',
     },
     intro: 'Lesen und Schreiben sind grundlegende Kompetenzen für Bildung und gesellschaftliche Teilhabe. Kinder mit Lese- und Rechtschreibschwierigkeiten stoßen im Schulalltag jedoch häufig auf Barrieren — fachlich, emotional und sozial.\n\nZiel meiner Masterarbeit war die Konzeption und Gestaltung einer digitalen Lernanwendung, die inklusives Lernen fördert, Lehrkräfte entlastet und Schüler:innen individuell beim Schriftspracherwerb unterstützt.',
     research: {

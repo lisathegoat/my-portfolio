@@ -48,7 +48,10 @@ export default function CaseStudyFyta() {
 
       {/* Research */}
       <CaseSection label="Research">
-        <p className="font-body text-body-md text-light/80">{cs.research}</p>
+        <div className="flex flex-col gap-8">
+          <p className="font-body text-body-md text-light/80">{cs.research}</p>
+          <img src="/images/fyta-onboarding/01_Mental_Model.png" alt="Mental Model" className="w-full rounded-card object-cover" />
+        </div>
       </CaseSection>
 
       {/* Definition */}
@@ -58,15 +61,17 @@ export default function CaseStudyFyta() {
 
       {/* Design */}
       <CaseSection label="Design">
-        <p className="font-body text-body-md text-light/80">{cs.design}</p>
+        <div className="flex flex-col gap-8">
+          <p className="font-body text-body-md text-light/80">{cs.design}</p>
+          <img src="/images/fyta-onboarding/03_System_support.png" alt="System Support" className="w-full rounded-card object-cover" />
+        </div>
       </CaseSection>
 
       {/* Deep Dive */}
       <CaseSection label="Vertiefung">
         <div className="flex flex-col gap-8">
           <p className="font-body text-body-md text-light/80">{cs.deepDive}</p>
-          {/* Flow diagram placeholder */}
-          <ImagePlaceholder aspectRatio="hero" label="Flowchart: Zuordnungslogik + Edge Cases" />
+          <img src="/images/fyta-onboarding/02_Add sensor 1 Flow chart.png" alt="Flowchart: Zuordnungslogik + Edge Cases" className="w-full rounded-card object-cover" />
         </div>
       </CaseSection>
 
@@ -83,17 +88,20 @@ export default function CaseStudyFyta() {
       <CaseSection label="UX-Entscheidung">
         <div className="flex flex-col gap-8">
           <p className="font-body text-body-md text-light/80">{cs.uxDecision.intro}</p>
-          {/* Screen annotations + placeholders */}
+          {/* Screen annotations */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-l">
-            {cs.uxDecision.annotations.map((ann, i) => (
-              <div key={i} className="flex flex-col gap-4">
-                <ImagePlaceholder aspectRatio="phone" label={ann.screen} />
-                <div className="flex flex-col gap-1">
-                  <span className="font-body text-body-sm text-accent">{ann.screen}</span>
-                  <p className="font-body text-body-sm text-light/70">{ann.label}</p>
+            {cs.uxDecision.annotations.map((ann, i) => {
+              const screens = ['04.png', '05.png', '06.png']
+              return (
+                <div key={i} className="flex flex-col gap-4">
+                  <img src={`/images/fyta-onboarding/${screens[i]}`} alt={ann.screen} className="w-full rounded-xl object-cover" />
+                  <div className="flex flex-col gap-1">
+                    <span className="font-body text-body-sm text-accent">{ann.screen}</span>
+                    <p className="font-body text-body-sm text-light/70">{ann.label}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </CaseSection>
@@ -103,13 +111,20 @@ export default function CaseStudyFyta() {
         <div className="flex flex-col gap-8">
           <p className="font-body text-body-md text-light/80">{cs.furtherTouchpoints.intro}</p>
           <div className="flex flex-col gap-xxl">
-            {cs.furtherTouchpoints.items.map((item, i) => (
-              <div key={i} className="flex flex-col gap-4">
-                <h3 className="font-body text-body-md font-medium text-light">{item.title}</h3>
-                <p className="font-body text-body-md text-light/70">{item.body}</p>
-                <ImagePlaceholder aspectRatio="hero" label={item.title} />
-              </div>
-            ))}
+            {cs.furtherTouchpoints.items.map((item, i) => {
+              const touchpointImages = ['07.png', '09.png', null] // 08.png missing — Statuskommunikation pending
+              const img = touchpointImages[i]
+              return (
+                <div key={i} className="flex flex-col gap-4">
+                  <h3 className="font-body text-body-md font-medium text-light">{item.title}</h3>
+                  <p className="font-body text-body-md text-light/70">{item.body}</p>
+                  {img
+                    ? <img src={`/images/fyta-onboarding/${img}`} alt={item.title} className="w-full rounded-card object-cover" />
+                    : <ImagePlaceholder aspectRatio="hero" label={`${item.title} — Bild fehlt (08.png)`} />
+                  }
+                </div>
+              )
+            })}
           </div>
         </div>
       </CaseSection>
