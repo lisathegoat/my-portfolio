@@ -147,7 +147,7 @@ export const caseStudies = {
 
   thesis: {
     slug: '/projekte/inklusive-lern-app',
-    title: 'Inklusive Lern-App für Lesen & Schreiben',
+    title: 'Inklusive Lern-App für Lesen & Schreiben im Schulalltag',
     shortTitle: 'Inklusive Lern-App',
     description: 'Konzeption und Gestaltung einer digitalen Lernanwendung, die inklusives Lernen fördert, Lehrkräfte entlastet und Schüler:innen individuell beim Schriftspracherwerb unterstützt.',
     tags: ['Branding', 'UI/UX', 'Design System', 'Konzeption'],
@@ -157,19 +157,44 @@ export const caseStudies = {
       imageFolder: '/images/masterthesis/',
     },
     intro: 'Lesen und Schreiben sind grundlegende Kompetenzen für Bildung und gesellschaftliche Teilhabe. Kinder mit Lese- und Rechtschreibschwierigkeiten stoßen im Schulalltag jedoch häufig auf Barrieren — fachlich, emotional und sozial.\n\nZiel meiner Masterarbeit war die Konzeption und Gestaltung einer digitalen Lernanwendung, die inklusives Lernen fördert, Lehrkräfte entlastet und Schüler:innen individuell beim Schriftspracherwerb unterstützt.',
-    research: 'Umfangreiche Literaturrecherche zu Schriftspracherwerb, LRS-Diagnostik und inklusiver Bildung sowie Interviews mit Expert:innen aus Lerntherapie, Unterricht und Diagnostik.\n\nZentrale Erkenntnis: Explizite Hilfestellungen für Kinder mit LRS wirken im Unterricht oft nicht unterstützend, sondern erzeugen zusätzliche Stigmatisierung. Diese Einsicht führte zu einem grundlegenden Umdenken.',
-    definition: 'Wie lässt sich eine App entwickeln, die alle Schüler:innen unterstützt — ohne auszugrenzen — und gleichzeitig praxisnah in den Unterricht integrierbar ist?',
-    design: {
-      intro: 'Konzept einer App, die nicht zwischen „mit" und „ohne LRS" unterscheidet, sondern sich flexibel an unterschiedliche Lernstände anpasst und im gesamten Klassenverband genutzt werden kann.',
-      features: [
-        { title: 'Lesehelfer', body: 'Unterstützung beim Vorlesen und Mitlesen von Texten' },
-        { title: 'Feedbackgestützter Rechtschreibchecker', body: 'Direkte, erklärende Rückmeldungen statt bloßer Fehleranzeigen' },
-        { title: 'Digitaler Karteikasten', body: 'Individuelles Worttraining mit Lernfortschrittsanzeige' },
+    research: {
+      body: 'Lesen- und Schreibkompetenzen sind entscheidend für gesellschaftliche Teilhabe. Kinder mit Lese- und Rechtschreibschwierigkeiten erleben Schule jedoch häufig nicht als Ort des Lernens, sondern als tägliche Überforderung.\n\nBesonders herausfordernd war die Erkenntnis, dass explizite Hilfestellungen für Kinder mit LRS im Unterricht oft nicht unterstützend wirken, sondern zusätzliche Stigmatisierung erzeugen. Diese Einsicht führte zu einem grundlegenden Umdenken in meiner Arbeit.',
+      barriers: [
+        { title: 'Schulische Überforderung', body: 'Starres Curriculum, kaum Differenzierung' },
+        { title: 'Sichtbare Andersbehandlung', body: 'Stigmatisierung durch explizite Fördermaßnahmen' },
+        { title: 'Mangelnde Förderung', body: 'Lehrerabhängigkeit, keine digitalen Tools' },
+        { title: 'Schulangst & Rückzug', body: 'Angst, Frust, Vermeidungsverhalten' },
+        { title: 'Innere Blockaden', body: '„Alle denken, ich sei dumm."' },
       ],
     },
-    validation: 'Der klickbare Prototyp wurde mit Expert:innen aus dem schulischen und therapeutischen Kontext reflektiert. Besonders positiv bewertet: unmittelbare Rückmeldungen, selbstständiges Arbeiten, einfache Integration in den Unterricht.',
-    results: 'Prototyp entwickelt und mit Fachexpert:innen validiert. Positives Feedback auf alle drei Kernfunktionen.',
-    learning: 'Im Verlauf dieses Projekts wurde mir besonders bewusst, wie viel Verantwortung Design trägt, wenn es darum geht, Unterstützung zugänglich zu machen, ohne auszugrenzen. Inklusion im Design sollte nicht nur in spezifischen Projekten mitgedacht werden — sondern als konzeptionelle Haltung generell eine Rolle spielen.',
+    definition: 'Wie lässt sich eine App entwickeln, die alle Schüler:innen unterstützt — ohne auszugrenzen — und gleichzeitig praxisnah in den Unterricht integrierbar ist?',
+    design: {
+      heading: 'Hauptfunktionen',
+      intro: 'Die Funktionen der App sind darauf ausgelegt, selbstständiges Lernen zu ermöglichen, die Selbstwirksamkeit der Schüler:innen zu stärken und Lehrkräfte durch adaptive Inhalte und automatisiertes Feedback zu entlasten.',
+      ideation: 'Ausgehend von dieser Fragestellung entwickelte ich das Konzept einer App, die nicht zwischen „mit" und „ohne LRS" unterscheidet, sondern sich flexibel an unterschiedliche Lernstände anpasst und im gesamten Klassenverband genutzt werden kann.',
+      features: [
+        { title: 'Lesehelfer', body: 'Unterstützung beim Vorlesen und Mitlesen von Texten.' },
+        { title: 'Feedbackgestützter Rechtschreibchecker', body: 'Direkte, erklärende Rückmeldungen statt bloßer Fehleranzeigen. Das „a in Vater lässt sich durch das a in Vater ableiten" — Feedback, das erklärt, nicht nur markiert.' },
+        { title: 'Digitaler Karteikasten', body: 'Individuelles Worttraining mit Lernfortschrittsanzeige.' },
+      ],
+    },
+    validation: {
+      heading: 'Nutzer-Feedback',
+      body: 'Der klickbare Prototyp wurde in Figma entwickelt und mit Expert:innen aus dem schulischen und therapeutischen Kontext reflektiert. Besonders positiv bewertet wurden die unmittelbaren Rückmeldungen, die Möglichkeit zum selbstständigen Arbeiten und die einfache Integration in den Unterricht.',
+    },
+    results: {
+      heading: 'Trainieren',
+      metrics: [
+        { label: 'Wörter pro Minute', value: '9' },
+        { label: 'Trainierte Karteikarten', value: '36' },
+        { label: 'Abgeschlossene Karteikarten', value: '14' },
+        { label: 'Zeit trainiert', value: '25 Min.' },
+      ],
+    },
+    learning: {
+      heading: 'Inklusion im Design',
+      body: 'Im Verlauf dieses Projekts wurde mir besonders bewusst, wie viel Verantwortung Design trägt, wenn es darum geht, Unterstützung zugänglich zu machen, ohne auszugrenzen. Inklusion im Design sollte dabei nicht nur in Projekten wie diesem mitgedacht werden — sondern zentral als konzeptionelle Haltung generell eine Rolle spielen.',
+    },
   },
 
   placeholder: {
