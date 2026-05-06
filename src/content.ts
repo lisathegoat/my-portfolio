@@ -40,6 +40,7 @@ export const caseStudies = {
       role: 'Head of Product Design',
       status: 'Shipped',
       imageFolder: '/images/fyta-onboarding/',
+      cover: 'cover.png',
     },
     intro: 'FYTA verbindet Pflanzenpflege mit sensorbasierten Daten — die App übersetzt Messwerte aus Boden, Licht und Umgebung in konkrete Pflegehinweise. Bis zur Einführung der neuen Sensoren kannte die App genau ein Modell: ein Sensor, eine Pflanze, ein Topf.\n\nAls Head of Product Design habe ich die Erweiterung des Sensor-Portfolios von Grund auf verantwortet — von der Systemlogik im Backend bis zum finalen UI. Das Projekt war kein Feature-Update. Es war der Umbau eines Einzelprodukts zu einem skalierbaren Ökosystem.',
     research: 'Da für die neuen Sensoren kein vergleichbares Onboarding existierte, nahm die Recherche eine andere Form an als klassische Nutzerforschung. Ich analysierte, an welchen Stellen der bestehende Beam-Flow strukturell versagt, sobald man ihn auf neue Sensortypen überträgt — und welche mentalen Modelle dabei zusammenbrechen. Support-Anfragen aus der Beam-Zeit gaben Aufschluss darüber, wo Nutzer:innen beim Setup grundsätzlich ins Stocken geraten. Parallel dazu arbeitete ich eng mit dem Tech-Team zusammen, um Edge Cases zu erfassen, die das Backend bereits kannte, aber im UI noch nie adressiert worden waren.',

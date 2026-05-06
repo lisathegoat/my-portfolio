@@ -185,7 +185,7 @@ export default function Home() {
           }}
         >
           <img
-            src="/images/profile.jpg"
+            src="/images/home/Lisa_C.png"
             alt="Lisa"
             className="w-full h-full object-cover object-top"
             onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = 'none' }}
@@ -218,6 +218,7 @@ export default function Home() {
               description={p.description}
               tags={p.tags}
               imageFolder={p.meta.imageFolder}
+              imageName={(p.meta as { cover?: string }).cover}
               isPlaceholder={p.slug === '#'}
             />
           ))}

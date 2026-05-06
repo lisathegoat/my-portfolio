@@ -11,7 +11,7 @@ export default function CaseStudyFyta() {
       meta={{ role: cs.meta.role, tags: cs.tags, status: cs.meta.status }}
     >
       {/* Hero image */}
-      <ImagePlaceholder aspectRatio="hero" label="FYTA Sensoranbindung — Hero" className="w-full mb-xxl" />
+      <img src="/images/fyta-onboarding/hero.jpg" alt="FYTA Sensoranbindung" className="w-full rounded-card object-cover mb-xxl" />
 
       {/* Intro */}
       <CaseSection label="Intro">
