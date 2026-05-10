@@ -43,16 +43,79 @@ export const caseStudies = {
       cover: 'cover.png',
     },
     intro: 'FYTA verbindet Pflanzenpflege mit sensorbasierten Daten — die App übersetzt Messwerte aus Boden, Licht und Umgebung in konkrete Pflegehinweise. Bis zur Einführung der neuen Sensoren kannte die App genau ein Modell: ein Sensor, eine Pflanze, ein Topf.\n\nAls Head of Product Design habe ich die Erweiterung des Sensor-Portfolios von Grund auf verantwortet — von der Systemlogik im Backend bis zum finalen UI. Das Projekt war kein Feature-Update. Es war der Umbau eines Einzelprodukts zu einem skalierbaren Ökosystem.',
-    research: 'Für die neuen Sensoren gab es kein vergleichbares Onboarding. Ich analysierte, wo der bestehende Beam-Flow strukturell versagt, sobald man ihn auf neue Sensortypen überträgt, und wertete Support-Anfragen aus der Beam-Zeit aus. Das Tech-Team kannte Edge Cases, die das Backend längst berücksichtigte — im UI aber nie sichtbar geworden waren.',
+    research: 'Für die neuen Sensoren gab es keine Nutzer:innen, die man hätte befragen können — das Produkt existierte noch nicht. Die Recherche stützte sich auf zwei Quellen: Support-Tickets aus der Beam-Zeit, die zeigten, wo das bestehende Onboarding grundsätzlich scheitert, und enge Zusammenarbeit mit dem Tech-Team, das Backend-seitige Edge Cases kannte, die im UI nie adressiert worden waren.\n\nDas Ergebnis dieser Analyse war kein Konzept — es war ein Flowchart. Alle Abhängigkeiten, Inkompatibilitäten und Sonderfälle wurden zuerst als Systemlogik sichtbar gemacht, bevor der erste Screen entworfen wurde.',
+    oldFlowReview: {
+      intro: 'Ausgangspunkt war der bestehende Beam-Onboarding-Flow. Eine strukturierte Analyse zeigte, wo das UI grundlegende UX-Prinzipien verletzt — und warum dieser Flow nicht auf neue Sensortypen skaliert.',
+      screens: [
+        {
+          label: 'Manage Devices — Einstieg',
+          notes: [
+            '"Add Beam" und "Add Hub" haben gleiches visuelles Gewicht — Hub-Setup ist ein seltener Sonderfall, kein primärer Flow.',
+            'Alle Geräte sehen identisch aus: keine Statusanzeige, keine visuelle Differenzierung. Nutzer:innen mit mehreren Sensoren können nicht auf einen Blick erkennen, welcher Sensor welchen Zustand hat.',
+          ],
+        },
+        {
+          label: 'Activate Beam',
+          notes: [
+            'Illustration und Copy zeigen nicht dasselbe: Text beschreibt den Battery-Slip, die Illustration zeigt den Sensor von vorn ohne erkennbare Handlungsaufforderung.',
+            '"I tried but it\'s not working" ist als unauffälliger Textlink umgesetzt. Nutzer:innen, die bereits frustriert sind, übersehen ihn — der Zeitpunkt, an dem dieser Link am wichtigsten wäre.',
+            'Kein Fortschrittsindikator: Nutzer:innen wissen nicht, wie viele Schritte noch folgen.',
+          ],
+        },
+        {
+          label: 'Searching for Beam / Updating Firmware',
+          notes: [
+            'Reine Ladezustände ohne Kontextinformation. Nutzer:innen wissen nicht, was im Hintergrund passiert, wie lange es dauert, oder was zu tun ist, wenn der Vorgang hängt.',
+            'Kein Timeout-Handling sichtbar: Was passiert, wenn der Sensor nicht gefunden wird? Der Flow hat keine kommunizierte Fallback-Option.',
+          ],
+        },
+        {
+          label: 'Preparation — Schraubenzieher',
+          notes: [
+            'Nutzer:innen werden mitten im Flow aufgefordert, ein Werkzeug zu holen. Diese Information gehört an den Anfang des Onboardings, nicht nach dem Pairing.',
+            'Copy sagt "metal object" — Illustration zeigt einen Schraubenzieher. Inkonsistenz zwischen Text und Bild erzeugt Unsicherheit.',
+          ],
+        },
+        {
+          label: 'Beam Calibration',
+          notes: [
+            'Sehr langer Instruktionstext für eine physische Handlung, die präzise ausgeführt werden muss. Lange Sätze sind hier ein UX-Fehler — Schritt-für-Schritt wäre angemessener.',
+            '"You will seamlessly transition to the next step" — unklar, ob die App automatisch weiter springt oder ob Nutzer:innen aktiv etwas tun müssen. Passivkonstruktion verdeckt die eigentliche Handlungsaufforderung.',
+          ],
+        },
+        {
+          label: 'Select Plant',
+          notes: [
+            'Erlaubt nur die Auswahl einer einzigen Pflanze — die zentrale strukturelle Einschränkung, die mit dem neuen Ökosystem gebrochen werden musste.',
+            'Keine Möglichkeit, eine neue Pflanze direkt aus dem Flow heraus anzulegen. Nutzer:innen, deren Pflanze noch nicht existiert, sitzen in einer Sackgasse.',
+          ],
+        },
+        {
+          label: 'Select Beam Legs',
+          notes: [
+            '7 Größenoptionen als scrollbare Liste — zu viele Entscheidungen auf einmal. Der "Recommended"-Tag ist kaum erkennbar (grün auf grün).',
+            'Keine visuelle Referenz, welche Topfgröße welcher Sensorgröße entspricht. Nutzer:innen müssen die cm-Angaben mental mit ihrem Topf abgleichen.',
+          ],
+        },
+        {
+          label: 'You\'re ready to go!',
+          notes: [
+            '"Get first data (live mode)" und "Finish" haben ähnliches visuelles Gewicht, implizieren aber sehr unterschiedliche Commitments. Der primäre CTA ist nicht klar priorisiert.',
+            '"Live mode" ist internes Vokabular. Nutzer:innen verstehen nicht, was dieser Modus bedeutet oder warum er relevant ist.',
+            'Keine Zusammenfassung: Welche Pflanze wurde zugeordnet? Welcher Sensor? Eine kurze Bestätigung würde Vertrauen schaffen.',
+          ],
+        },
+      ],
+    },
     definition: 'Das Problem war kein fehlendes Feature — es war ein mentales Modell, das nicht mehr passte. Der Beam hatte Nutzer:innen eine einzige Logik gelehrt. Alle neuen Sensoren brachen sie.',
     design: 'Ziel war ein Onboarding-System, das mit dem Ökosystem mitwächst — ohne bei jedem neuen Sensor neu gedacht werden zu müssen. Komplexität früh abfangen. Nur zeigen, was in diesem Moment relevant ist.',
     challenge: {
       heading: 'Von einem Sensor zu einem Ökosystem',
       body: 'Mit jedem neuen Sensor wuchs die Komplexität dahinter. Drei Herausforderungen ergaben sich daraus:',
       points: [
-        'Sensoren können unabhängig von Pflanzen angebunden werden — das bisherige Onboarding kannte diesen Zustand nicht.',
-        'Technische Einschränkungen müssen berücksichtigt werden, ohne Nutzer:innen mit Details zu belasten.',
-        'Unterschiedliche Konfigurationen erzeugen zahlreiche Edge Cases, die im bisherigen Onboarding nicht existierten.',
+        'Ein Terra-Sensor im Hochbeet versorgt drei Pflanzen gleichzeitig — das bisherige Onboarding fragte nach genau einer. Nutzer:innen hatten kein mentales Modell für diesen Zustand, weil die App ihn nie zugelassen hatte.',
+        'Beam steckt in den Topf. Terra wird im Boden vergraben — mit Tiefenvorgabe, Werkzeug, Außeneinsatz. Jeder Sensortyp erfordert am Ende des Flows eine grundlegend andere physische Handlung. Das musste sensorspezifisch kommuniziert werden, ohne den Hauptflow zu verkomplizieren.',
+        'Nicht jede Pflanzenkombination ist valide. Pflanzen in unterschiedlichem Substrat, aber auch zwei Pflanzen im selben Topf mit widersprüchlichen Pflegebedürfnissen — eine braucht Feuchtigkeit, die andere verträgt sie kaum — erzeugen Messkonflikte. Dieses Terrain war komplett neu: es gab keinen bestehenden Flow, der solche Fälle kannte oder abfing.',
       ],
       complexityModel: [
         { label: 'Eins zu eins', sub: 'Einzelne Topfpflanze', note: 'Ausgangspunkt' },

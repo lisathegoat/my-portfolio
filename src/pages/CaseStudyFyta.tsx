@@ -35,16 +35,7 @@ export default function CaseStudyFyta() {
               </li>
             ))}
           </ul>
-          {/* Complexity model grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-            {cs.challenge.complexityModel.map((item, i) => (
-              <div key={i} className="flex flex-col gap-1 p-6 border border-white/10 rounded-xl">
-                <span className="font-body text-body-md font-medium text-light">{item.label}</span>
-                <span className="font-body text-body-sm text-light/70">{item.sub}</span>
-                {item.note && <span className="font-body text-body-sm text-light/40">{item.note}</span>}
-              </div>
-            ))}
-          </div>
+          <img src="/images/fyta-onboarding/01_Mental_Model.png" alt="Komplexitätsmodell: Eins zu eins, Eins zu vielen, Viele zu viele" className="w-full rounded-card object-cover mt-4" />
         </div>
       </CaseSection>
 
@@ -57,9 +48,33 @@ export default function CaseStudyFyta() {
 
       {/* Research */}
       <CaseSection label="Research">
-        <div className="flex flex-col gap-8">
-          <p className="font-body text-body-md text-light/80">{cs.research}</p>
-          <img src="/images/fyta-onboarding/01_Mental_Model.png" alt="Mental Model" className="w-full rounded-card object-cover" />
+        <div className="flex flex-col gap-10">
+          {cs.research.split('\n\n').map((para, i) => (
+            <p key={i} className="font-body text-body-md text-light/80">{para}</p>
+          ))}
+
+          {/* Flowchart */}
+          <img src="/images/fyta-onboarding/02_Add sensor 1 Flow chart.png" alt="Flowchart: Zuordnungslogik und Edge Cases" className="w-full rounded-card object-cover" />
+
+          {/* Old flow UX review */}
+          <div className="flex flex-col gap-6">
+            <p className="font-body text-body-sm text-grey uppercase tracking-[0.08em]">{cs.oldFlowReview.intro}</p>
+            <div className="flex flex-col gap-6">
+              {cs.oldFlowReview.screens.map((screen, i) => (
+                <div key={i} className="flex flex-col gap-3 p-6 border border-white/10 rounded-xl">
+                  <span className="font-body text-body-sm font-medium text-accent">{screen.label}</span>
+                  <ul className="flex flex-col gap-2">
+                    {screen.notes.map((note, j) => (
+                      <li key={j} className="flex gap-3 items-start">
+                        <span className="text-grey/40 shrink-0 mt-1">—</span>
+                        <span className="font-body text-body-sm text-light/70">{note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </CaseSection>
 
@@ -78,10 +93,7 @@ export default function CaseStudyFyta() {
 
       {/* Deep Dive */}
       <CaseSection label="Vertiefung">
-        <div className="flex flex-col gap-8">
-          <p className="font-body text-body-md text-light/80">{cs.deepDive}</p>
-          <img src="/images/fyta-onboarding/02_Add sensor 1 Flow chart.png" alt="Flowchart: Zuordnungslogik + Edge Cases" className="w-full rounded-card object-cover" />
-        </div>
+        <p className="font-body text-body-md text-light/80">{cs.deepDive}</p>
       </CaseSection>
 
       {/* Iteration — text only, blockquote treatment */}
