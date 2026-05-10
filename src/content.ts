@@ -43,7 +43,7 @@ export const caseStudies = {
       cover: 'cover.png',
     },
     intro: 'FYTA verbindet Pflanzenpflege mit sensorbasierten Daten — die App übersetzt Messwerte aus Boden, Licht und Umgebung in konkrete Pflegehinweise. Bis zur Einführung der neuen Sensoren kannte die App genau ein Modell: ein Sensor, eine Pflanze, ein Topf.\n\nAls Head of Product Design habe ich die Erweiterung des Sensor-Portfolios von Grund auf verantwortet — von der Systemlogik im Backend bis zum finalen UI. Das Projekt war kein Feature-Update. Es war der Umbau eines Einzelprodukts zu einem skalierbaren Ökosystem.',
-    research: 'Für die neuen Sensoren gab es keine Nutzer:innen, die man hätte befragen können — das Produkt existierte noch nicht. Die Recherche stützte sich auf zwei Quellen: Support-Tickets aus der Beam-Zeit, die zeigten, wo das bestehende Onboarding grundsätzlich scheitert, und enge Zusammenarbeit mit dem Tech-Team, das Backend-seitige Edge Cases kannte, die im UI nie adressiert worden waren.\n\nDas Ergebnis dieser Analyse war kein Konzept — es war ein Flowchart. Alle Abhängigkeiten, Inkompatibilitäten und Sonderfälle wurden zuerst als Systemlogik sichtbar gemacht, bevor der erste Screen entworfen wurde.',
+    research: 'Für die neuen Sensoren gab es keine Nutzer:innen, die man hätte befragen können — das Produkt existierte noch nicht. Die Recherche stützte sich auf zwei Quellen.\n\nErstens: Support-Tickets aus der Beam-Ära. Sie zeigten, wo das bestehende Onboarding grundsätzlich scheitert — die meisten Probleme entstanden nicht durch defekte Hardware, sondern durch Setups, die das UI unbemerkt zugelassen hatte. Nutzer:innen konnten nicht unterscheiden, ob ein Sensor nicht kalibriert war oder schlicht nicht korrekt eingesteckt. Die App ließ beides durch.\n\nZweitens: Enge Zusammenarbeit mit dem Tech-Team. Es kannte Backend-seitige Constraints, die im UI nie adressiert worden waren: Substratkompatibilität als harte Voraussetzung für zuverlässige Messwerte, ein Pairing-Timeout von 60 Sekunden, Firmware-Update als Pflichtschritt vor dem ersten Einsatz.\n\nDas Ergebnis dieser Analyse war kein Konzept — es war ein Flowchart. Alle Abhängigkeiten, Inkompatibilitäten und Sonderfälle wurden zuerst als Systemlogik sichtbar gemacht, bevor der erste Screen entworfen wurde.',
     oldFlowReview: {
       intro: 'Ausgangspunkt war der bestehende Beam-Onboarding-Flow. Eine strukturierte Analyse zeigte, wo das UI grundlegende UX-Prinzipien verletzt — und warum dieser Flow nicht auf neue Sensortypen skaliert.',
       screens: [
@@ -108,7 +108,7 @@ export const caseStudies = {
       ],
     },
     definition: 'Das Problem war kein fehlendes Feature — es war ein mentales Modell, das nicht mehr passte. Der Beam hatte Nutzer:innen eine einzige Logik gelehrt. Alle neuen Sensoren brachen sie.',
-    design: 'Ziel war ein Onboarding-System, das mit dem Ökosystem mitwächst — ohne bei jedem neuen Sensor neu gedacht werden zu müssen. Komplexität früh abfangen. Nur zeigen, was in diesem Moment relevant ist.',
+    design: 'Ziel war ein Onboarding-System, das mit dem Ökosystem mitwächst — ohne bei jedem neuen Sensor neu gedacht werden zu müssen. Das führte zu drei expliziten Grundsatzentscheidungen.\n\nErstens: Pflanzen-Pairing nicht einschränken, sondern informieren. Nutzer:innen dürfen inkompatible Kombinationen wählen — aber das System erklärt vorher, was das bedeutet. Verbote erzeugen Frust; Aufklärung erzeugt Entscheidungskompetenz.\n\nZweitens: Ein Sensor ohne Pflanze ist ein valider Zustand. Nicht jeder Nutzer ordnet seinen Sensor sofort einer Pflanze zu — das darf kein Fehler sein.\n\nDrittens: Einheitliche Einstellungsstruktur für alle Sensortypen. Die Verzweigung passiert ausschließlich am Ende des Flows — beim sensorspezifischen Placement-Step.',
     challenge: {
       heading: 'Von einem Sensor zu einem Ökosystem',
       body: 'Mit jedem neuen Sensor wuchs die Komplexität dahinter. Drei Herausforderungen ergaben sich daraus:',
@@ -124,14 +124,14 @@ export const caseStudies = {
       ],
     },
     hmw: 'Wie lässt sich ein Onboarding gestalten, das mit einem wachsenden Sensor-Ökosystem skaliert — ohne dass Nutzer:innen die Komplexität dahinter spüren?',
-    deepDive: 'Bodensensoren liefern nur zuverlässige Daten, wenn alle zugeordneten Pflanzen im selben Substrat wachsen — für Nutzer:innen nicht intuitiv. Ich habe die Zuordnungslogik zunächst als Flowchart modelliert, um Abhängigkeiten und Edge Cases sichtbar zu machen, bevor der erste Screen entworfen wurde.',
+    deepDive: 'Bodensensoren liefern nur zuverlässige Daten, wenn alle zugeordneten Pflanzen im selben Substrat wachsen — für Nutzer:innen nicht intuitiv, für das System eine harte Grenze.\n\nBei der Sphere, dem Multi-Topf-Sensor, bedeutete das: bis zu drei Pflanzen können zugeordnet werden — aber nur, wenn sie im selben Substrat wachsen. Der Auswahl-Screen erklärt diese Regel inline, bevor Nutzer:innen wählen. Bei Konflikten zeigt das System eine Parameterübersicht: konkret, welche Messwerte betroffen wären — nicht als Fehlermeldung, sondern als Information mit Handlungsoptionen.\n\nTerra erfordert am Ende des Flows eine fundamental andere physische Handlung: Im Boden vergraben, mit Tiefenvorgabe, Werkzeughinweis und Outdoor-Kontext. Diese Instruktion erscheint bewusst erst nach der Zuordnung. Vorher würde sie ablenken; danach ist sie der logische nächste Schritt.',
     iteration: 'Früh erwogen: Pflanzen frei auswählen lassen und erst danach auf Inkompatibilitäten hinweisen. Das Problem — Korrekturen am Ende eines Flows erzeugen Frust und das Gefühl, etwas falsch gemacht zu haben, obwohl die App es hätte verhindern können.\n\nDie Entscheidung für einen vorgelagerten Info-Screen war kein Kompromiss. Sie war die einzige Variante, die Fehler verhindert, bevor sie entstehen.',
     uxDecision: {
-      intro: 'Die folgenden Screens zeigen, wie das System Nutzer:innen durch einen vorgelagerten Info-Screen vorbereitet, bei inkompatiblen Pflanzen eingreift — und welche Handlungsoptionen es dann anbietet.',
+      intro: 'Die Sphere-Pflanzenzuordnung war die komplexeste UX-Entscheidung des Projekts. Die folgenden drei Screens zeigen den vollständigen Konflikt-Flow: Aufklärung vor der Auswahl, transparente Konfliktanzeige mit Parameterbezug, und strukturierte Handlungsoptionen — kein Verbot, kein stiller Fehler.',
       annotations: [
-        { screen: 'Screen 1', label: 'Info-Screen — Kompatibilitätsregeln vor der Auswahl.' },
-        { screen: 'Screen 2', label: 'Inkompatibilität erkannt — das System erklärt warum.' },
-        { screen: 'Screen 3', label: 'Handlungsoptionen — Auswahl anpassen oder Einstellungen korrigieren.' },
+        { screen: 'Pflanzenzuordnung', label: 'Ein Info-Screen vor der Auswahl erklärt die Substrat-Regel — bevor Nutzer:innen eine Entscheidung treffen, die das System nicht kommentarlos durchlassen kann.' },
+        { screen: 'Konflikt erkannt', label: 'Parametertabelle zeigt konkret, welche Messwerte bei dieser Kombination beeinträchtigt wären. Keine Fehlermeldung — ein transparenter Hinweis.' },
+        { screen: 'Handlungsoptionen', label: 'Drei Wege: fortfahren mit Verständnis, Pflanzenauswahl anpassen, oder neuen Topf anlegen. Das System entscheidet nicht — es zeigt die Optionen.' },
       ],
     },
     furtherTouchpoints: {
@@ -154,11 +154,11 @@ export const caseStudies = {
     uiDecisions: [
       {
         title: 'Produkt-Renderings statt Illustrationen',
-        body: 'Nutzer:innen erkennen ihren Sensor sofort wieder — auch wenn sie ihn zum ersten Mal in der Hand halten. Renderings skalieren mit dem wachsenden Portfolio.',
+        body: 'Nutzer:innen erkennen ihren Sensor sofort wieder — auch wenn sie ihn zum ersten Mal in der Hand halten. Renderings skalieren mit dem wachsenden Portfolio, ohne dass für jeden neuen Sensortyp neue Illustrationsarbeit entsteht.',
       },
       {
-        title: 'Loading & Feedback States',
-        body: 'Pairing und Sync brauchen Zeit — eigene Animationen machen Systemzustände lesbar und verhindern, dass Nutzer:innen in Unsicherheit abbrechen.',
+        title: 'Besetzte Wartezeit statt leere Ladezustände',
+        body: 'Firmware-Updates sind ein Pflichtschritt — und dauern. Der Flow nutzt diese Zeit produktiv: Nutzer:innen erfahren während des Updates, was ihr Sensor messen kann und warum das für ihre Pflanze relevant ist. Besetzte Wartezeit fühlt sich kürzer an als ein leerer Ladebalken.',
       },
       {
         title: 'Illustrative Ebene für Nutzungskontexte',
