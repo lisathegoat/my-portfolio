@@ -4,6 +4,7 @@ import About from './pages/About'
 import CaseStudyFyta from './pages/CaseStudyFyta'
 import CaseStudyProbe from './pages/CaseStudyProbe'
 import CaseStudyThesis from './pages/CaseStudyThesis'
+import CaseStudyTemplate from './pages/CaseStudyTemplate'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
         <Route path="/projekte/fyta-sensor-onboarding" element={<CaseStudyFyta />} />
         <Route path="/projekte/soil-probe-diagnostic" element={<CaseStudyProbe />} />
         <Route path="/projekte/inklusive-lern-app" element={<CaseStudyThesis />} />
+        <Route path="/template" element={<CaseStudyTemplate />} />
       </Routes>
     </BrowserRouter>
   )

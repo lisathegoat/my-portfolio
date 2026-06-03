@@ -1,5 +1,6 @@
 import CaseStudyLayout, { CaseSection } from '../components/CaseStudyLayout'
 import { ImagePlaceholder } from '../components/Placeholder'
+import CSMediaLightbox from '../components/case-study/CSMediaLightbox'
 import { caseStudies } from '../content'
 
 const cs = caseStudies.fyta
@@ -35,7 +36,7 @@ export default function CaseStudyFyta() {
               </li>
             ))}
           </ul>
-          <img src="/images/fyta-onboarding/01_Mental_Model.png" alt="Komplexitätsmodell: Eins zu eins, Eins zu vielen, Viele zu viele" className="w-full rounded-card object-cover mt-4" />
+          <CSMediaLightbox src="/images/fyta-onboarding/01_Mental_Model.png" alt="Komplexitätsmodell: Eins zu eins, Eins zu vielen, Viele zu viele" className="w-full rounded-card object-cover mt-4" />
         </div>
       </CaseSection>
 
@@ -54,7 +55,7 @@ export default function CaseStudyFyta() {
           ))}
 
           {/* Flowchart */}
-          <img src="/images/fyta-onboarding/02_Add sensor 1 Flow chart.png" alt="Flowchart: Zuordnungslogik und Edge Cases" className="w-full rounded-card object-cover" />
+          <CSMediaLightbox src="/images/fyta-onboarding/02_Add sensor 1 Flow chart.png" alt="Flowchart: Zuordnungslogik und Edge Cases" className="w-full rounded-card object-cover" />
 
           {/* Old flow UX review */}
           <div className="flex flex-col gap-6">
@@ -87,7 +88,7 @@ export default function CaseStudyFyta() {
       <CaseSection label="Design">
         <div className="flex flex-col gap-8">
           <p className="font-body text-body-md text-light/80">{cs.design}</p>
-          <img src="/images/fyta-onboarding/03_System_support.png" alt="System Support" className="w-full rounded-card object-cover" />
+          <CSMediaLightbox src="/images/fyta-onboarding/03_System_support.png" alt="System Support" className="w-full rounded-card object-cover" />
         </div>
       </CaseSection>
 
@@ -115,7 +116,7 @@ export default function CaseStudyFyta() {
               const screens = ['04.png', '05.png', '06.png']
               return (
                 <div key={i} className="flex flex-col gap-4">
-                  <img src={`/images/fyta-onboarding/${screens[i]}`} alt={ann.screen} className="w-full rounded-xl object-cover" />
+                  <CSMediaLightbox src={`/images/fyta-onboarding/${screens[i]}`} alt={ann.screen} className="w-full rounded-xl object-cover" />
                   <div className="flex flex-col gap-1">
                     <span className="font-body text-body-sm text-accent">{ann.screen}</span>
                     <p className="font-body text-body-sm text-light/70">{ann.label}</p>
@@ -140,7 +141,7 @@ export default function CaseStudyFyta() {
                   <h3 className="font-body text-body-md font-medium text-light">{item.title}</h3>
                   <p className="font-body text-body-md text-light/70">{item.body}</p>
                   {img
-                    ? <img src={`/images/fyta-onboarding/${img}`} alt={item.title} className="w-full rounded-card object-cover" />
+                    ? <CSMediaLightbox src={`/images/fyta-onboarding/${img}`} alt={item.title} className="w-full rounded-card object-cover" />
                     : <ImagePlaceholder aspectRatio="hero" label={`${item.title} — Bild fehlt (08.png)`} />
                   }
                 </div>

@@ -1,5 +1,6 @@
 import CaseStudyLayout, { CaseSection } from '../components/CaseStudyLayout'
 import { ImagePlaceholder } from '../components/Placeholder'
+import CSMediaLightbox from '../components/case-study/CSMediaLightbox'
 import { caseStudies } from '../content'
 
 const cs = caseStudies.probe
