@@ -62,15 +62,28 @@ export default function CaseStudyLayout({ title, meta, children }: CaseStudyLayo
 }
 
 // Reusable section block for case studies
+// layout="sidebar" (default): label left, content right (240px + 1fr)
+// layout="stacked": label on top, content full width
 export function CaseSection({
   label,
   children,
   className = '',
+  layout = 'sidebar',
 }: {
   label?: string
   children: React.ReactNode
   className?: string
+  layout?: 'sidebar' | 'stacked'
 }) {
+  if (layout === 'stacked') {
+    return (
+      <section className={`flex flex-col gap-8 py-xxl border-t border-white/10 ${className}`}>
+        {label && <span className="section-label">{label}</span>}
+        <div>{children}</div>
+      </section>
+    )
+  }
+
   return (
     <section className={`grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-xxl items-start py-xxl border-t border-white/10 ${className}`}>
       {label && <span className="section-label pt-1">{label}</span>}

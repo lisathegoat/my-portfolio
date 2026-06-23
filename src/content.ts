@@ -180,7 +180,7 @@ export const caseStudies = {
     slug: '/projekte/soil-probe-diagnostic',
     title: 'FYTA – Soil Probe Diagnostic',
     shortTitle: 'Probe Diagnostic',
-    description: 'Wenn ein Soil Probe defekt ist, liefert die App Daten — aber keine richtigen. Ein Self-Service-Diagnose-Flow, der Nutzer:innen ermöglicht, den Zustand ihrer Probes selbst zu prüfen.',
+    description: 'Defekte Bodenstäbe liefern plausible aber falsche Messwerte. Ein algorithmisch getriggerter Self-Service-Flow, der Nutzer:innen das Problem selbst lösen lässt — ohne Supportanfrage.',
     tags: ['UI/UX', 'System Design', 'Self-Service UX', 'Hardware'],
     meta: {
       role: 'Head of Product Design',
@@ -188,49 +188,36 @@ export const caseStudies = {
       imageFolder: '/images/probe-diagnostic/',
       cover: 'cover.png',
     },
-    intro: 'Wenn ein Soil Probe defekt ist, liefert die App Daten — aber keine richtigen. Das Problem: Von außen sieht alles normal aus.\n\nAls Head of Product Design habe ich einen Diagnose-Flow entwickelt, der Nutzer:innen ermöglicht, den Zustand ihrer Soil Probes selbst zu prüfen — ohne Umweg über den Support.',
+    intro: 'Zeigt ein Beam-Sensor über Tage fehlerhafte Feuchtigkeitswerte, können Nutzer:innen nicht einordnen, ob der Sensor oder die Bodenstäbe das Problem sind. Jede Anomalie landete als manuelle Supportanfrage.\n\nIch habe zuerst validiert, ob Messmuster eine automatische Defekterkennung überhaupt ermöglichen. Auf dieser Grundlage entstand ein algorithmisch getriggerter Self-Service-Flow, der Nutzer:innen das Problem selbst lösen lässt.',
     challenge: {
       heading: 'Falsche Daten, die sich richtig anfühlen',
-      body: 'Nutzer:innen meldeten fehlerhafte Bodenfeuchtigkeitswerte — ihre Pflanzen wurden falsch gepflegt, ohne dass sie es wussten. Das führte zu hohem Support-Aufkommen und Vertrauensverlust in die Produktdaten.\n\nDas eigentliche Problem: Wir konnten nicht unterscheiden, ob die Ursache ein defekter Probe war oder eine fehlerhafte Kalibrierung. Beides erzeugt dasselbe Symptom — braucht aber grundlegend verschiedene Lösungen. Jeder Fall musste manuell untersucht werden.',
+      body: 'Defekte Bodenstäbe erzeugen keine Fehlermeldungen — sondern plausible, aber falsche Messwerte. Nutzer:innen merkten, dass etwas nicht stimmte, konnten aber nicht einordnen, woran es lag.',
+      callout: 'Das Ergebnis war immer dasselbe: eine Supportanfrage, auf die unser Team jedes Mal manuell eine individuelle Schritt-für-Schritt-Anleitung schrieb.',
     },
-    myRole: 'Ich habe den gesamten Diagnose-Flow konzipiert und gestaltet — vom ersten Konzept bis zum finalen UI, in enger Zusammenarbeit mit dem Tech-Team und dem Product Manager.',
-    process: {
-      steps: [
-        {
-          label: 'Warum der Probe-Test zuerst',
-          body: 'Ein defekter Probe lässt sich nicht kalibrieren — er muss ersetzt werden. Der Probe-Test ist Fail-Fast-Logik: Er klärt die grundlegendste Frage, bevor weitere Schritte folgen.',
-        },
-        {
-          label: 'Verbindung zuerst',
-          body: 'Verbindung zum Sensor herstellen, bevor Nutzer:innen irgendetwas physisch vorbereiten. Wenn der Sensor nicht erreichbar ist, erfahren Nutzer:innen das sofort — bevor sie ein Glas Wasser bereitstellen und zwei Minuten investieren.',
-        },
-        {
-          label: 'Der Test — einfach und zugänglich',
-          body: 'Ein Glas Wasser, beide Probes eintauchen, Live-Messung pro Probe, klares Ergebnis: passed oder failed. Das Wort „Gefäß" wurde bewusst verworfen — zu klinisch. Sprache ist hier genauso wichtig wie UI.',
-        },
-        {
-          label: 'Kein Probe-Naming',
-          body: 'FYTA liefert immer beide Probes als Paar — einzelne Namen erzeugen Verwechslungspotenzial ohne Nutzen.',
-        },
-      ],
-    },
-    keyDecision: {
-      heading: 'Self-Service statt Support-Schleife',
-      body: 'Der eigentliche Shift war nicht ein einzelner Screen — sondern das Modell dahinter. Vorher: Nutzer:innen schildern das Problem, warten, werden manuell untersucht. Nachher: Nutzer:innen führen den Test selbst durch — und im Fehlerfall ist der Support-Request bereits vorbereitet.\n\nDie Entscheidung, den Flow so zugänglich zu machen (ein Glas Wasser, zwei Minuten, klare Schritte), war keine Vereinfachung um der Vereinfachung willen. Sie war die Voraussetzung dafür, dass das Modell funktioniert.\n\nTrade-off: Der Probe-Test löst nur die Hardware-Seite. Wenn beide Probes bestehen, die Messwerte aber trotzdem falsch sind, liegt die Ursache wahrscheinlich in der Kalibrierung — ein separater Flow, der noch in Planung ist.',
-    },
-    results: {
-      note: 'Feature shipped. Post-launch-Daten folgen.',
-      metrics: [
-        'Support-Tickets: fehlerhafte Messwerte — Baseline 3 Monate vor Launch vs. nach Launch',
-        'Flow-Completion-Rate — Wie viele Nutzer:innen kommen bis zum Ergebnis-Screen?',
-        'Connection-Failure-Drop-off — Zeigt, ob der Fail-Fast-Schritt funktioniert',
-        'Support-Request-Nutzung nach Failed Result — Wird das vorbereitete Formular tatsächlich genutzt?',
-      ],
-    },
-    learning: {
-      heading: 'Hardware braucht Klarheit, keine Abstraktion',
-      body: 'Support-Aufwand entsteht nicht nur, wenn etwas kaputt ist — er entsteht, wenn Nutzer:innen keine Möglichkeit haben, selbst herauszufinden, was los ist. Ein Self-Service-Flow ist ein Vertrauensangebot: Wir geben dir die Mittel, es selbst zu überprüfen.\n\nDas zweite Learning: „Ein Glas Wasser" statt „ein geeignetes Gefäß" ist kein Stilproblem. Es ist der Unterschied zwischen einem Test, den jemand sofort versteht — und einem, bei dem jemand kurz zögert.',
-    },
+    hmw: 'Wie lässt sich ein Defekt erkennen, der keine Fehlermeldung erzeugt — und Nutzer:innen ermöglichen, ihn selbst zu lösen?',
+    decisions: [
+      {
+        heading: 'Zuerst fragen, ob das Problem algorithmisch lösbar ist',
+        body: 'Bevor der erste Screen entworfen wurde, habe ich validiert: Gibt es Messmuster, die statistisch auf defekte Bodenstäbe hinweisen? Die Antwort ermöglichte den gesamten Ansatz. Ohne sie hätte es keinen sinnvollen automatischen Trigger gegeben.',
+      },
+      {
+        heading: 'Den Flow dort starten, wo das Problem sichtbar wird',
+        body: 'Der Algorithmus triggert einen kontextuellen Toast direkt im Feuchtigkeits-Detailscreen — genau dort, wo Nutzer:innen die auffälligen Werte bereits sehen. Das Testergebnis wird backend-seitig durch den Live-Messwert verifiziert, nicht durch Selbstauskunft.',
+      },
+      {
+        heading: 'Mein Modell, nicht das der Nutzer:innen',
+        body: 'Die erste Iteration bezeichnete die Stäbe als „der linke" und „der rechte Bodenstab". Beim Testen zeigte sich: Dieses Modell existierte nur in meinem Kopf. Die Stäbe tragen keine Beschriftung — die Benennung implizierte eine Unterscheidung, die physisch nicht existiert. Die Lösung: auf Naming verzichten.',
+      },
+      {
+        heading: 'Visuell instruieren statt textuell',
+        body: 'Beide Stäbe lassen sich nur mit dem linken Sockel testen — zunächst unintuitiv. Im Fließtext stand der Hinweis, aber Nutzer:innen überlasen ihn. Wer den Screen überflog, setzte den Stab in den falschen Sockel. Die Lösung: ein gehighlighteter Info-Toast plus ein GIF, das den physischen Ablauf zeigt. Nutzer:innen müssen nichts lesen.',
+      },
+      {
+        heading: 'Abschließen mit Kontrolle',
+        body: 'Das vorausgefüllte Support-Formular enthält Gerätedaten, Testergebnis und die Stablänge aus den Nutzerdaten. Die Länge ist editierbar — wir brauchen sie, um den richtigen Ersatz zu versenden. Ein expliziter Hinweis fordert zur Prüfung auf, bevor abgeschickt wird. Das System schlägt vor, der Nutzer bestätigt.',
+      },
+    ],
+    reflection: 'Der wichtigste Schritt war der erste: nicht mit Screens anfangen, sondern mit der Frage, ob das Problem überhaupt algorithmisch greifbar ist. Ohne diese Validierung wäre der Flow ein manueller Workaround geblieben — mit besserem UI, aber demselben Modell.',
   },
 
   thesis: {
@@ -244,6 +231,7 @@ export const caseStudies = {
       status: 'Abgeschlossen',
       imageFolder: '/images/masterthesis/',
       cover: 'cover.png',
+      coverVideo: 'cover_Animation.mp4',
     },
     intro: 'Lesen und Schreiben sind grundlegende Kompetenzen für gesellschaftliche Teilhabe. Kinder mit Lese- und Rechtschreibschwierigkeiten stoßen im Schulalltag jedoch häufig auf Barrieren — fachlich, emotional und sozial.\n\nZiel meiner Masterarbeit war die Konzeption einer digitalen Lernanwendung, die inklusives Lernen fördert, Lehrkräfte entlastet und Schüler:innen individuell beim Schriftspracherwerb unterstützt.',
     research: {

@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         title: ['"Times New Roman"', 'Times', 'serif'],
         body: ['"Neue Montreal"', '"DM Sans"', 'system-ui', 'sans-serif'],
+        v2: ['"GT America"', '"Neue Montreal"', '"DM Sans"', 'system-ui', 'sans-serif'],
       },
       // Golden ratio type scale (φ = 1.618), base 16px
       // 16 → 20 → 26 → 32 → 52 → 84 → 136

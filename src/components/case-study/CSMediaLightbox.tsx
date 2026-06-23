@@ -4,10 +4,11 @@ interface CSMediaLightboxProps {
   src: string
   alt: string
   className?: string
+  style?: React.CSSProperties
   children?: React.ReactNode
 }
 
-export default function CSMediaLightbox({ src, alt, className = '' }: CSMediaLightboxProps) {
+export default function CSMediaLightbox({ src, alt, className = '', style }: CSMediaLightboxProps) {
   const [open, setOpen] = useState(false)
 
   const close = useCallback(() => setOpen(false), [])
@@ -31,6 +32,7 @@ export default function CSMediaLightbox({ src, alt, className = '' }: CSMediaLig
         src={src}
         alt={alt}
         className={`cursor-zoom-in transition-opacity duration-200 hover:opacity-90 ${className}`}
+        style={style}
         onClick={() => setOpen(true)}
       />
 

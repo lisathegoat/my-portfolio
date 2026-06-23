@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect, useCallback } from 'react'
+import { useState, useRef, useEffect, useLayoutEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import CaseStudyCard from '../components/CaseStudyCard'
@@ -67,6 +67,18 @@ const projects = [
 // ── Page ─────────────────────────────────────────────────────────────────────
 export default function Home() {
   const [activeDropdown, setActiveDropdown] = useState<'p' | 'o' | null>(null)
+  const [scrollY, setScrollY] = useState(0)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => setMounted(true))
+    const onScroll = () => setScrollY(window.scrollY)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      cancelAnimationFrame(raf)
+      window.removeEventListener('scroll', onScroll)
+    }
+  }, [])
 
   // Refs on the individual letters to compute star positions
   const wordmarkRef = useRef<HTMLHeadingElement>(null)
@@ -107,29 +119,34 @@ export default function Home() {
 
       {/* ── Hero ──────────────────────────────────────────────────────── */}
       <section
-        className="flex flex-col items-center justify-center gap-14 px-8"
+        className="flex flex-col items-center justify-center gap-14 px-8 overflow-hidden"
         style={{ minHeight: 'calc(100svh - 68px - 110px)' }}
       >
 
-        {/* Intro text */}
-        <p className="font-body text-body-lg text-center leading-[1.6]">
+        {/* Intro text — fade in first, parallax: moves up slowly */}
+        <p
+          className="font-body text-body-lg text-center leading-[1.6] transition-all duration-1000 ease-out"
+          style={{
+            opacity: mounted ? 1 : 0,
+            transform: `translateY(${mounted ? 0 : 30}px) translateY(${scrollY * -0.15}px)`,
+            transitionDelay: '200ms',
+          }}
+        >
           <span className="text-accent">{home.hero.intro}</span>
           <br />
           <span className="text-grey">{home.hero.introSub}</span>
         </p>
 
-        {/* Wordmark + stars ─────────────────────────────────────── */}
-        {/*
-          The h1 is the positioning parent (position: relative).
-          Stars are absolute-positioned div siblings rendered INSIDE the h1's
-          bounding box but as separate DOM nodes — no inline span tricks.
-          Dropdown panels open downward so they never overlap "Portfolio".
-        */}
+        {/* Wordmark + stars — fade in second, parallax: moves up faster */}
         <div
           ref={wordmarkRef}
-          className="relative w-full flex items-center justify-center"
+          className="relative w-full flex items-center justify-center transition-all duration-1000 ease-out"
+          style={{
+            opacity: mounted ? 1 : 0,
+            transform: `translateY(${mounted ? 0 : 50}px) translateY(${scrollY * -0.3}px) scale(${1 + scrollY * 0.0001})`,
+            transitionDelay: '500ms',
+          }}
         >
-          {/* The wordmark text — letter spans are refs only, no children */}
           <h1
             className="font-title-italic text-accent text-center leading-none whitespace-nowrap pointer-events-none"
             style={{
@@ -142,7 +159,7 @@ export default function Home() {
             <span ref={oRef}>o</span>
           </h1>
 
-          {/* P star — right edge at left of "P", vertically centered on cap height */}
+          {/* P star */}
           <div
             className="absolute"
             style={{
@@ -158,7 +175,7 @@ export default function Home() {
             />
           </div>
 
-          {/* o star — right edge at right of "o", bottom of component at o baseline */}
+          {/* o star */}
           <div
             className="absolute"
             style={{
@@ -175,13 +192,16 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Profile photo pill */}
+        {/* Profile photo pill — fade in last, parallax: moves up slowest */}
         <div
-          className="overflow-hidden bg-grey/20 shrink-0"
+          className="overflow-hidden bg-grey/20 shrink-0 transition-all duration-1000 ease-out"
           style={{
             width: 'clamp(220px, 24vw, 357px)',
             height: 'clamp(128px, 14vw, 206px)',
             borderRadius: '100px',
+            opacity: mounted ? 1 : 0,
+            transform: `translateY(${mounted ? 0 : 40}px) translateY(${scrollY * -0.08}px)`,
+            transitionDelay: '800ms',
           }}
         >
           <img
@@ -219,6 +239,7 @@ export default function Home() {
               tags={p.tags}
               imageFolder={p.meta.imageFolder}
               imageName={(p.meta as { cover?: string }).cover}
+              videoName={(p.meta as { coverVideo?: string }).coverVideo}
               isPlaceholder={p.slug === '#'}
             />
           ))}
@@ -255,9 +276,14 @@ export default function Home() {
 
         <div className="flex items-start justify-between gap-8 pt-4 border-t border-grey/10">
           <p className="font-body text-body-sm text-grey max-w-md">{about.bio[0]}</p>
-          <Link to="/about" className="font-body text-body-sm text-grey hover:text-light transition-colors shrink-0 ml-8">
-            About →
-          </Link>
+          <div className="flex items-center gap-6 shrink-0 ml-8">
+            <Link to="/about" className="font-body text-body-sm text-grey hover:text-light transition-colors">
+              About →
+            </Link>
+            <Link to="/v2" className="font-body text-body-sm text-grey/40 hover:text-grey transition-colors">
+              Layout V2
+            </Link>
+          </div>
         </div>
       </footer>
     </div>

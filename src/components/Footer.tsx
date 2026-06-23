@@ -23,6 +23,20 @@ export default function Footer() {
           >
             About
           </Link>
+          <span className="font-body text-body-sm text-grey/40 hidden md:block">·</span>
+          <Link
+            to="/design-system"
+            className="font-body text-body-sm text-grey/40 hover:text-grey transition-colors"
+          >
+            Design System
+          </Link>
+          <span className="font-body text-body-sm text-grey/40 hidden md:block">·</span>
+          <Link
+            to="/v2"
+            className="font-body text-body-sm text-grey/40 hover:text-grey transition-colors"
+          >
+            Layout V2
+          </Link>
         </div>
         <span className="font-body text-body-sm text-grey/40">{footer.copyright}</span>
       </div>

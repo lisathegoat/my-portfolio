@@ -9,77 +9,74 @@ interface CaseStudyCardProps {
   tags: string[]
   imageFolder: string
   imageName?: string
+  videoName?: string
   isPlaceholder?: boolean
+}
+
+function ArrowIcon() {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="w-6 h-6">
+      <path stroke="#fff" strokeWidth="1.5" d="M8 8.162h7v7M8 15.162l7-6.989" />
+    </svg>
+  )
 }
 
 export default function CaseStudyCard({
   slug,
   title,
-  description,
-  tags,
   imageFolder,
   imageName,
+  videoName,
   isPlaceholder = false,
 }: CaseStudyCardProps) {
   const [hovered, setHovered] = useState(false)
   const imageSrc = imageName ? `${imageFolder}${imageName}` : null
+  const videoSrc = videoName ? `${imageFolder}${videoName}` : null
 
   const inner = (
-    <>
-      {/* Image */}
-      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-card">
-        {imageSrc ? (
-          <img
-            src={imageSrc}
-            alt={title}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-        ) : (
-          <ImagePlaceholder aspectRatio="square" className="w-full h-full !aspect-auto !rounded-card" />
-        )}
-      </div>
+    <div className="relative w-full aspect-square overflow-hidden rounded-[24px]">
+      {videoSrc ? (
+        <video
+          src={videoSrc}
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform"
+          style={{ transform: hovered ? 'scale(1.05)' : 'scale(1)' }}
+        />
+      ) : imageSrc ? (
+        <img
+          src={imageSrc}
+          alt={title}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform"
+          style={{
+            transform: hovered ? 'scale(1.05)' : 'scale(1)',
+          }}
+        />
+      ) : (
+        <ImagePlaceholder aspectRatio="square" className="absolute inset-0 w-full h-full !aspect-auto !rounded-none" />
+      )}
 
-      {/* Meta */}
-      <div className="flex flex-col gap-m">
-        {/* Title — Neue Montreal 32px as per Figma */}
-        <p className={`font-body text-body-lg leading-[1.3] transition-colors duration-200 ${
-          hovered ? 'text-accent' : 'text-light'
-        }`}>
-          {title}
-        </p>
-
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2 items-center">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className={`font-body text-body-sm border rounded-full px-[16px] py-[8px] transition-colors duration-200 whitespace-nowrap ${
-                hovered
-                  ? 'border-accent text-accent'
-                  : 'border-grey text-grey'
-              }`}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {/* Description — visible on hover */}
-        <p
-          className={`font-body text-body-md text-light/70 transition-all duration-300 overflow-hidden ${
-            hovered ? 'max-h-32 opacity-100' : 'max-h-0 opacity-0'
-          }`}
+      {/* Bottom bar — slides up on hover */}
+      <div className="w-full px-2 absolute bottom-2 left-0">
+        <div
+          className="w-full p-3 pl-4 lg:p-6 bg-black/40 backdrop-blur-[25px] rounded-xl lg:rounded-2xl flex justify-between items-center transition-transform duration-500 ease-out"
+          style={{
+            transform: hovered ? 'translateY(0px)' : 'translateY(200px)',
+          }}
         >
-          {description}
-        </p>
+          <span className="font-body text-body-sm text-white">{title}</span>
+          <ArrowIcon />
+        </div>
       </div>
-    </>
+    </div>
   )
 
   if (isPlaceholder) {
     return (
       <div
-        className="group flex flex-col gap-l opacity-50"
+        className="opacity-50"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
@@ -91,7 +88,7 @@ export default function CaseStudyCard({
   return (
     <Link
       to={slug}
-      className="group flex flex-col gap-l cursor-pointer"
+      className="block cursor-pointer"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
