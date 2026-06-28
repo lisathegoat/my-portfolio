@@ -3,27 +3,23 @@ import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import CSMediaLightbox from '../components/case-study/CSMediaLightbox'
-import { ImagePlaceholder } from '../components/Placeholder'
 import { caseStudies } from '../content'
 
 const cs = caseStudies.fyta
 const folder = cs.meta.imageFolder
 
 const sections = [
-  { id: 'overview', label: 'Overview' },
-  { id: 'herausforderung', label: 'Herausforderung' },
+  { id: 'zusammenfassung', label: 'Zusammenfassung' },
+  { id: 'ueberblick', label: 'Überblick' },
   { id: 'fragestellung', label: 'Fragestellung' },
-  { id: 'research', label: 'Research' },
-  { id: 'design', label: 'Design' },
-  { id: 'vertiefung', label: 'Vertiefung' },
-  { id: 'ux-entscheidung', label: 'UX-Entscheidung' },
-  { id: 'touchpoints', label: 'Touchpoints' },
-  { id: 'impact', label: 'Impact' },
+  { id: 'prozess', label: 'Prozess' },
+  { id: 'loesung', label: 'Lösung' },
+  { id: 'hardware', label: 'Hardware' },
   { id: 'reflexion', label: 'Reflexion' },
 ]
 
 export default function CaseStudyFyta() {
-  const [activeId, setActiveId] = useState('overview')
+  const [activeId, setActiveId] = useState('zusammenfassung')
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -132,60 +128,57 @@ export default function CaseStudyFyta() {
           {/* ── Sections ── */}
           <div className="flex flex-col gap-12 md:gap-24">
 
-            {/* Overview */}
-            <section id="overview" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Overview</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
-                Vom Einzelprodukt zum Ökosystem
-              </h2>
-              {cs.intro.split('\n\n').map((para, i) => (
-                <p key={i} className="font-body text-[16px] leading-[1.7] text-light/60">{para}</p>
-              ))}
+            {/* Zusammenfassung */}
+            <section id="zusammenfassung" className="flex flex-col gap-4">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Zusammenfassung</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+                Ein skalierbares Onboarding-System für das neue FYTA-Ökosystem. Von einem Sensor auf viele.
+              </h3>
+              <p className="font-body text-[16px] leading-[1.7] text-light/60">
+                FYTA ist ein Berliner Startup, das Pflanzenpflege mit einem smarten Sensor und einer App verbindet, die datenbasierte Insights zur optimalen Pflege bieten. Die Sensoren messen Bodenfeuchtigkeit, Licht, Temperatur und Nährstoffe — und helfen dabei, jede Pflanze individuell zu versorgen.
+              </p>
             </section>
 
-            {/* Herausforderung */}
-            <section id="herausforderung" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Herausforderung</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
-                {cs.challenge.heading}
-              </h2>
-              <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.challenge.body}</p>
-              <ul className="flex flex-col gap-4 pl-0 mt-2">
-                {cs.challenge.points.map((point, i) => (
-                  <li key={i} className="flex gap-4 items-start">
-                    <span className="font-body text-[14px] text-light/30 mt-0.5 shrink-0">—</span>
-                    <span className="font-body text-[16px] leading-[1.7] text-light/60">{point}</span>
-                  </li>
-                ))}
-              </ul>
+            {/* Überblick */}
+            <section id="ueberblick" className="flex flex-col gap-4">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Überblick</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+                Von einem Sensor zu einem Ökosystem
+              </h3>
+              <p className="font-body text-[16px] leading-[1.7] text-light/60">
+                Die App kannte bis dahin genau eine Beziehung: ein Sensor, eine Pflanze. Mit der neuen Sensorfamilie wurde daraus ein Viele-zu-viele-System. Als Head of Product Design habe ich mich mit dem neuen Setup, dem Backend, eigenen Video-Meetings und frühzeitigem Verhindern von Fehlbedienungen auseinandergesetzt. Als Head of Product Design habe ich das System von Grund auf neu gestaltet.
+              </p>
 
               <div className="mt-4">
                 <CSMediaLightbox
                   src={`${folder}01_Mental_Model.png`}
-                  alt="Komplexitätsmodell"
+                  alt="Komplexitätsmodell: Eins zu eins, Eins zu vielen, Viele zu viele"
                   className="w-full object-cover"
                 />
               </div>
             </section>
 
-            {/* Fragestellung */}
+            {/* Fragestellung — keeps h2 (main question) */}
             <section id="fragestellung" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Fragestellung</h4>
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Fragestellung</h4>
               <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light">
-                {cs.hmw}
+                Wie lässt sich ein Onboarding gestalten, das mit einem wachsenden Sensor-Ökosystem skaliert — ohne dass Nutzer:innen die Komplexität dahinter spüren?
               </h2>
               <div className="h-px w-full bg-white/10 mt-12 mb-4" />
             </section>
 
-            {/* Research */}
-            <section id="research" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Research</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
-                Support-Tickets und Systemlogik
-              </h2>
-              {cs.research.split('\n\n').map((para, i) => (
-                <p key={i} className="font-body text-[16px] leading-[1.7] text-light/60">{para}</p>
-              ))}
+            {/* Prozess */}
+            <section id="prozess" className="flex flex-col gap-4">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Prozess</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+                Systemlogik vor Screens
+              </h3>
+              <p className="font-body text-[16px] leading-[1.7] text-light/60">
+                Das Onboarding musste nicht nur ein neues mentales Modell vermitteln, sondern gleichzeitig ein System abbilden, in dem Sensoren, Pflanzen, Substrate und Nutzungskontexte in unzähligen Kombinationen miteinander interagieren — jede davon mit eigenen Regeln, Abhängigkeiten und Fehlerzuständen.
+              </p>
+              <p className="font-body text-[16px] leading-[1.7] text-light/60">
+                Bevor der erste Screen entworfen wurde, habe ich die Logik als Flowchart modelliert, um alle Abhängigkeiten und Edge Cases sichtbar zu machen.
+              </p>
 
               <div className="mt-4">
                 <CSMediaLightbox
@@ -194,166 +187,174 @@ export default function CaseStudyFyta() {
                   className="w-full object-cover"
                 />
               </div>
-
-              {/* Old flow UX review */}
-              <div className="flex flex-col gap-4 mt-8">
-                <p className="font-body text-[12px] text-light/30 uppercase tracking-[0.08em]">{cs.oldFlowReview.intro}</p>
-                <div className="flex flex-col gap-4">
-                  {cs.oldFlowReview.screens.map((screen, i) => (
-                    <div key={i} className="flex flex-col gap-3 p-6 border border-white/10">
-                      <span className="font-body text-[14px] font-medium text-light/80">{screen.label}</span>
-                      <ul className="flex flex-col gap-2">
-                        {screen.notes.map((note, j) => (
-                          <li key={j} className="flex gap-3 items-start">
-                            <span className="text-light/20 shrink-0 mt-1">—</span>
-                            <span className="font-body text-[14px] text-light/50 leading-[1.6]">{note}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </div>
             </section>
 
-            {/* Design */}
-            <section id="design" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Design</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+            {/* Lösung */}
+            <section id="loesung" className="flex flex-col gap-4">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Lösung</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 Ein System, das mitwächst
-              </h2>
-              <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.definition}</p>
-              {cs.design.split('\n\n').map((para, i) => (
-                <p key={i} className="font-body text-[16px] leading-[1.7] text-light/60">{para}</p>
-              ))}
+              </h3>
+              <p className="font-body text-[16px] leading-[1.7] text-light/60">
+                Aus einem einzigen mentalen Modell entstanden vier eigenständige Onboarding-Flows — für Beam, Mini, Terra und Sphere — die trotz unterschiedlicher Sensorkonfigurationen derselben Informationsarchitektur und wiederkehrenden Interaktionsmustern folgen. Konsistente Statussprache, einheitliche Fehlerbehandlung und ein gemeinsames Navigationsgerüst sorgen dafür, dass Nutzer:innen sich beim zweiten Sensor bereits orientieren können, ohne den Flow neu erlernen zu müssen.
+              </p>
 
+              {/* Flows overview image */}
               <div className="mt-4">
                 <CSMediaLightbox
-                  src={`${folder}03_System_support.png`}
-                  alt="System Support"
+                  src={`${folder}casestudy-04.png`}
+                  alt="Vier Onboarding-Flows: Beam, Mini, Terra, Sphere"
                   className="w-full object-cover"
                 />
               </div>
-            </section>
 
-            {/* Vertiefung */}
-            <section id="vertiefung" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Vertiefung</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
-                Substrat, Konflikte, Platzierung
-              </h2>
-              {cs.deepDive.split('\n\n').map((para, i) => (
-                <p key={i} className="font-body text-[16px] leading-[1.7] text-light/60">{para}</p>
-              ))}
+              {/* Entscheidungskarten */}
+              <p className="font-body text-[14px] text-light/40 mt-8 mb-2">
+                Wichtige Entscheidungen, die einen großen Unterschied gemacht haben
+              </p>
 
-              {/* Iteration as inline blockquote */}
-              <blockquote className="border-l-2 border-white/20 pl-6 mt-6">
-                {cs.iteration.split('\n\n').map((para, i) => (
-                  <p key={i} className="font-body text-[16px] leading-[1.7] text-light/40 italic mb-3 last:mb-0">{para}</p>
-                ))}
-              </blockquote>
-            </section>
+              <div className="flex flex-col gap-12 md:gap-16">
 
-            {/* UX-Entscheidung */}
-            <section id="ux-entscheidung" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">UX-Entscheidung</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
-                Sphere-Pflanzenzuordnung
-              </h2>
-              <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.uxDecision.intro}</p>
+                {/* Entscheidung 1 — Statussprache */}
+                <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
+                  <div className="md:hidden flex flex-col pb-2">
+                    <h3 className="font-body text-[16px] font-medium text-light">Alle Sensortypen folgen derselben Statussprache</h3>
+                  </div>
+                  <div className="relative w-full border border-white/10 overflow-hidden">
+                    <CSMediaLightbox
+                      src={`${folder}casestudy-05.png`}
+                      alt="Connecting to Sphere — einheitliche Statussprache"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div className="hidden md:flex flex-col h-fit">
+                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Alle Sensortypen folgen derselben Statussprache</h3>
+                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Die Statuslichter der Sensoren folgen einer einheitlichen Farbsprache: Blau pulsierend signalisiert den Kopplungsmodus, Orange ein laufendes Firmware-Update. Nutzer:innen müssen diese Zustände nicht erlernen — sie verinnerlichen sie, weil sie sensorübergreifend immer gleich kommuniziert werden.</p>
+                  </div>
+                </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-                {cs.uxDecision.annotations.map((ann, i) => {
-                  const screens = ['04.png', '05.png', '06.png']
-                  return (
-                    <div key={i} className="flex flex-col gap-4">
-                      <CSMediaLightbox
-                        src={`${folder}${screens[i]}`}
-                        alt={ann.screen}
-                        className="w-full object-cover"
-                      />
-                      <div className="flex flex-col gap-1">
-                        <span className="font-body text-[14px] font-medium text-light/80">{ann.screen}</span>
-                        <p className="font-body text-[14px] text-light/50 leading-[1.6]">{ann.label}</p>
-                      </div>
-                    </div>
-                  )
-                })}
+                {/* Entscheidung 2 — Pflanzenkompatibilität */}
+                <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
+                  <div className="md:hidden flex flex-col pb-2">
+                    <h3 className="font-body text-[16px] font-medium text-light">Pflanzenkompatibilität durch Information abfangen</h3>
+                  </div>
+                  <div className="relative w-full border border-white/10 overflow-hidden">
+                    <CSMediaLightbox
+                      src={`${folder}casestudy-06.png`}
+                      alt="Kompatibilitätsprüfung und Konflikt-Dialog"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div className="hidden md:flex flex-col h-fit">
+                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Pflanzenkompatibilität durch Information abfangen</h3>
+                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Statt Inkompatibilitäten erst im Pflanzenprofil zu blockieren, greift das System früh ein — Nutzer:innen werden vorbereitet, nicht gestoppt. Frustration entsteht durch schlechte Vorbereitung, nicht durch zu viel Kontext.</p>
+                  </div>
+                </div>
+
+                {/* Entscheidung 3 — Illustrative Ebene */}
+                <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
+                  <div className="md:hidden flex flex-col pb-2">
+                    <h3 className="font-body text-[16px] font-medium text-light">Illustrative Ebene für adaptive Nutzungskontexte</h3>
+                  </div>
+                  <div className="relative w-full border border-white/10 overflow-hidden">
+                    <CSMediaLightbox
+                      src={`${folder}casestudy-07.png`}
+                      alt="Terra Platzierung — illustrative Instruktion"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div className="hidden md:flex flex-col h-fit">
+                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Illustrative Ebene für adaptive Nutzungskontexte</h3>
+                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Durch die verschiedenen Nutzungskontexte muss jeder Sensor anders installiert werden. Um das visuell zu unterstützen, wurden speziell für die App Illustrationen der Sensoren entwickelt.</p>
+                  </div>
+                </div>
+
               </div>
             </section>
 
-            {/* Weitere Touchpoints */}
-            <section id="touchpoints" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Weitere Touchpoints</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+            {/* Hardware in der App verankern */}
+            <section id="hardware" className="flex flex-col gap-4">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Hardware in der App verankern</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 Über das Onboarding hinaus
-              </h2>
-              <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.furtherTouchpoints.intro}</p>
+              </h3>
+              <p className="font-body text-[16px] leading-[1.7] text-light/60">
+                Neben den Onboarding-Flows der einzelnen Sensoren endete das Projekt nicht mit dem letzten Setup-Screen. Die neuen Sensoren betrafen Touchpoints in der gesamten App, die vorher schlicht nicht existiert hatten. Ich sammelte Szenarien und offene Fragen, die wir als Produktteam gemeinsam diskutierten, um zu evaluieren, wo die bestmögliche Lösung liegt.
+              </p>
 
               <div className="flex flex-col gap-12 mt-4">
-                {cs.furtherTouchpoints.items.map((item, i) => {
-                  const touchpointImages = ['07.png', '09.png', null]
-                  const img = touchpointImages[i]
-                  return (
-                    <div key={i} className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
-                      <div className="md:hidden flex flex-col pb-2">
-                        <h3 className="font-body text-[16px] font-medium text-light">{item.title}</h3>
-                      </div>
-                      <div className="relative w-full border border-white/10 overflow-hidden">
-                        {img ? (
-                          <CSMediaLightbox
-                            src={`${folder}${img}`}
-                            alt={item.title}
-                            className="w-full h-auto object-cover"
-                          />
-                        ) : (
-                          <ImagePlaceholder aspectRatio="hero" label={`${item.title} — Bild fehlt`} />
-                        )}
-                      </div>
-                      <div className="hidden md:flex flex-col h-fit">
-                        <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">{item.title}</h3>
-                        <p className="font-body text-[15px] text-light/50 leading-[1.6]">{item.body}</p>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
 
-              {/* UI Decisions inline */}
-              <h4 className="font-body text-[14px] text-light font-medium mt-12 mb-2">UI-Entscheidungen</h4>
-              <div className="flex flex-col gap-6">
-                {cs.uiDecisions.map((decision, i) => (
-                  <div key={i} className="flex flex-col gap-2">
-                    <h3 className="font-body text-[16px] font-medium text-light">{decision.title}</h3>
-                    <p className="font-body text-[16px] leading-[1.7] text-light/60">{decision.body}</p>
+                {/* My Devices */}
+                <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
+                  <div className="md:hidden flex flex-col pb-2">
+                    <h3 className="font-body text-[16px] font-medium text-light">My Devices</h3>
                   </div>
-                ))}
-              </div>
-            </section>
+                  <div className="relative w-full border border-white/10 overflow-hidden">
+                    <CSMediaLightbox
+                      src={`${folder}casestudy-09.png`}
+                      alt="My Devices — Sensorübersicht"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div className="hidden md:flex flex-col h-fit">
+                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">My Devices</h3>
+                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Sensoren lassen sich jetzt unabhängig von Pflanzen anbinden. Mit „My Devices" entstand erstmals eine sensorzentrische Ebene in der App — Geräte, Status und letzter Sync auf einen Blick, losgelöst vom Pflanzenprofil.</p>
+                  </div>
+                </div>
 
-            {/* Business Impact */}
-            <section id="impact" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Business Impact</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
-                Messbare Ergebnisse
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-                {cs.impact.cards.map((card, i) => (
-                  <div key={i} className="flex flex-col gap-3 border border-white/10 p-6">
-                    <span className="font-body text-[14px] font-medium text-light">{card.title}</span>
-                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">{card.body}</p>
+                {/* Out of Sync */}
+                <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
+                  <div className="md:hidden flex flex-col pb-2">
+                    <h3 className="font-body text-[16px] font-medium text-light">Out of Sync / Sensor Cards</h3>
                   </div>
-                ))}
+                  <div className="relative w-full border border-white/10 overflow-hidden">
+                    <video
+                      src={`${folder}casestudy-10.mp4`}
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      onMouseEnter={(e) => { e.currentTarget.controls = true }}
+                      onMouseLeave={(e) => { e.currentTarget.controls = false }}
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div className="hidden md:flex flex-col h-fit">
+                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Out of Sync / Sensor Cards</h3>
+                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Veraltete Daten werden nicht mehr isoliert pro Pflanze kommuniziert, sondern direkt an der Sensorkarte — mit den betroffenen Parametern sichtbar im Pflanzenprofil. So wird klar, dass das Problem beim Gerät liegt, nicht bei der Pflanze.</p>
+                  </div>
+                </div>
+
+                {/* Empty States */}
+                <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
+                  <div className="md:hidden flex flex-col pb-2">
+                    <h3 className="font-body text-[16px] font-medium text-light">Empty States</h3>
+                  </div>
+                  <div className="relative w-full border border-white/10 overflow-hidden">
+                    <CSMediaLightbox
+                      src={`${folder}casestudy-11.png`}
+                      alt="Empty State — Sensor-Empfehlung"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+                  <div className="hidden md:flex flex-col h-fit">
+                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Empty States</h3>
+                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Empty States erklären den Mehrwert eines Sensors kontextbezogen — genau dann, wenn eine Pflanze ein Gerät vermisst, das sie noch nicht hat.</p>
+                  </div>
+                </div>
+
               </div>
             </section>
 
             {/* Reflexion */}
             <section id="reflexion" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Reflexion</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Reflexion</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 System vor Interface
-              </h2>
-              <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.reflection}</p>
+              </h3>
+              <p className="font-body text-[16px] leading-[1.7] text-light/60">
+                Das größte Learning war keine UI-Entscheidung. Onboarding bei hardware-nahen Produkten beginnt nicht am Interface — sondern am System dahinter. Die schwierigsten Fragen waren konzeptioneller Natur: Welche Komplexität darf ich zeigen — und welche muss das Design schlucken?
+              </p>
             </section>
 
           </div>

@@ -85,6 +85,23 @@ export default function CaseStudyCard({
     )
   }
 
+  const isExternal = slug.startsWith('http')
+
+  if (isExternal) {
+    return (
+      <a
+        href={slug}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block cursor-pointer"
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+      >
+        {inner}
+      </a>
+    )
+  }
+
   return (
     <Link
       to={slug}

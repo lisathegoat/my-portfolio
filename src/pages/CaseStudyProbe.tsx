@@ -128,10 +128,10 @@ export default function CaseStudyProbe() {
 
             {/* Overview */}
             <section id="overview" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Overview</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Overview</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 Algorithmische Defekterkennung
-              </h2>
+              </h3>
               {cs.intro.split('\n\n').map((para, i) => (
                 <p key={i} className="font-body text-[16px] leading-[1.7] text-light/60">{para}</p>
               ))}
@@ -139,19 +139,19 @@ export default function CaseStudyProbe() {
 
             {/* Herausforderung */}
             <section id="herausforderung" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Herausforderung</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Herausforderung</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 {cs.challenge.heading}
-              </h2>
+              </h3>
               <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.challenge.body}</p>
               <blockquote className="border-l-2 border-white/20 pl-6 mt-2">
                 <p className="font-body text-[16px] leading-[1.7] text-light/40 italic">{cs.challenge.callout}</p>
               </blockquote>
             </section>
 
-            {/* Fragestellung */}
+            {/* Fragestellung — keeps h2 (main question) */}
             <section id="fragestellung" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Fragestellung</h4>
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Fragestellung</h4>
               <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light">
                 {cs.hmw}
               </h2>
@@ -160,10 +160,10 @@ export default function CaseStudyProbe() {
 
             {/* Entscheidungen */}
             <section id="entscheidungen" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Entscheidungen</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Entscheidungen</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 Fünf Designentscheidungen
-              </h2>
+              </h3>
 
               <div className="flex flex-col gap-12 md:gap-16 mt-4">
 
@@ -207,6 +207,8 @@ export default function CaseStudyProbe() {
                       loop
                       muted
                       playsInline
+                      onMouseEnter={(e) => { e.currentTarget.controls = true }}
+                      onMouseLeave={(e) => { e.currentTarget.controls = false }}
                     >
                       <source src={`${folder}ProbeSwap.webm`} type="video/webm" />
                       <source src={`${folder}ProbeSwap.mp4`} type="video/mp4" />
@@ -264,10 +266,10 @@ export default function CaseStudyProbe() {
 
             {/* Reflexion */}
             <section id="reflexion" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Reflexion</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Reflexion</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 Validierung vor Gestaltung
-              </h2>
+              </h3>
               <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.reflection}</p>
             </section>
 

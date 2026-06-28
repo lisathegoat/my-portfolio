@@ -9,9 +9,9 @@ const cs = caseStudies.thesis
 const folder = cs.meta.imageFolder
 
 const sections = [
-  { id: 'overview', label: 'Overview' },
+  { id: 'zusammenfassung', label: 'Zusammenfassung' },
   { id: 'recherche', label: 'Recherche' },
-  { id: 'fragestellung', label: 'Fragestellung' },
+  { id: 'ausrichtung', label: 'Ausrichtung' },
   { id: 'ideation', label: 'Ideation' },
   { id: 'entwurf', label: 'Entwurf' },
   { id: 'testing', label: 'Testing' },
@@ -19,7 +19,7 @@ const sections = [
 ]
 
 export default function CaseStudyThesis() {
-  const [activeId, setActiveId] = useState('overview')
+  const [activeId, setActiveId] = useState('zusammenfassung')
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -51,10 +51,7 @@ export default function CaseStudyThesis() {
 
         {/* ── Left sidebar ── */}
         <aside className="md:sticky md:top-0 md:h-fit px-8 md:px-0 md:pl-8 pt-12 pb-0 md:py-12 min-w-[160px]">
-          <Link
-            to="/"
-            className="w-full text-left"
-          >
+          <Link to="/" className="w-full text-left">
             <div className="flex items-center gap-2 font-body text-[14px] text-grey/50 hover:text-light transition-colors cursor-pointer">
               <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20z" />
@@ -97,7 +94,7 @@ export default function CaseStudyThesis() {
             {/* Hero video */}
             <div className="w-full aspect-video border border-white/10 overflow-hidden">
               <video
-                src={`${folder}cover_Animation.mp4`}
+                src={`${folder}01_Hero_LernApp.mp4`}
                 autoPlay
                 muted
                 loop
@@ -134,12 +131,12 @@ export default function CaseStudyThesis() {
           {/* ── Sections ── */}
           <div className="flex flex-col gap-12 md:gap-24">
 
-            {/* Overview */}
-            <section id="overview" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Overview</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+            {/* Zusammenfassung */}
+            <section id="zusammenfassung" className="flex flex-col gap-4">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Zusammenfassung</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 Inklusives Lernen — digital gedacht
-              </h2>
+              </h3>
               {cs.intro.split('\n\n').map((para, i) => (
                 <p key={i} className="font-body text-[16px] leading-[1.7] text-light/60">{para}</p>
               ))}
@@ -147,26 +144,26 @@ export default function CaseStudyThesis() {
 
             {/* Recherche */}
             <section id="recherche" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Recherche</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Recherche</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 Schulische Barrieren verstehen
-              </h2>
+              </h3>
               {cs.research.body.split('\n\n').map((para, i) => (
                 <p key={i} className="font-body text-[16px] leading-[1.7] text-light/60">{para}</p>
               ))}
 
               <div className="mt-4">
                 <CSMediaLightbox
-                  src={`${folder}01.png`}
+                  src={`${folder}02_barrieren.png`}
                   alt="Barrieren-Diagramm"
                   className="w-full object-cover"
                 />
               </div>
             </section>
 
-            {/* Fragestellung */}
-            <section id="fragestellung" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Fragestellung</h4>
+            {/* Ausrichtung (HMW) — keeps h2 */}
+            <section id="ausrichtung" className="flex flex-col gap-4">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Ausrichtung</h4>
               <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light">
                 {cs.definition}
               </h2>
@@ -175,94 +172,93 @@ export default function CaseStudyThesis() {
 
             {/* Ideation */}
             <section id="ideation" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Ideation</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Ideation</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 Konzept ohne Kategorisierung
-              </h2>
+              </h3>
               <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.design.ideation}</p>
               <div className="mt-4">
                 <CSMediaLightbox
-                  src={`${folder}02.png`}
-                  alt="Ideation"
+                  src={`${folder}03_App-design.png`}
+                  alt="App-Konzept"
                   className="w-full object-cover"
                 />
               </div>
             </section>
 
-            {/* Entwurf */}
+            {/* Entwurf — Hauptfunktionen */}
             <section id="entwurf" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Entwurf</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Entwurf</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 {cs.design.heading}
-              </h2>
+              </h3>
               <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.design.intro}</p>
 
-              <h4 className="font-body text-[14px] text-light font-medium mt-8 mb-2">Hauptfunktionen</h4>
-
-              {/* Feature splits — image left, description right */}
-              <div className="flex flex-col gap-8 mt-2">
-                {cs.design.features.map((f, i) => {
-                  const images = [
-                    `${folder}03_Lesehelfer.png`,
-                    `${folder}04Feedback.png`,
-                    `${folder}05_karteikarten.png`,
-                  ]
-                  return (
-                    <div key={f.title} className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
-                      <div className="md:hidden flex flex-col pb-2">
-                        <h3 className="font-body text-[16px] font-medium text-light">{f.title}</h3>
-                      </div>
-                      <div className="relative w-full border border-white/10 overflow-hidden">
-                        <CSMediaLightbox
-                          src={images[i]}
-                          alt={f.title}
-                          className="w-full h-auto object-cover"
-                        />
-                      </div>
-                      <div className="hidden md:flex flex-col h-fit">
-                        <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">{f.title}</h3>
-                        <p className="font-body text-[15px] text-light/50 leading-[1.6]">{f.body}</p>
-                      </div>
+              {/* Feature splits — video left, description right */}
+              <div className="flex flex-col gap-16 mt-8">
+                {cs.design.features.map((f) => (
+                  <div key={f.title} className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
+                    <div className="md:hidden flex flex-col pb-2">
+                      <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light">{f.title}</h3>
                     </div>
-                  )
-                })}
+                    <div className="relative w-full border border-white/10 overflow-hidden">
+                      <video
+                        src={`${folder}${f.video}`}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        onMouseEnter={(e) => { e.currentTarget.controls = true }}
+                        onMouseLeave={(e) => { e.currentTarget.controls = false }}
+                        className="w-full h-auto object-cover"
+                      />
+                    </div>
+                    <div className="hidden md:flex flex-col h-fit">
+                      <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">{f.title}</h3>
+                      <p className="font-body text-[15px] text-light/50 leading-[1.6]">{f.body}</p>
+                    </div>
+                    <div className="md:hidden">
+                      <p className="font-body text-[15px] text-light/50 leading-[1.6]">{f.body}</p>
+                    </div>
+                  </div>
+                ))}
               </div>
 
-              {/* UX Flow video */}
-              <div className="w-full border border-white/10 overflow-hidden mt-8">
-                <video
-                  src={`${folder}06.mov`}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="w-full h-auto object-cover"
+              {/* Design System */}
+              <div className="mt-12">
+                <CSMediaLightbox
+                  src={`${folder}Design_system.png`}
+                  alt="Design System"
+                  className="w-full object-cover"
                 />
+                <p className="font-body text-[15px] text-light/50 leading-[1.6] mt-4">{cs.designSystem}</p>
               </div>
             </section>
 
             {/* Testing */}
             <section id="testing" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Testing</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Testing</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 {cs.validation.heading}
-              </h2>
+              </h3>
               <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.validation.body}</p>
             </section>
 
             {/* Reflexion */}
             <section id="reflexion" className="flex flex-col gap-4">
-              <h4 className="font-body text-[14px] text-light font-medium mb-1">Reflexion</h4>
-              <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Reflexion</h4>
+              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 {cs.learning.heading}
-              </h2>
-              <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.learning.body}</p>
+              </h3>
+              {cs.learning.body.split('\n\n').map((para, i) => (
+                <p key={i} className="font-body text-[16px] leading-[1.7] text-light/60">{para}</p>
+              ))}
             </section>
 
           </div>
         </div>
 
-        {/* ── Right spacer (balances the 3-column grid) ── */}
+        {/* ── Right spacer ── */}
         <div className="p-6 py-12" />
 
       </main>

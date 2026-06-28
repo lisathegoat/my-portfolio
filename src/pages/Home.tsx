@@ -22,7 +22,7 @@ function DropdownPanel({ visible }: { visible: boolean }) {
       // Opens downward; right:0 aligns panel's right edge to star's right, extending left
       style={{ top: '100%', right: 0, marginTop: 8 }}
     >
-      <p className="font-body text-[11px] text-grey uppercase tracking-[0.15em] mb-3 leading-none">
+      <p className="font-mono text-[11px] text-grey uppercase tracking-[0.15em] mb-3 leading-none">
         Design Erfahrung
       </p>
       <p className="font-body text-[14px] text-light/70 leading-[1.6]">
@@ -48,7 +48,7 @@ function StarAnchor({ visible, onEnter, onLeave }: {
       <span className="text-grey/40">
         <StarSVG size={16} />
       </span>
-      <span className="font-body text-[11px] text-grey/40 uppercase tracking-[0.15em] whitespace-nowrap">
+      <span className="font-mono text-[11px] text-grey/40 uppercase tracking-[0.15em] whitespace-nowrap">
         Design Erfahrung
       </span>
       <DropdownPanel visible={visible} />
@@ -61,7 +61,7 @@ const projects = [
   caseStudies.fyta,
   caseStudies.probe,
   caseStudies.thesis,
-  caseStudies.placeholder,
+  caseStudies.scrollytelling,
 ]
 
 // ── Page ─────────────────────────────────────────────────────────────────────
@@ -228,8 +228,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* 2 × 2 grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-16">
+        {/* 3-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-12">
           {projects.map((p) => (
             <CaseStudyCard
               key={p.slug}
@@ -250,7 +250,7 @@ export default function Home() {
       <footer className="border-t border-grey/20 px-8 py-12 flex flex-col gap-8">
 
         <div className="flex flex-col gap-3">
-          <span className="font-body text-[11px] font-bold text-light uppercase tracking-[0.15em]">
+          <span className="font-mono text-[11px] font-normal text-light uppercase tracking-[0.15em]">
             {home.footer.projectsLabel}
           </span>
           <div className="flex flex-wrap gap-x-8 gap-y-2">
