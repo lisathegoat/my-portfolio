@@ -170,7 +170,7 @@ export default function CaseStudyProbe() {
                 {/* Decision 01 — text only */}
                 <div className="flex flex-col gap-2">
                   <span className="font-body text-[13px] text-light/30 font-medium">01</span>
-                  <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-1">{cs.decisions[0].heading}</h3>
+                  <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-1">{cs.decisions[0].heading}</h3>
                   <p className="font-body text-[16px] leading-[1.7] text-light/60">{cs.decisions[0].body}</p>
                 </div>
 
@@ -178,7 +178,7 @@ export default function CaseStudyProbe() {
                 <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
                   <div className="md:hidden flex flex-col pb-2">
                     <span className="font-body text-[13px] text-light/30 font-medium">02</span>
-                    <h3 className="font-body text-[16px] font-medium text-light">{cs.decisions[1].heading}</h3>
+                    <h3 className="font-title-italic text-[16px] text-light">{cs.decisions[1].heading}</h3>
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
@@ -189,7 +189,7 @@ export default function CaseStudyProbe() {
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
                     <span className="font-body text-[13px] text-light/30 font-medium mb-2">02</span>
-                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">{cs.decisions[1].heading}</h3>
+                    <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">{cs.decisions[1].heading}</h3>
                     <p className="font-body text-[15px] text-light/50 leading-[1.6]">{cs.decisions[1].body}</p>
                   </div>
                 </div>
@@ -198,7 +198,7 @@ export default function CaseStudyProbe() {
                 <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
                   <div className="md:hidden flex flex-col pb-2">
                     <span className="font-body text-[13px] text-light/30 font-medium">03</span>
-                    <h3 className="font-body text-[16px] font-medium text-light">{cs.decisions[2].heading}</h3>
+                    <h3 className="font-title-italic text-[16px] text-light">{cs.decisions[2].heading}</h3>
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <video
@@ -216,7 +216,7 @@ export default function CaseStudyProbe() {
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
                     <span className="font-body text-[13px] text-light/30 font-medium mb-2">03</span>
-                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">{cs.decisions[2].heading}</h3>
+                    <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">{cs.decisions[2].heading}</h3>
                     <p className="font-body text-[15px] text-light/50 leading-[1.6]">{cs.decisions[2].body}</p>
                   </div>
                 </div>
@@ -225,7 +225,7 @@ export default function CaseStudyProbe() {
                 <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
                   <div className="md:hidden flex flex-col pb-2">
                     <span className="font-body text-[13px] text-light/30 font-medium">04</span>
-                    <h3 className="font-body text-[16px] font-medium text-light">{cs.decisions[3].heading}</h3>
+                    <h3 className="font-title-italic text-[16px] text-light">{cs.decisions[3].heading}</h3>
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
@@ -236,7 +236,7 @@ export default function CaseStudyProbe() {
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
                     <span className="font-body text-[13px] text-light/30 font-medium mb-2">04</span>
-                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">{cs.decisions[3].heading}</h3>
+                    <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">{cs.decisions[3].heading}</h3>
                     <p className="font-body text-[15px] text-light/50 leading-[1.6]">{cs.decisions[3].body}</p>
                   </div>
                 </div>
@@ -245,7 +245,7 @@ export default function CaseStudyProbe() {
                 <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
                   <div className="md:hidden flex flex-col pb-2">
                     <span className="font-body text-[13px] text-light/30 font-medium">05</span>
-                    <h3 className="font-body text-[16px] font-medium text-light">{cs.decisions[4].heading}</h3>
+                    <h3 className="font-title-italic text-[16px] text-light">{cs.decisions[4].heading}</h3>
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
@@ -256,7 +256,7 @@ export default function CaseStudyProbe() {
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
                     <span className="font-body text-[13px] text-light/30 font-medium mb-2">05</span>
-                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">{cs.decisions[4].heading}</h3>
+                    <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">{cs.decisions[4].heading}</h3>
                     <p className="font-body text-[15px] text-light/50 leading-[1.6]">{cs.decisions[4].body}</p>
                   </div>
                 </div>

@@ -14,7 +14,7 @@ const sections = [
   { id: 'fragestellung', label: 'Fragestellung' },
   { id: 'prozess', label: 'Prozess' },
   { id: 'loesung', label: 'Lösung' },
-  { id: 'hardware', label: 'Hardware' },
+  { id: 'hardware', label: 'Systemweite Entscheidungen' },
   { id: 'reflexion', label: 'Reflexion' },
 ]
 
@@ -91,11 +91,14 @@ export default function CaseStudyFyta() {
               </h1>
             </div>
 
-            {/* Hero image */}
+            {/* Hero video */}
             <div className="w-full aspect-video border border-white/10 overflow-hidden">
-              <img
-                src={`${folder}hero.jpg`}
-                alt="FYTA Sensoranbindung"
+              <video
+                src={`${folder}hero_Onboarding_hero.mp4`}
+                autoPlay
+                muted
+                loop
+                playsInline
                 className="w-full h-full object-cover"
               />
             </div>
@@ -139,22 +142,22 @@ export default function CaseStudyFyta() {
               </p>
             </section>
 
-            {/* Überblick */}
+            {/* Überblick — split: image left, text right */}
             <section id="ueberblick" className="flex flex-col gap-4">
-              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Überblick</h4>
-              <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
-                Von einem Sensor zu einem Ökosystem
-              </h3>
-              <p className="font-body text-[16px] leading-[1.7] text-light/60">
-                Die App kannte bis dahin genau eine Beziehung: ein Sensor, eine Pflanze. Mit der neuen Sensorfamilie wurde daraus ein Viele-zu-viele-System. Als Head of Product Design habe ich mich mit dem neuen Setup, dem Backend, eigenen Video-Meetings und frühzeitigem Verhindern von Fehlbedienungen auseinandergesetzt. Als Head of Product Design habe ich das System von Grund auf neu gestaltet.
-              </p>
-
-              <div className="mt-4">
-                <CSMediaLightbox
-                  src={`${folder}01_Mental_Model.png`}
-                  alt="Komplexitätsmodell: Eins zu eins, Eins zu vielen, Viele zu viele"
-                  className="w-full object-cover"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-6 md:gap-8 items-start">
+                <div className="relative w-full overflow-hidden">
+                  <CSMediaLightbox
+                    src={`${folder}01_Mental_Model.png`}
+                    alt="Komplexitätsmodell: Eins zu eins, Eins zu vielen, Viele zu viele"
+                    className="w-full object-cover"
+                  />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <h4 className="font-mono text-[14px] text-light font-normal mb-1">Überblick</h4>
+                  <p className="font-body text-[16px] leading-[1.7] text-light/60">
+                    Die App kannte bis dahin genau eine Beziehung: ein Sensor, eine Pflanze. Mit der neuen Sensorfamilie wurde daraus ein Viele-zu-viele-System — einer von vielen Logik — aber mit eigenen Hardware-spezifischen Setups, eigenen Edge Cases. Als Head of Product Design habe ich das System von Grund auf neu gestaltet.
+                  </p>
+                </div>
               </div>
             </section>
 
@@ -218,7 +221,7 @@ export default function CaseStudyFyta() {
                 {/* Entscheidung 1 — Statussprache */}
                 <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
                   <div className="md:hidden flex flex-col pb-2">
-                    <h3 className="font-body text-[16px] font-medium text-light">Alle Sensortypen folgen derselben Statussprache</h3>
+                    <h3 className="font-title-italic text-[16px] text-light">Alle Sensortypen folgen derselben Statussprache</h3>
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
@@ -228,7 +231,7 @@ export default function CaseStudyFyta() {
                     />
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
-                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Alle Sensortypen folgen derselben Statussprache</h3>
+                    <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Alle Sensortypen folgen derselben Statussprache</h3>
                     <p className="font-body text-[15px] text-light/50 leading-[1.6]">Die Statuslichter der Sensoren folgen einer einheitlichen Farbsprache: Blau pulsierend signalisiert den Kopplungsmodus, Orange ein laufendes Firmware-Update. Nutzer:innen müssen diese Zustände nicht erlernen — sie verinnerlichen sie, weil sie sensorübergreifend immer gleich kommuniziert werden.</p>
                   </div>
                 </div>
@@ -236,7 +239,7 @@ export default function CaseStudyFyta() {
                 {/* Entscheidung 2 — Pflanzenkompatibilität */}
                 <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
                   <div className="md:hidden flex flex-col pb-2">
-                    <h3 className="font-body text-[16px] font-medium text-light">Pflanzenkompatibilität durch Information abfangen</h3>
+                    <h3 className="font-title-italic text-[16px] text-light">Pflanzenkompatibilität durch Information abfangen</h3>
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
@@ -246,7 +249,7 @@ export default function CaseStudyFyta() {
                     />
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
-                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Pflanzenkompatibilität durch Information abfangen</h3>
+                    <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Pflanzenkompatibilität durch Information abfangen</h3>
                     <p className="font-body text-[15px] text-light/50 leading-[1.6]">Statt Inkompatibilitäten erst im Pflanzenprofil zu blockieren, greift das System früh ein — Nutzer:innen werden vorbereitet, nicht gestoppt. Frustration entsteht durch schlechte Vorbereitung, nicht durch zu viel Kontext.</p>
                   </div>
                 </div>
@@ -254,7 +257,7 @@ export default function CaseStudyFyta() {
                 {/* Entscheidung 3 — Illustrative Ebene */}
                 <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
                   <div className="md:hidden flex flex-col pb-2">
-                    <h3 className="font-body text-[16px] font-medium text-light">Illustrative Ebene für adaptive Nutzungskontexte</h3>
+                    <h3 className="font-title-italic text-[16px] text-light">Illustrative Ebene für adaptive Nutzungskontexte</h3>
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
@@ -264,7 +267,7 @@ export default function CaseStudyFyta() {
                     />
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
-                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Illustrative Ebene für adaptive Nutzungskontexte</h3>
+                    <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Illustrative Ebene für adaptive Nutzungskontexte</h3>
                     <p className="font-body text-[15px] text-light/50 leading-[1.6]">Durch die verschiedenen Nutzungskontexte muss jeder Sensor anders installiert werden. Um das visuell zu unterstützen, wurden speziell für die App Illustrationen der Sensoren entwickelt.</p>
                   </div>
                 </div>
@@ -274,7 +277,7 @@ export default function CaseStudyFyta() {
 
             {/* Hardware in der App verankern */}
             <section id="hardware" className="flex flex-col gap-4">
-              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Hardware in der App verankern</h4>
+              <h4 className="font-mono text-[14px] text-light font-normal mb-1">Systemweite Entscheidungen</h4>
               <h3 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light -mb-2">
                 Über das Onboarding hinaus
               </h3>
@@ -287,7 +290,7 @@ export default function CaseStudyFyta() {
                 {/* My Devices */}
                 <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
                   <div className="md:hidden flex flex-col pb-2">
-                    <h3 className="font-body text-[16px] font-medium text-light">My Devices</h3>
+                    <h3 className="font-title-italic text-[16px] text-light">My Devices</h3>
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
@@ -297,7 +300,7 @@ export default function CaseStudyFyta() {
                     />
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
-                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">My Devices</h3>
+                    <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">My Devices</h3>
                     <p className="font-body text-[15px] text-light/50 leading-[1.6]">Sensoren lassen sich jetzt unabhängig von Pflanzen anbinden. Mit „My Devices" entstand erstmals eine sensorzentrische Ebene in der App — Geräte, Status und letzter Sync auf einen Blick, losgelöst vom Pflanzenprofil.</p>
                   </div>
                 </div>
@@ -305,7 +308,7 @@ export default function CaseStudyFyta() {
                 {/* Out of Sync */}
                 <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
                   <div className="md:hidden flex flex-col pb-2">
-                    <h3 className="font-body text-[16px] font-medium text-light">Out of Sync / Sensor Cards</h3>
+                    <h3 className="font-title-italic text-[16px] text-light">Out of Sync / Sensor Cards</h3>
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <video
@@ -320,7 +323,7 @@ export default function CaseStudyFyta() {
                     />
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
-                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Out of Sync / Sensor Cards</h3>
+                    <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Out of Sync / Sensor Cards</h3>
                     <p className="font-body text-[15px] text-light/50 leading-[1.6]">Veraltete Daten werden nicht mehr isoliert pro Pflanze kommuniziert, sondern direkt an der Sensorkarte — mit den betroffenen Parametern sichtbar im Pflanzenprofil. So wird klar, dass das Problem beim Gerät liegt, nicht bei der Pflanze.</p>
                   </div>
                 </div>
@@ -328,7 +331,7 @@ export default function CaseStudyFyta() {
                 {/* Empty States */}
                 <div className="grid grid-cols-1 md:grid-cols-[60%_auto] gap-6 md:gap-8 items-end">
                   <div className="md:hidden flex flex-col pb-2">
-                    <h3 className="font-body text-[16px] font-medium text-light">Empty States</h3>
+                    <h3 className="font-title-italic text-[16px] text-light">Empty States</h3>
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
@@ -338,7 +341,7 @@ export default function CaseStudyFyta() {
                     />
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
-                    <h3 className="font-body text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Empty States</h3>
+                    <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Empty States</h3>
                     <p className="font-body text-[15px] text-light/50 leading-[1.6]">Empty States erklären den Mehrwert eines Sensors kontextbezogen — genau dann, wenn eine Pflanze ein Gerät vermisst, das sie noch nicht hat.</p>
                   </div>
                 </div>
