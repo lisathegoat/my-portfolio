@@ -109,12 +109,10 @@ export default function HomeV2() {
 
       <MinimalNav />
 
-      {/* ── Hero — fullscreen, intro left + CV right ── */}
+      {/* ── Hero — intro left + CV right ── */}
       <section
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 px-8 items-end max-w-[1200px] mx-auto"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 px-8 items-end pt-12 pb-20"
         style={{
-          minHeight: 'calc(100svh - 68px)',
-          paddingBottom: '80px',
           opacity: mounted ? 1 : 0,
           transform: `translateY(${mounted ? 0 : 20}px)`,
           transition: 'opacity 1s ease-out, transform 1s ease-out',
@@ -122,9 +120,11 @@ export default function HomeV2() {
       >
         {/* Left — intro */}
         <div className="flex flex-col justify-end">
-          <p className="font-tiempos text-[clamp(24px,2.8vw,36px)] tracking-[-0.02em] leading-[1.35] text-dark">
-            {home.hero.intro}
-          </p>
+          <h1 className="font-tiempos text-[clamp(28px,3.2vw,42px)] tracking-[-0.02em] leading-[1.3]">
+            <span className="text-dark">Hi, ich bin Lisa.</span>
+            <br />
+            <span className="italic text-dark/60">Produkt + Visuelle-designerin</span>
+          </h1>
         </div>
 
         {/* Right — CV table */}
@@ -149,8 +149,8 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* ── Case Studies — 2-column masonry grid ── */}
-      <section className="px-8 pb-20 max-w-[1200px] mx-auto">
+      {/* ── Case Studies — 2-column masonry grid, full width ── */}
+      <section className="px-8 pb-20">
         <div className="columns-1 md:columns-2 gap-8">
           {projects.map((p) => (
             <div key={p.slug} className="break-inside-avoid mb-8">
@@ -161,7 +161,7 @@ export default function HomeV2() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="border-t border-dark/10 px-8 py-12 max-w-[1200px] mx-auto flex flex-col gap-6">
+      <footer className="border-t border-dark/10 px-8 py-12 flex flex-col gap-6">
         <a
           href={`mailto:${home.footer.email}`}
           className="font-tiempos text-dark leading-[1.1] tracking-[-0.03em] hover:opacity-60 transition-opacity"
