@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import { home, caseStudies, about } from '../content'
+import { home, caseStudies } from '../content'
 
 const projects = [
   { ...caseStudies.fyta, aspectRatio: '16/9', wideCover: '/images/home/Onboarding_16x9.mp4' },
@@ -40,8 +40,8 @@ function CaseStudyGridCard({ project }: { project: typeof projects[number] }) {
         )}
       </div>
       <div className="mt-3">
-        <h3 className="font-body text-[17px] text-dark font-medium leading-tight">{project.shortTitle}</h3>
-        <h4 className="font-body text-[15px] text-dark/50 mt-0.5">{project.tags.join(' · ')}</h4>
+        <h3 className="font-tiempos text-[17px] text-dark font-normal leading-tight">{project.shortTitle}</h3>
+        <h4 className="font-geist text-[15px] text-dark/50 mt-0.5">{project.tags.join(' · ')}</h4>
       </div>
     </>
   )
@@ -66,20 +66,20 @@ function MinimalNav() {
     <header className="w-full px-8 py-6 flex items-center justify-between">
       <Link
         to="/v2"
-        className="font-body text-[15px] tracking-[-0.01em] text-dark font-medium hover:text-dark/60 transition-colors"
+        className="font-mono text-[11px] uppercase tracking-[0.15em] text-dark hover:text-dark/60 transition-colors"
       >
         Lisa Haupt
       </Link>
       <div className="flex items-center gap-8">
         <Link
           to="/about"
-          className="font-body text-[15px] tracking-[-0.01em] text-dark/50 hover:text-dark transition-colors"
+          className="font-mono text-[11px] uppercase tracking-[0.15em] text-dark/50 hover:text-dark transition-colors"
         >
           About
         </Link>
         <a
           href={`mailto:${home.footer.email}`}
-          className="font-body text-[15px] tracking-[-0.01em] text-dark/50 hover:text-dark transition-colors"
+          className="font-mono text-[11px] uppercase tracking-[0.15em] text-dark/50 hover:text-dark transition-colors"
         >
           Contact
         </a>
@@ -89,10 +89,11 @@ function MinimalNav() {
 }
 
 const cvEntries = [
-  { period: 'seit 2022', role: 'Head of Product Design', company: 'FYTA' },
-  { period: '2021 – 2022', role: 'UI/UX Design Lead', company: 'FYTA' },
-  { period: '2020 – 2021', role: 'UX/UI Designer', company: 'Freelance' },
-  { period: '2019 – 2020', role: 'Werkstudentin Design', company: 'Siemens' },
+  { year: '2024', role: 'Lead of Design', company: 'FYTA' },
+  { year: '2022', role: 'Produkt Designer', company: 'FYTA' },
+  { year: '2022', role: 'Master of Arts', company: 'FH Potsdam' },
+  { year: '2020', role: 'Grafik & Digital Designerin', company: 'Loveto' },
+  { year: '2018', role: 'Grafik & Digital Designerin', company: 'FH Eichmeister Kreativagentur' },
 ]
 
 export default function HomeV2() {
@@ -108,10 +109,12 @@ export default function HomeV2() {
 
       <MinimalNav />
 
-      {/* ── Hero — intro left + CV right ── */}
+      {/* ── Hero — fullscreen, intro left + CV right ── */}
       <section
-        className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 px-8 pt-12 pb-20 max-w-[1200px] mx-auto"
+        className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 px-8 items-end max-w-[1200px] mx-auto"
         style={{
+          minHeight: 'calc(100svh - 68px)',
+          paddingBottom: '80px',
           opacity: mounted ? 1 : 0,
           transform: `translateY(${mounted ? 0 : 20}px)`,
           transition: 'opacity 1s ease-out, transform 1s ease-out',
@@ -119,13 +122,8 @@ export default function HomeV2() {
       >
         {/* Left — intro */}
         <div className="flex flex-col justify-end">
-          <p className="font-body text-[clamp(24px,2.8vw,36px)] tracking-[-0.02em] leading-[1.35]">
-            <span className="text-dark">{home.hero.intro}</span>
-            <br />
-            <span className="text-dark/50">{home.hero.introSub}</span>
-          </p>
-          <p className="font-body text-[16px] text-dark/50 leading-[1.7] mt-4 max-w-md">
-            {about.bio[0]}
+          <p className="font-tiempos text-[clamp(24px,2.8vw,36px)] tracking-[-0.02em] leading-[1.35] text-dark">
+            {home.hero.intro}
           </p>
         </div>
 
@@ -135,13 +133,13 @@ export default function HomeV2() {
             <tbody>
               {cvEntries.map((entry, i) => (
                 <tr key={i} className="border-b border-dark/10">
-                  <td className="font-mono text-[13px] text-dark/40 py-2.5 pr-6 whitespace-nowrap align-top">
-                    {entry.period}
+                  <td className="font-mono text-[13px] text-dark/40 py-3 pr-8 whitespace-nowrap align-top">
+                    {entry.year}
                   </td>
-                  <td className="font-body text-[15px] text-dark py-2.5 align-top">
+                  <td className="font-geist text-[15px] text-dark py-3 align-top">
                     {entry.role}
                   </td>
-                  <td className="font-body text-[15px] text-dark/50 py-2.5 pl-4 text-right align-top whitespace-nowrap">
+                  <td className="font-geist text-[15px] text-dark/40 py-3 pl-4 text-right align-top whitespace-nowrap">
                     {entry.company}
                   </td>
                 </tr>
@@ -166,18 +164,18 @@ export default function HomeV2() {
       <footer className="border-t border-dark/10 px-8 py-12 max-w-[1200px] mx-auto flex flex-col gap-6">
         <a
           href={`mailto:${home.footer.email}`}
-          className="font-title-italic text-dark leading-[1.1] tracking-[-0.05em] hover:opacity-60 transition-opacity"
+          className="font-tiempos text-dark leading-[1.1] tracking-[-0.03em] hover:opacity-60 transition-opacity"
           style={{ fontSize: 'clamp(28px, 5vw, 64px)' }}
         >
           {home.footer.email}
         </a>
         <div className="flex items-center justify-between pt-4 border-t border-dark/10">
-          <p className="font-body text-[14px] text-dark/40">© 2025 Lisa Haupt</p>
+          <p className="font-geist text-[14px] text-dark/40">© 2025 Lisa Haupt</p>
           <div className="flex items-center gap-6">
-            <Link to="/" className="font-body text-[14px] text-dark/40 hover:text-dark transition-colors">
+            <Link to="/" className="font-geist text-[14px] text-dark/40 hover:text-dark transition-colors">
               Layout V1
             </Link>
-            <Link to="/about" className="font-body text-[14px] text-dark/40 hover:text-dark transition-colors">
+            <Link to="/about" className="font-geist text-[14px] text-dark/40 hover:text-dark transition-colors">
               About
             </Link>
           </div>

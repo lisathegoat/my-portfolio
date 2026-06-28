@@ -16,6 +16,8 @@ export default {
         body: ['"Neue Montreal"', '"DM Sans"', 'system-ui', 'sans-serif'],
         mono: ['"Geist Mono"', 'ui-monospace', 'monospace'],
         v2: ['"GT America"', '"Neue Montreal"', '"DM Sans"', 'system-ui', 'sans-serif'],
+        geist: ['"Geist"', 'system-ui', 'sans-serif'],
+        tiempos: ['"Tiempos Text"', 'Georgia', 'serif'],
       },
       // Golden ratio type scale (φ = 1.618), base 16px
       // 16 → 20 → 26 → 32 → 52 → 84 → 136

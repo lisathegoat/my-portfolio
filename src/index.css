@@ -58,6 +58,22 @@
     font-style: normal;
     font-display: swap;
   }
+
+  @font-face {
+    font-family: 'Geist';
+    src: url('/fonts/Geist-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Tiempos Text';
+    src: url('/fonts/TiemposText-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
 }
 
 @layer components {
