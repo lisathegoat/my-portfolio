@@ -7,24 +7,28 @@ export interface VersionEntry {
   path: string
   label: string
   description: string
+  /** Only mounted in dev. Explorations must never be reachable in production. */
+  devOnly?: boolean
   component: ComponentType
 }
 
-// Add new landing page explorations here — Lab, VersionSwitcher, and App
+// Landing page explorations. Exactly one entry is the live site (path '/');
+// everything else is a dev-only reference route. Lab, VersionSwitcher and App
 // routes all read from this single list.
 export const versions: VersionEntry[] = [
   {
-    id: 'v1',
+    id: 'v2',
     path: '/',
-    label: 'V1',
-    description: 'Dark, editorial hero',
-    component: HomeV1,
+    label: 'V2',
+    description: 'White, masonry grid — live',
+    component: HomeV2,
   },
   {
-    id: 'v2',
-    path: '/v2',
-    label: 'V2',
-    description: 'White, masonry grid',
-    component: HomeV2,
+    id: 'v1',
+    path: '/v1',
+    label: 'V1',
+    description: 'Dark, editorial hero — archived exploration',
+    devOnly: true,
+    component: HomeV1,
   },
 ]

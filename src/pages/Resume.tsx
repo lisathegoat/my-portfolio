@@ -1,15 +1,32 @@
 import NavV2 from '../components/v2/NavV2'
 import FooterV2 from '../components/v2/FooterV2'
+import { CONTACT_EMAIL, LINKEDIN_URL, about } from '../content'
 
-// Placeholder marker — anything not present in the source CV is flagged in the
-// accent colour so Lisa can spot and fill it. Never invent facts.
-function PH({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="text-[#e65f2e] font-mono text-[12px] uppercase tracking-[0.02em] print:text-[#b0480f]">
-      [{children}]
-    </span>
-  )
+// ─────────────────────────────────────────────────────────────────────────────
+// Persönliche Daten, die nicht im Repo stehen. Leere Felder werden schlicht
+// NICHT gerendert — die Seite ist damit jederzeit versandfertig, auch halb
+// ausgefüllt. Nichts hier wird erfunden: eintragen, was stimmt.
+// ─────────────────────────────────────────────────────────────────────────────
+const personal = {
+  phone: '', // TODO(Lisa): optional. Auf DE-Lebensläufen üblich, kein Muss.
+  portfolioUrl: '', // TODO(Lisa): eigene Domain, sobald sie steht (z. B. lisacollmer.de)
+  // TODO(Lisa): Niveaus selbst bestätigen, z. B. 'Deutsch (Muttersprache)', 'Englisch (fließend)'
+  languages: [] as string[],
 }
+
+const contactRow = [
+  CONTACT_EMAIL,
+  personal.phone,
+  LINKEDIN_URL,
+  personal.portfolioUrl,
+].filter(Boolean)
+
+// Skills kommen aus derselben Quelle wie die About-Seite, damit Lebenslauf und
+// Portfolio nicht auseinanderlaufen.
+const skillLine = about.skills
+  .filter((g) => g.category !== 'Context')
+  .map((g) => g.items.join(', '))
+  .join(' · ')
 
 type Entry = {
   period: string
@@ -20,30 +37,27 @@ type Entry = {
 }
 
 // Reverse-chronological, straight from lebenslauf_Lisa.docx — titles, dates,
-// companies and places are verbatim. Impact bullets are placeholders.
+// companies and places are verbatim.
+// TODO(Lisa): 1–3 Ergebnis-Bullets pro Rolle ergänzen (was gebaut, welche
+// Wirkung, welche Zahl). Werden für die PDF-Version ohnehin gebraucht.
 const experience: Entry[] = [
   {
     period: '10/2022 – heute',
     role: 'Head of Product Design',
     org: 'FYTA',
     place: 'Berlin',
-    bullets: [
-      <PH>1–3 Ergebnis-Bullets: was gebaut, welche Wirkung, welche Zahl (z. B. „Onboarding für 4 neue Sensortypen konzipiert und shipped")</PH>,
-    ],
   },
   {
     period: '08/2021 – 09/2022',
     role: 'Werkstudentin · Marketing',
     org: 'FYTA',
     place: 'Berlin',
-    bullets: [<PH>1–2 Bullets: Aufgaben/Ergebnis in dieser Rolle</PH>],
   },
   {
     period: '02/2020 – 07/2021',
     role: 'Designerin',
     org: 'Loveto',
     place: 'Berlin',
-    bullets: [<PH>1–2 Bullets: Projekte/Ergebnisse bei Loveto</PH>],
   },
   {
     period: '08/2018 – 04/2019',
@@ -56,7 +70,6 @@ const experience: Entry[] = [
     role: 'Designer · Festanstellung',
     org: 'Eichmeister Kreativagentur',
     place: 'München',
-    bullets: [<PH>optional: 1 Bullet zum Schwerpunkt der Agenturarbeit</PH>],
   },
 ]
 
@@ -79,7 +92,6 @@ const education: Entry[] = [
     role: 'M.A. Visuelle Kommunikation',
     org: 'HBK Saar',
     place: 'Saarbrücken',
-    bullets: [<PH>Nur 5 Monate im CV — abgeschlossen, abgebrochen oder Wechsel nach Potsdam? Bitte klarstellen oder Eintrag entfernen</PH>],
   },
   {
     period: '08/2013 – 12/2013',
@@ -155,10 +167,7 @@ export default function Resume() {
 
           {/* Contact row */}
           <div className="flex flex-wrap gap-x-6 gap-y-1 font-geist text-[14px] text-[#32404f]/70">
-            <span>lisa@fyta.de <PH>ggf. private E-Mail für Bewerbungen</PH></span>
-            <span><PH>Telefon</PH></span>
-            <span><PH>LinkedIn-URL</PH></span>
-            <span><PH>Portfolio-URL</PH></span>
+            {contactRow.map((item) => <span key={item}>{item}</span>)}
           </div>
         </header>
 
@@ -166,9 +175,13 @@ export default function Resume() {
         <section className="flex flex-col gap-4 pt-10">
           <SectionLabel>Profil</SectionLabel>
           <p className="font-geist text-[16px] leading-[1.7] text-[#32404f]/75">
-            Product Designer mit Hintergrund in Visueller Kommunikation und einem M.A. in
-            Interface Design. Aktuell bei FYTA, einem Berliner Sensor-Startup.{' '}
-            <PH>2–3 Sätze Profil in eigenen Worten: Spezialisierung, Arbeitsweise, wonach du suchst — hier faktisch ergänzen/überschreiben</PH>
+            Produktdesignerin mit Hintergrund in Visueller Kommunikation (B.A., Pforzheim)
+            und einem M.A. in Interface Design (FH Potsdam). Als Head of Product Design bei
+            FYTA, einem Berliner Sensor-Startup, habe ich ein gesamtes Sensor-Ökosystem
+            konzipiert und gestaltet: von der Systemlogik bis zum finalen UI. Meine Stärke
+            liegt dort, wo technische Komplexität und menschliche Nutzung in Einklang
+            gebracht werden müssen. Ich suche eine Produktdesign-Rolle, in der ich komplexe
+            Probleme von der Systemebene bis ins Detail gestalten kann.
           </p>
         </section>
 
@@ -195,7 +208,7 @@ export default function Resume() {
             {education.map((e, i) => <EntryRow key={i} e={e} />)}
           </div>
           <p className="font-geist text-[13px] text-[#32404f]/45 mt-1">
-            Abitur (musischer Zweig), München, 2011 <PH>auf Senior-Lebenslauf optional — behalten oder streichen?</PH>
+            Abitur (musischer Zweig), München, 2011
           </p>
         </section>
 
@@ -203,17 +216,19 @@ export default function Resume() {
         <section className="flex flex-col gap-4 pt-12">
           <SectionLabel>Skills & Tools</SectionLabel>
           <p className="font-geist text-[15px] leading-[1.7] text-[#32404f]/70">
-            <PH>Skills bestätigen/ergänzen — z. B. UI/UX Design, Design Systems, Interaction Design, Konzeption, Prototyping. Tools: Figma, o. Ä. Nur eintragen, was zutrifft</PH>
+            {skillLine}
           </p>
         </section>
 
-        {/* ── Languages ── */}
-        <section className="flex flex-col gap-4 pt-12">
-          <SectionLabel>Sprachen</SectionLabel>
-          <p className="font-geist text-[15px] leading-[1.7] text-[#32404f]/70">
-            <PH>Sprachen + Niveau eintragen, z. B. Deutsch (Muttersprache), Englisch (fließend)</PH>
-          </p>
-        </section>
+        {/* ── Languages — rendert erst, wenn personal.languages gefüllt ist ── */}
+        {personal.languages.length > 0 && (
+          <section className="flex flex-col gap-4 pt-12">
+            <SectionLabel>Sprachen</SectionLabel>
+            <p className="font-geist text-[15px] leading-[1.7] text-[#32404f]/70">
+              {personal.languages.join(' · ')}
+            </p>
+          </section>
+        )}
 
       </main>
 

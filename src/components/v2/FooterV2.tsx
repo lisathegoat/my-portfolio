@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { home } from '../../content'
+import { CONTACT_EMAIL } from '../../content'
 
 // Shared across every V2-styled page. See NavV2 for the same rationale.
 export default function FooterV2() {
@@ -10,14 +10,11 @@ export default function FooterV2() {
       </p>
       <div className="flex items-center gap-5 md:gap-8">
         <a
-          href={`mailto:${home.footer.email}`}
+          href={`mailto:${CONTACT_EMAIL}`}
           className="font-mono text-[13px] md:text-[15px] uppercase tracking-[0.02em] text-[#32404f]/60 hover:text-[#32404f] transition-colors"
         >
           Email
         </a>
-        <Link to="/" className="font-mono text-[13px] md:text-[15px] uppercase tracking-[0.02em] text-[#32404f]/60 hover:text-[#32404f] transition-colors">
-          Layout V1
-        </Link>
         <Link to="/about" className="font-mono text-[13px] md:text-[15px] uppercase tracking-[0.02em] text-[#32404f]/60 hover:text-[#32404f] transition-colors">
           About
         </Link>
