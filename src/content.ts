@@ -5,11 +5,10 @@
 // ─────────────────────────────────────────────────────────────────────────────
 export const CONTACT_EMAIL = 'lisacollmer@googlemail.com'
 
-// TODO(Lisa): eigene Profil-URL eintragen, Format https://www.linkedin.com/in/<name>
-// Nicht /feed/ — das ist der Startbildschirm und für andere nicht aufrufbar.
-// Vorher unter Profil → Öffentliches Profil und URL bearbeiten auf einen
-// sauberen Namen ohne Ziffern umstellen.
-export const LINKEDIN_URL = ''
+// TODO(Lisa): Vanity-URL aufräumen (Profil → Öffentliches Profil und URL
+// bearbeiten), dann hier nachziehen. Die Ziffernfolge ist automatisch vergeben
+// und steht später auf Lebenslauf und Portfolio.
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/lisa-collmer-79312315b/'
 
 export const nav = {
   projekte: 'Projekte',

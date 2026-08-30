@@ -33,8 +33,7 @@ Erledigt in dieser Session:
 Offen, brauche deine Daten:
 
 - [x] Private E-Mail eingetragen (`lisacollmer@googlemail.com`)
-- [ ] **LinkedIn-URL** → `LINKEDIN_URL` in `src/content.ts`. Gebraucht wird die
-      Profil-URL im Format `https://www.linkedin.com/in/<name>`, nicht `/feed/`
+- [x] LinkedIn-URL eingetragen (`LINKEDIN_URL` in `src/content.ts`)
 - [ ] **Sprachen** → `personal.languages` in `src/pages/Resume.tsx`
 - [ ] **Telefon** (optional) → `personal.phone` in `src/pages/Resume.tsx`
 - [ ] **Eigene Domain** kaufen, in Vercel unter Settings → Domains eintragen,
@@ -116,9 +115,14 @@ Reihenfolge: erst Profil, dann Easy Apply. Nicht umgekehrt.
 
 ### Profil
 
-- [ ] **Öffentliche URL aufräumen.** Profil → Öffentliches Profil und URL
-      bearbeiten → auf `linkedin.com/in/lisacollmer` o. ä. ändern. Die
-      automatisch vergebene URL mit Ziffern sieht auf dem Lebenslauf schlecht aus.
+- [ ] **Öffentliche URL aufräumen.** Aktuell:
+      `linkedin.com/in/lisa-collmer-79312315b`. Die Ziffernfolge ist automatisch
+      vergeben und steht später auf Lebenslauf, Portfolio-Footer und in jeder
+      Bewerbung. Profil öffnen → rechts oben **Öffentliches Profil und URL
+      bearbeiten** → Stift neben der URL → auf `lisacollmer` ändern (oder
+      `lisa-collmer`, falls vergeben) → speichern.
+      Danach `LINKEDIN_URL` in `src/content.ts` nachziehen.
+      LinkedIn leitet die alte URL weiter, es geht nichts kaputt.
 - [ ] **Profilsprache Englisch.** LinkedIn kann mehrere Profilsprachen führen.
       Wenn die Suche englischsprachig läuft, muss das englische Profil das
       Hauptprofil sein. Deutsch optional zusätzlich.
@@ -180,3 +184,38 @@ niedrig. Sinnvolle Aufteilung der 5 bis 8 Bewerbungen pro Woche:
 - Für die 5 bis 10 Firmen, die du wirklich willst: direkt über die Firmenseite
   bewerben und zusätzlich eine kurze Nachricht an die Design-Lead oder eine
   Designerin im Team. Das schlägt Easy Apply deutlich.
+
+### Offene Fragen an mich selbst
+
+Ohne diese Angaben lassen sich Headline, About-Text, Ergebnis-Bullets und die
+Head-zu-Senior-Positionierung nicht schreiben. Sie sind Tatsachenbehauptungen
+über dich, die im Gespräch geprüft werden, deshalb kommen sie von dir und nicht
+aus einer plausiblen Schätzung. Einmal beantworten, dann fließen sie in
+Lebenslauf, LinkedIn und Case Studies gleichzeitig.
+
+**Rolle bei FYTA**
+- [ ] Wie viele Menschen hast du geführt, und in welcher Disziplin?
+      Falls null: war "Head of" Titel für alleinige Design-Verantwortung?
+- [ ] Wie hoch war der Anteil eigener Design-Arbeit gegenüber Steuerung?
+- [ ] Was lag außer Design in deiner Verantwortung (Research, Strategie,
+      Zusammenarbeit mit Hardware oder Firmware, Roadmap)?
+
+**Zahlen** (drei bis fünf reichen, alles was du belegen kannst)
+- [ ] Support-Tickets zu Setup-Problemen vor und nach dem Launch
+- [ ] Anzahl unterstützter Sensor-Modelle vor und nach dem Umbau
+- [ ] App-Nutzerzahl, Downloads oder Store-Bewertung
+- [ ] Irgendeine Quote, die sich verändert hat (Setup-Abbrüche, Retouren,
+      Wiederkehr-Rate)
+
+**Frühere Stationen**
+- [ ] Loveto (2018 bis 2021): welche Art Projekte, welche Kunden, was ist dein
+      vorzeigbarer Anteil?
+- [ ] Eichmeister (2017 bis 2018): Schwerpunkt?
+- [ ] HBK Saar (5 Monate): abgebrochen, gewechselt oder abgeschlossen?
+
+**Suche**
+- [ ] Zielrollen: eher Produkt mit Hardware-Bezug, oder auch reines SaaS/B2B?
+- [ ] Orte: nur Berlin, deutschlandweit remote, europaweit remote?
+- [ ] Sprachniveau Englisch, wie du es auf dem Lebenslauf angeben würdest
+- [ ] Kündigungsfrist
+- [ ] Gehaltsvorstellung (wird bei Easy Apply direkt abgefragt)
