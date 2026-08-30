@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
-import CSMediaLightbox from '../components/case-study/CSMediaLightbox'
-import { caseStudies } from '../content'
+import Nav from '../../../components/Nav'
+import Footer from '../../../components/Footer'
+import CSMediaLightbox from '../../../components/case-study/CSMediaLightbox'
+import { caseStudies } from '../../../content'
 
 const cs = caseStudies.fyta
 const folder = cs.meta.imageFolder
@@ -138,7 +138,7 @@ export default function CaseStudyFyta() {
                 Ein skalierbares Onboarding-System für das neue FYTA-Ökosystem. Von einem Sensor auf viele.
               </h3>
               <p className="font-body text-[16px] leading-[1.7] text-light/60">
-                FYTA ist ein Berliner Startup, das Pflanzenpflege mit einem smarten Sensor und einer App verbindet, die datenbasierte Insights zur optimalen Pflege bieten. Die Sensoren messen Bodenfeuchtigkeit, Licht, Temperatur und Nährstoffe — und helfen dabei, jede Pflanze individuell zu versorgen.
+                FYTA ist ein Berliner Startup, das Pflanzenpflege mit einem smarten Sensor und einer App verbindet, die datenbasierte Insights zur optimalen Pflege bieten. Die Sensoren messen Bodenfeuchtigkeit, Licht, Temperatur und Nährstoffe und helfen dabei, jede Pflanze individuell zu versorgen.
               </p>
             </section>
 
@@ -155,7 +155,7 @@ export default function CaseStudyFyta() {
                 <div className="flex flex-col gap-3">
                   <h4 className="font-mono text-[14px] text-light font-normal mb-1">Überblick</h4>
                   <p className="font-body text-[16px] leading-[1.7] text-light/60">
-                    Die App kannte bis dahin genau eine Beziehung: ein Sensor, eine Pflanze. Mit der neuen Sensorfamilie wurde daraus ein Viele-zu-viele-System — einer von vielen Logik — aber mit eigenen Hardware-spezifischen Setups, eigenen Edge Cases. Als Head of Product Design habe ich das System von Grund auf neu gestaltet.
+                    Die App kannte bis dahin genau eine Beziehung: ein Sensor, eine Pflanze. Mit der neuen Sensorfamilie wurde daraus ein Viele-zu-viele-System (einer von vielen Logik), aber mit eigenen Hardware-spezifischen Setups, eigenen Edge Cases. Als Head of Product Design habe ich das System von Grund auf neu gestaltet.
                   </p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function CaseStudyFyta() {
             <section id="fragestellung" className="flex flex-col gap-4">
               <h4 className="font-mono text-[14px] text-light font-normal mb-1">Fragestellung</h4>
               <h2 className="font-title-italic text-[clamp(22px,3vw,32px)] tracking-[-0.02em] leading-[1.25] text-light">
-                Wie lässt sich ein Onboarding gestalten, das mit einem wachsenden Sensor-Ökosystem skaliert — ohne dass Nutzer:innen die Komplexität dahinter spüren?
+                Wie lässt sich ein Onboarding gestalten, das mit einem wachsenden Sensor-Ökosystem skaliert, ohne dass Nutzer:innen die Komplexität dahinter spüren?
               </h2>
               <div className="h-px w-full bg-white/10 mt-12 mb-4" />
             </section>
@@ -177,7 +177,7 @@ export default function CaseStudyFyta() {
                 Systemlogik vor Screens
               </h3>
               <p className="font-body text-[16px] leading-[1.7] text-light/60">
-                Das Onboarding musste nicht nur ein neues mentales Modell vermitteln, sondern gleichzeitig ein System abbilden, in dem Sensoren, Pflanzen, Substrate und Nutzungskontexte in unzähligen Kombinationen miteinander interagieren — jede davon mit eigenen Regeln, Abhängigkeiten und Fehlerzuständen.
+                Das Onboarding musste nicht nur ein neues mentales Modell vermitteln, sondern gleichzeitig ein System abbilden, in dem Sensoren, Pflanzen, Substrate und Nutzungskontexte in unzähligen Kombinationen miteinander interagieren, jede davon mit eigenen Regeln, Abhängigkeiten und Fehlerzuständen.
               </p>
               <p className="font-body text-[16px] leading-[1.7] text-light/60">
                 Bevor der erste Screen entworfen wurde, habe ich die Logik als Flowchart modelliert, um alle Abhängigkeiten und Edge Cases sichtbar zu machen.
@@ -199,7 +199,7 @@ export default function CaseStudyFyta() {
                 Ein System, das mitwächst
               </h3>
               <p className="font-body text-[16px] leading-[1.7] text-light/60">
-                Aus einem einzigen mentalen Modell entstanden vier eigenständige Onboarding-Flows — für Beam, Mini, Terra und Sphere — die trotz unterschiedlicher Sensorkonfigurationen derselben Informationsarchitektur und wiederkehrenden Interaktionsmustern folgen. Konsistente Statussprache, einheitliche Fehlerbehandlung und ein gemeinsames Navigationsgerüst sorgen dafür, dass Nutzer:innen sich beim zweiten Sensor bereits orientieren können, ohne den Flow neu erlernen zu müssen.
+                Aus einem einzigen mentalen Modell entstanden vier eigenständige Onboarding-Flows für Beam, Mini, Terra und Sphere, die trotz unterschiedlicher Sensorkonfigurationen derselben Informationsarchitektur und wiederkehrenden Interaktionsmustern folgen. Konsistente Statussprache, einheitliche Fehlerbehandlung und ein gemeinsames Navigationsgerüst sorgen dafür, dass Nutzer:innen sich beim zweiten Sensor bereits orientieren können, ohne den Flow neu erlernen zu müssen.
               </p>
 
               {/* Flows overview image */}
@@ -225,14 +225,14 @@ export default function CaseStudyFyta() {
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
-                      src={`${folder}casestudy-05.png`}
-                      alt="Connecting to Sphere — einheitliche Statussprache"
+                      src={`${folder}casestudy-05.mp4`}
+                      alt="Connecting to Sphere: einheitliche Statussprache"
                       className="w-full h-auto object-cover"
                     />
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
                     <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Alle Sensortypen folgen derselben Statussprache</h3>
-                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Die Statuslichter der Sensoren folgen einer einheitlichen Farbsprache: Blau pulsierend signalisiert den Kopplungsmodus, Orange ein laufendes Firmware-Update. Nutzer:innen müssen diese Zustände nicht erlernen — sie verinnerlichen sie, weil sie sensorübergreifend immer gleich kommuniziert werden.</p>
+                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Die Statuslichter der Sensoren folgen einer einheitlichen Farbsprache: Blau pulsierend signalisiert den Kopplungsmodus, Orange ein laufendes Firmware-Update. Nutzer:innen müssen diese Zustände nicht erlernen. Sie verinnerlichen sie, weil sie sensorübergreifend immer gleich kommuniziert werden.</p>
                   </div>
                 </div>
 
@@ -243,14 +243,14 @@ export default function CaseStudyFyta() {
                   </div>
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
-                      src={`${folder}casestudy-06.png`}
+                      src={`${folder}casestudy-06.mp4`}
                       alt="Kompatibilitätsprüfung und Konflikt-Dialog"
                       className="w-full h-auto object-cover"
                     />
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
                     <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Pflanzenkompatibilität durch Information abfangen</h3>
-                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Statt Inkompatibilitäten erst im Pflanzenprofil zu blockieren, greift das System früh ein — Nutzer:innen werden vorbereitet, nicht gestoppt. Frustration entsteht durch schlechte Vorbereitung, nicht durch zu viel Kontext.</p>
+                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Statt Inkompatibilitäten erst im Pflanzenprofil zu blockieren, greift das System früh ein. Nutzer:innen werden vorbereitet, nicht gestoppt. Frustration entsteht durch schlechte Vorbereitung, nicht durch zu viel Kontext.</p>
                   </div>
                 </div>
 
@@ -262,7 +262,7 @@ export default function CaseStudyFyta() {
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
                       src={`${folder}casestudy-07.png`}
-                      alt="Terra Platzierung — illustrative Instruktion"
+                      alt="Terra Platzierung: illustrative Instruktion"
                       className="w-full h-auto object-cover"
                     />
                   </div>
@@ -295,13 +295,13 @@ export default function CaseStudyFyta() {
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
                       src={`${folder}casestudy-09.png`}
-                      alt="My Devices — Sensorübersicht"
+                      alt="My Devices: Sensorübersicht"
                       className="w-full h-auto object-cover"
                     />
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
                     <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">My Devices</h3>
-                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Sensoren lassen sich jetzt unabhängig von Pflanzen anbinden. Mit „My Devices" entstand erstmals eine sensorzentrische Ebene in der App — Geräte, Status und letzter Sync auf einen Blick, losgelöst vom Pflanzenprofil.</p>
+                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Sensoren lassen sich jetzt unabhängig von Pflanzen anbinden. Mit „My Devices" entstand erstmals eine sensorzentrische Ebene in der App: Geräte, Status und letzter Sync auf einen Blick, losgelöst vom Pflanzenprofil.</p>
                   </div>
                 </div>
 
@@ -324,7 +324,7 @@ export default function CaseStudyFyta() {
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
                     <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Out of Sync / Sensor Cards</h3>
-                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Veraltete Daten werden nicht mehr isoliert pro Pflanze kommuniziert, sondern direkt an der Sensorkarte — mit den betroffenen Parametern sichtbar im Pflanzenprofil. So wird klar, dass das Problem beim Gerät liegt, nicht bei der Pflanze.</p>
+                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Veraltete Daten werden nicht mehr isoliert pro Pflanze kommuniziert, sondern direkt an der Sensorkarte, mit den betroffenen Parametern sichtbar im Pflanzenprofil. So wird klar, dass das Problem beim Gerät liegt, nicht bei der Pflanze.</p>
                   </div>
                 </div>
 
@@ -336,13 +336,13 @@ export default function CaseStudyFyta() {
                   <div className="relative w-full border border-white/10 overflow-hidden">
                     <CSMediaLightbox
                       src={`${folder}casestudy-11.png`}
-                      alt="Empty State — Sensor-Empfehlung"
+                      alt="Empty State: Sensor-Empfehlung"
                       className="w-full h-auto object-cover"
                     />
                   </div>
                   <div className="hidden md:flex flex-col h-fit">
                     <h3 className="font-title-italic text-[clamp(18px,2vw,24px)] tracking-[-0.01em] leading-[1.3] text-light mb-2">Empty States</h3>
-                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Empty States erklären den Mehrwert eines Sensors kontextbezogen — genau dann, wenn eine Pflanze ein Gerät vermisst, das sie noch nicht hat.</p>
+                    <p className="font-body text-[15px] text-light/50 leading-[1.6]">Empty States erklären den Mehrwert eines Sensors kontextbezogen, genau dann, wenn eine Pflanze ein Gerät vermisst, das sie noch nicht hat.</p>
                   </div>
                 </div>
 
@@ -356,7 +356,7 @@ export default function CaseStudyFyta() {
                 System vor Interface
               </h3>
               <p className="font-body text-[16px] leading-[1.7] text-light/60">
-                Das größte Learning war keine UI-Entscheidung. Onboarding bei hardware-nahen Produkten beginnt nicht am Interface — sondern am System dahinter. Die schwierigsten Fragen waren konzeptioneller Natur: Welche Komplexität darf ich zeigen — und welche muss das Design schlucken?
+                Das größte Learning war keine UI-Entscheidung. Onboarding bei hardware-nahen Produkten beginnt nicht am Interface, sondern am System dahinter. Die schwierigsten Fragen waren konzeptioneller Natur: Welche Komplexität darf ich zeigen, und welche muss das Design schlucken?
               </p>
             </section>
 

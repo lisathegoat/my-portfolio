@@ -1,8 +1,8 @@
 import { useState, useRef, useEffect, useLayoutEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
-import Nav from '../components/Nav'
-import CaseStudyCard from '../components/CaseStudyCard'
-import { home, caseStudies, about } from '../content'
+import Nav from '../../components/Nav'
+import CaseStudyCard from '../../components/CaseStudyCard'
+import { home, caseStudies, about } from '../../content'
 
 // ── Star SVG ─────────────────────────────────────────────────────────────────
 function StarSVG({ size = 20 }: { size?: number }) {
@@ -65,7 +65,7 @@ const projects = [
 ]
 
 // ── Page ─────────────────────────────────────────────────────────────────────
-export default function Home() {
+export default function HomeV1() {
   const [activeDropdown, setActiveDropdown] = useState<'p' | 'o' | null>(null)
   const [scrollY, setScrollY] = useState(0)
   const [mounted, setMounted] = useState(false)

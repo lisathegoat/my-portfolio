@@ -13,9 +13,9 @@ export default {
       },
       fontFamily: {
         title: ['"Times New Roman"', 'Times', 'serif'],
-        body: ['"Neue Montreal"', '"DM Sans"', 'system-ui', 'sans-serif'],
+        body: ['"Neue Montreal"', 'system-ui', 'sans-serif'],
         mono: ['"Geist Mono"', 'ui-monospace', 'monospace'],
-        v2: ['"GT America"', '"Neue Montreal"', '"DM Sans"', 'system-ui', 'sans-serif'],
+        v2: ['"GT America"', '"Neue Montreal"', 'system-ui', 'sans-serif'],
         geist: ['"Geist"', 'system-ui', 'sans-serif'],
         tiempos: ['"Tiempos Text"', 'Georgia', 'serif'],
       },

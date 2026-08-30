@@ -10,6 +10,7 @@ interface CSMediaLightboxProps {
 
 export default function CSMediaLightbox({ src, alt, className = '', style }: CSMediaLightboxProps) {
   const [open, setOpen] = useState(false)
+  const isVideo = /\.(mp4|webm|mov)$/i.test(src)
 
   const close = useCallback(() => setOpen(false), [])
 
@@ -28,13 +29,27 @@ export default function CSMediaLightbox({ src, alt, className = '', style }: CSM
 
   return (
     <>
-      <img
-        src={src}
-        alt={alt}
-        className={`cursor-zoom-in transition-opacity duration-200 hover:opacity-90 ${className}`}
-        style={style}
-        onClick={() => setOpen(true)}
-      />
+      {isVideo ? (
+        <video
+          src={src}
+          aria-label={alt}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={`cursor-zoom-in transition-opacity duration-200 hover:opacity-90 ${className}`}
+          style={style}
+          onClick={() => setOpen(true)}
+        />
+      ) : (
+        <img
+          src={src}
+          alt={alt}
+          className={`cursor-zoom-in transition-opacity duration-200 hover:opacity-90 ${className}`}
+          style={style}
+          onClick={() => setOpen(true)}
+        />
+      )}
 
       {open && (
         <div
@@ -48,12 +63,24 @@ export default function CSMediaLightbox({ src, alt, className = '', style }: CSM
           >
             &times;
           </button>
-          <img
-            src={src}
-            alt={alt}
-            className="max-w-[90vw] max-h-[90vh] object-contain rounded-panel"
-            onClick={(e) => e.stopPropagation()}
-          />
+          {isVideo ? (
+            <video
+              src={src}
+              aria-label={alt}
+              controls
+              autoPlay
+              loop
+              className="max-w-[90vw] max-h-[90vh] object-contain rounded-panel"
+              onClick={(e) => e.stopPropagation()}
+            />
+          ) : (
+            <img
+              src={src}
+              alt={alt}
+              className="max-w-[90vw] max-h-[90vh] object-contain rounded-panel"
+              onClick={(e) => e.stopPropagation()}
+            />
+          )}
         </div>
       )}
     </>

@@ -32,7 +32,7 @@ export const footer = {
 export const caseStudies = {
   fyta: {
     slug: '/projekte/fyta-sensor-onboarding',
-    title: 'FYTA – Neugestaltung der Sensoranbindung',
+    title: 'FYTA: Neugestaltung der Sensoranbindung',
     shortTitle: 'FYTA Sensoranbindung',
     description: 'Von einem Einzelprodukt zu einem skalierbaren Sensor-Ökosystem — Systemlogik, Edge Cases und ein Onboarding, das mit dem Produkt mitwächst.',
     tags: ['UI/UX', 'Design System', 'Konzeption'],
@@ -179,7 +179,7 @@ export const caseStudies = {
 
   probe: {
     slug: '/projekte/soil-probe-diagnostic',
-    title: 'FYTA – Soil Probe Diagnostic',
+    title: 'FYTA: Soil Probe Diagnostic',
     shortTitle: 'Probe Diagnostic',
     description: 'Defekte Bodenstäbe liefern plausible aber falsche Messwerte. Ein algorithmisch getriggerter Self-Service-Flow, der Nutzer:innen das Problem selbst lösen lässt — ohne Supportanfrage.',
     tags: ['UI/UX', 'System Design', 'Self-Service UX', 'Hardware'],
@@ -192,10 +192,10 @@ export const caseStudies = {
     intro: 'Zeigt ein Beam-Sensor über Tage fehlerhafte Feuchtigkeitswerte, können Nutzer:innen nicht einordnen, ob der Sensor oder die Bodenstäbe das Problem sind. Jede Anomalie landete als manuelle Supportanfrage.\n\nIch habe zuerst validiert, ob Messmuster eine automatische Defekterkennung überhaupt ermöglichen. Auf dieser Grundlage entstand ein algorithmisch getriggerter Self-Service-Flow, der Nutzer:innen das Problem selbst lösen lässt.',
     challenge: {
       heading: 'Falsche Daten, die sich richtig anfühlen',
-      body: 'Defekte Bodenstäbe erzeugen keine Fehlermeldungen — sondern plausible, aber falsche Messwerte. Nutzer:innen merkten, dass etwas nicht stimmte, konnten aber nicht einordnen, woran es lag.',
+      body: 'Defekte Bodenstäbe erzeugen keine Fehlermeldungen, sondern plausible, aber falsche Messwerte. Nutzer:innen merkten, dass etwas nicht stimmte, konnten aber nicht einordnen, woran es lag.',
       callout: 'Das Ergebnis war immer dasselbe: eine Supportanfrage, auf die unser Team jedes Mal manuell eine individuelle Schritt-für-Schritt-Anleitung schrieb.',
     },
-    hmw: 'Wie lässt sich ein Defekt erkennen, der keine Fehlermeldung erzeugt — und Nutzer:innen ermöglichen, ihn selbst zu lösen?',
+    hmw: 'Wie lässt sich ein Defekt erkennen, der keine Fehlermeldung erzeugt, und Nutzer:innen ermöglichen, ihn selbst zu lösen?',
     decisions: [
       {
         heading: 'Zuerst fragen, ob das Problem algorithmisch lösbar ist',
@@ -203,22 +203,22 @@ export const caseStudies = {
       },
       {
         heading: 'Den Flow dort starten, wo das Problem sichtbar wird',
-        body: 'Der Algorithmus triggert einen kontextuellen Toast direkt im Feuchtigkeits-Detailscreen — genau dort, wo Nutzer:innen die auffälligen Werte bereits sehen. Das Testergebnis wird backend-seitig durch den Live-Messwert verifiziert, nicht durch Selbstauskunft.',
+        body: 'Der Algorithmus triggert einen kontextuellen Toast direkt im Feuchtigkeits-Detailscreen, genau dort, wo Nutzer:innen die auffälligen Werte bereits sehen. Das Testergebnis wird backend-seitig durch den Live-Messwert verifiziert, nicht durch Selbstauskunft.',
       },
       {
         heading: 'Mein Modell, nicht das der Nutzer:innen',
-        body: 'Die erste Iteration bezeichnete die Stäbe als „der linke" und „der rechte Bodenstab". Beim Testen zeigte sich: Dieses Modell existierte nur in meinem Kopf. Die Stäbe tragen keine Beschriftung — die Benennung implizierte eine Unterscheidung, die physisch nicht existiert. Die Lösung: auf Naming verzichten.',
+        body: 'Die erste Iteration bezeichnete die Stäbe als „der linke" und „der rechte Bodenstab". Beim Testen zeigte sich: Dieses Modell existierte nur in meinem Kopf. Die Stäbe tragen keine Beschriftung, die Benennung implizierte eine Unterscheidung, die physisch nicht existiert. Die Lösung: auf Naming verzichten.',
       },
       {
         heading: 'Visuell instruieren statt textuell',
-        body: 'Beide Stäbe lassen sich nur mit dem linken Sockel testen — zunächst unintuitiv. Im Fließtext stand der Hinweis, aber Nutzer:innen überlasen ihn. Wer den Screen überflog, setzte den Stab in den falschen Sockel. Die Lösung: ein gehighlighteter Info-Toast plus ein GIF, das den physischen Ablauf zeigt. Nutzer:innen müssen nichts lesen.',
+        body: 'Beide Stäbe lassen sich nur mit dem linken Sockel testen, zunächst unintuitiv. Im Fließtext stand der Hinweis, aber Nutzer:innen überlasen ihn. Wer den Screen überflog, setzte den Stab in den falschen Sockel. Die Lösung: ein gehighlighteter Info-Toast plus ein GIF, das den physischen Ablauf zeigt. Nutzer:innen müssen nichts lesen.',
       },
       {
         heading: 'Abschließen mit Kontrolle',
-        body: 'Das vorausgefüllte Support-Formular enthält Gerätedaten, Testergebnis und die Stablänge aus den Nutzerdaten. Die Länge ist editierbar — wir brauchen sie, um den richtigen Ersatz zu versenden. Ein expliziter Hinweis fordert zur Prüfung auf, bevor abgeschickt wird. Das System schlägt vor, der Nutzer bestätigt.',
+        body: 'Das vorausgefüllte Support-Formular enthält Gerätedaten, Testergebnis und die Stablänge aus den Nutzerdaten. Die Länge ist editierbar: Wir brauchen sie, um den richtigen Ersatz zu versenden. Ein expliziter Hinweis fordert zur Prüfung auf, bevor abgeschickt wird. Das System schlägt vor, der Nutzer bestätigt.',
       },
     ],
-    reflection: 'Der wichtigste Schritt war der erste: nicht mit Screens anfangen, sondern mit der Frage, ob das Problem überhaupt algorithmisch greifbar ist. Ohne diese Validierung wäre der Flow ein manueller Workaround geblieben — mit besserem UI, aber demselben Modell.',
+    reflection: 'Der wichtigste Schritt war der erste: nicht mit Screens anfangen, sondern mit der Frage, ob das Problem überhaupt algorithmisch greifbar ist. Ohne diese Validierung wäre der Flow ein manueller Workaround geblieben, mit besserem UI, aber demselben Modell.',
   },
 
   thesis: {
@@ -234,11 +234,11 @@ export const caseStudies = {
       cover: 'cover.png',
       coverVideo: 'cover_Animation.mp4',
     },
-    intro: 'Lesen und Schreiben sind grundlegende Kompetenzen für Bildung und gesellschaftliche Teilhabe. Kinder mit Lese- und Rechtschreibschwierigkeiten stoßen im Schulalltag jedoch häufig auf Barrieren — fachlich, emotional und sozial.\n\nZiel meiner Masterarbeit war die Konzeption und Gestaltung einer digitalen Lernanwendung, die inklusives Lernen fördert, Lehrkräfte entlastet und Schüler:innen individuell beim Schriftspracherwerb unterstützt.',
+    intro: 'Lesen und Schreiben sind grundlegende Kompetenzen für Bildung und gesellschaftliche Teilhabe. Kinder mit Lese- und Rechtschreibschwierigkeiten stoßen im Schulalltag jedoch häufig auf Barrieren: fachlich, emotional und sozial.\n\nZiel meiner Masterarbeit war die Konzeption und Gestaltung einer digitalen Lernanwendung, die inklusives Lernen fördert, Lehrkräfte entlastet und Schüler:innen individuell beim Schriftspracherwerb unterstützt.',
     research: {
       body: 'Mein ursprüngliches Ziel war es Kindern mit einer Lese-Rechtschreibschwäche die Teilnahme am Unterricht zu erleichtern. Nach Interviews mit Expert:innen aus Lerntherapie, Unterricht und Diagnostik musste ich jedoch feststellen, dass explizite Hilfestellungen für Kinder mit LRS im Unterricht oft nicht unterstützend wirken, sondern zusätzliche Stigmatisierung erzeugen.\n\nDiese Einsicht führte zu einem grundlegenden Umdenken in meiner Arbeit.',
     },
-    definition: 'Wie lässt sich eine App entwickeln, die alle Schüler:innen unterstützt — ohne Auszugrenzen — und gleichzeitig praxisnah in den Unterricht integrierbar ist?',
+    definition: 'Wie lässt sich eine App entwickeln, die alle Schüler:innen unterstützt, ohne auszugrenzen, und gleichzeitig praxisnah in den Unterricht integrierbar ist?',
     design: {
       heading: 'Hauptfunktionen',
       intro: 'Die Funktionen der App sind darauf ausgelegt, selbstständiges Lernen zu ermöglichen, die Selbstwirksamkeit der Schüler:innen zu stärken und Lehrkräfte durch adaptive Inhalte und automatisiertes Feedback zu entlasten.',
@@ -253,7 +253,7 @@ export const caseStudies = {
     designSystem: 'Beim Erstellen des UIs war es vor allem wichtig kindgerecht zu gestalten, einfache Sprache einzusetzen und wo es möglich ist auf Worte zu verzichten mit eindeutigen Icons zu arbeiten.',
     validation: {
       heading: 'Nutzer-Feedback',
-      body: 'Während meiner Arbeit stand ich im engen Austausch mit Interviewpartner:innen aus der Lerntherapie, Eltern und einer Lehrerin, was einen kontinuierlichen Feedback-Loop über den gesamten Prozess ermöglichte. Zum Abschluss wurde die App mit einem Kind aus der Lerntherapie getestet. Die Resonanz war durchweg positiv — sowohl aus der Schule als auch aus der Therapie wurde der reale Einsatz als vorstellbar bewertet.',
+      body: 'Während meiner Arbeit stand ich im engen Austausch mit Interviewpartner:innen aus der Lerntherapie, Eltern und einer Lehrerin, was einen kontinuierlichen Feedback-Loop über den gesamten Prozess ermöglichte. Zum Abschluss wurde die App mit einem Kind aus der Lerntherapie getestet. Die Resonanz war durchweg positiv, sowohl aus der Schule als auch aus der Therapie wurde der reale Einsatz als vorstellbar bewertet.',
     },
     learning: {
       heading: 'Design als Haltung',
@@ -261,9 +261,55 @@ export const caseStudies = {
     },
   },
 
+  dataviz: {
+    slug: '/projekte/fyta-datenvisualisierung',
+    title: 'FYTA: Sensordaten verständlich visualisieren',
+    shortTitle: 'Datenvisualisierung',
+    description: 'Fünf Parameter neu gestaltet: Wie ich Sensordaten so kontextualisiere, dass Nutzer:innen verstehen, warum ihre Pflanze genau das braucht.',
+    tags: ['UI/UX', 'Data Visualization', 'Design System'],
+    meta: {
+      role: 'Head of Product Design',
+      status: 'Shipped',
+      imageFolder: '/images/dataVis/',
+      cover: 'cover.png',
+      coverVideo: 'cover.mp4',
+    },
+    intro: 'FYTA verbindet Pflanzenpflege mit Sensordaten aus Boden, Licht und Umgebung. Aber die App zeigte Messwerte ohne Kontext: Nutzer:innen sahen Graphen ohne zu verstehen, was die Zahlen für ihre Pflanze bedeuten. Support-Anfragen häuften sich. Ich neugestaltete alle fünf Parameter — von der Hierarchie bis zur Empfehlung — gemeinsam mit Designpraktikantin Alana Wu.',
+    research: {
+      intro: 'Aus den gesammelten Insights aus Nutzerfeedback sowie Nutzer-Interviews trieben drei Probleme das Redesign an:',
+      problems: [
+        { title: 'Was bedeutet das für meine Pflanze?', desc: 'Fachbegriffe (DLI, Salinity) bedeuten vielen Nutzer:innen nichts. Der Messwert blieb kontextlos — und führte im schlechtesten Fall zu falscher Pflege.' },
+        { title: 'Ich dachte, grün bedeutet gut.', desc: 'Schwellenwerte ohne Erklärung erzeugten falsches Verhalten. Nutzer:innen versuchten, Bodenfeuchte dauerhaft im grünen Bereich zu halten, dabei brauchen Pflanzen Trockenphasen für Wurzelsauerstoff.' },
+        { title: 'Ich weiß nicht, ob die App gerade funktioniert.', desc: 'Verbindungsprobleme wurden zu spät und ohne Handlungsoption kommuniziert. Nutzer:innen sahen erst unterhalb des Graphen, dass keine Daten vorlagen — und hatten keinen nächsten Schritt.' },
+      ],
+    },
+    definition: 'Wie visualisiere ich Sensordaten so, dass Nutzer:innen nicht nur sehen, ob ein Wert gut oder schlecht ist — sondern verstehen, warum ihre Pflanze das gerade braucht?',
+    design: {
+      heading: 'Fünf Parameter neu strukturiert',
+      intro: 'Gemeinsam mit unserer Design-Praktikantin Alana Wu habe ich alle fünf Parameter neu gestaltet — von der Informationshierarchie bis zur Pflegeempfehlung. Entstanden sind fünf neue Datenvisualisierungen, die Messwerte kontextualisieren, Pflegeempfehlungen priorisieren, historische Daten zugänglich machen und Nutzer:innen erstmals genau sagen, was sie als nächstes tun sollen.',
+      problems: [
+        { title: 'Handlungsempfehlung, wenn nötig', desc: 'Nutzer:innen sehen zuerst einen Status — ob sie jetzt etwas tun sollen oder nicht. Keine Action ≠ schlechte Nachricht. Oft ist der Parameter einfach im optimalen Bereich. Darunter dann Graph und Analyse als Erklärung. Vorher war es umgekehrt: Daten zuerst, Bedeutung unklar.', video: '04_Care_Actions.mp4' },
+        { title: 'Analysekacheln + Insights kontextualisieren parallel', desc: 'Zwei separate Elemente lösen das Kontextproblem: Analysekacheln zeigen konkret, wann zuletzt und als nächstes gehandelt werden muss. Insight-Kacheln übersetzen Muster in Warnung — etwa vor zu langen Trockenphasen. Sie warnen vor unsichtbaren Problemen, die Grenzwerte allein nicht zeigen.', video: '05_Insights.mp4' },
+        { title: 'Klare Statuskommunikation für alle Sensorphasen', desc: 'Neu verbundene Sensoren brauchen bis zu 24 Stunden für erste Analysedaten. Das ist keine Verbindungsstörung — Pflanzendaten stützen sich auf Langzeitanalyse. Eine Kachel erklärt das und verlinkt auf weitere Informationen.\n\nBei Verbindungsverlust: Ein Toast oben warnt den Nutzer sofort. Er bietet einen Button zum Datenabruf + klare Anweisung: „Halte dein Telefon näher an den Sensor."', video: '06_No_data_Jet.mp4' },
+      ],
+      ecGraph: {
+        heading: 'EC Graph',
+        body: 'Nährstoffe ließen sich nicht sinnvoll als Liniengraph darstellen. Stattdessen entstand eine Zweiteilung: Der EC-Graph zeigt den gemessenen Salzgehalt im Substrat. Der Nutri-Graph darüber übersetzt diesen Wert gemeinsam mit Nutzereingaben — wie dem letzten Düngezeitpunkt — in eine Kalenderansicht, die anzeigt, wann das nächste Düngen oder Umtopfen fällig ist. Da EC-Messungen technisch komplex sind und allein noch keine zuverlässige Grundlage bieten, war die Kombination aus Sensordaten und Nutzereingabe ein bewusster Workaround für mehr Verlässlichkeit. Das ist technisch verlässlicher und braucht weniger Erklärung — die mentale Barriere sinkt.',
+      },
+    },
+    validation: {
+      heading: 'Herausforderung: Komplexität invisible machen',
+      body: 'Pflanzendaten sind extrem komplex: fünf Grenzwertzustände, saisonale Verschiebungen (Dormanz), nicht-lineare Parameter (Temperatur-Schocks statt Durchschnitte). Das hatten Nutzer:innen nie gesehen.\n\nDie Aufgabe: Diese komplexen Daten in verständliche Informationen übersetzen und gleichzeitig in Handlungsempfehlungen kodieren. Nicht alle Daten verdienen Sichtbarkeit. Die entscheidende Frage war: Welche Information braucht der Nutzer genau jetzt?',
+    },
+    learning: {
+      heading: 'Die größte Herausforderung war Informationshierarchie',
+      body: 'Bei hardware-nahen Apps ist die größte Gestaltungsaufgabe nicht, Daten schön zu machen — sondern Systemlogik so zu strukturieren, dass die richtige Information zur richtigen Zeit ankommt. Das UI musste Komplexität bewältigen, ohne zu überlasten.',
+    },
+  },
+
   scrollytelling: {
     slug: 'https://infovis.fh-potsdam.de/femscroll/daten/',
-    title: 'Scrollytelling — Daten der Intersektionalität',
+    title: 'Scrollytelling: Daten der Intersektionalität',
     shortTitle: 'Scrollytelling',
     description: 'Datenvisualisierung als Scrollytelling-Erlebnis — intersektionale Perspektiven auf gesellschaftliche Daten, interaktiv erzählt.',
     tags: ['Data Visualization', 'Scrollytelling', 'Webdesign'],
@@ -292,6 +338,8 @@ export const caseStudies = {
 
 export const about = {
   intro: 'Gutes Design fällt nicht auf — es funktioniert einfach.',
+  bioShort:
+    'Ich bin Produktdesignerin in Berlin. Nach meinem B.A. in Visueller Kommunikation in Pforzheim und meinem M.A. in Interface Design an der FH Potsdam habe ich in verschiedenen Design-Agenturen und Studios gearbeitet, bevor ich als Head of Product Design zu FYTA gewechselt bin.',
   bio: [
     'Diese Überzeugung treibt mich an: Komplexität so zu durchdenken und zu strukturieren, dass sie für Nutzer:innen unsichtbar wird.',
     'Ich bin Produktdesignerin in Berlin. Nach meinem B.A. in Visueller Kommunikation in Pforzheim und meinem M.A. in Interface Design an der FH Potsdam habe ich in verschiedenen Design-Agenturen und Studios gearbeitet, bevor ich als Head of Product Design zu FYTA gewechselt bin — einem Berliner Startup, das Pflanzenpflege mit sensorbasierter Technologie verbindet. Dort habe ich ein gesamtes Sensor-Ökosystem konzipiert und gestaltet: von der Systemlogik bis zum finalen UI.',

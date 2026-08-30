@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import Nav from '../components/Nav'
-import Footer from '../components/Footer'
-import CSMediaLightbox from '../components/case-study/CSMediaLightbox'
-import { caseStudies } from '../content'
+import Nav from '../../../components/Nav'
+import Footer from '../../../components/Footer'
+import CSMediaLightbox from '../../../components/case-study/CSMediaLightbox'
+import { caseStudies } from '../../../content'
 
 const cs = caseStudies.probe
 const folder = cs.meta.imageFolder

@@ -30,13 +30,17 @@ export default function Footer() {
           >
             Design System
           </Link>
-          <span className="font-body text-body-sm text-grey/40 hidden md:block">·</span>
-          <Link
-            to="/v2"
-            className="font-body text-body-sm text-grey/40 hover:text-grey transition-colors"
-          >
-            Layout V2
-          </Link>
+          {import.meta.env.DEV && (
+            <>
+              <span className="font-body text-body-sm text-grey/40 hidden md:block">·</span>
+              <Link
+                to="/lab"
+                className="font-body text-body-sm text-grey/40 hover:text-grey transition-colors"
+              >
+                Lab
+              </Link>
+            </>
+          )}
         </div>
         <span className="font-body text-body-sm text-grey/40">{footer.copyright}</span>
       </div>

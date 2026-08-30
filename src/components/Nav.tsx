@@ -1,29 +1,33 @@
 import { Link, useLocation } from 'react-router-dom'
-import { nav } from '../content'
+
+const tabs = [
+  { label: 'Work', to: '/' },
+  { label: 'About', to: '/about' },
+  { label: 'Resume', to: '/resume' },
+]
 
 export default function Nav() {
   const { pathname } = useLocation()
 
+  const isActive = (to: string) =>
+    to === '/' ? pathname === '/' : pathname.startsWith(to)
+
   return (
-    <header className="w-full px-8 pt-4 pb-0">
-      {/* Exact Figma spec: h-[68px] container, px-4 py-2, items p-[18px] */}
-      <nav className="flex h-[68px] items-center justify-between px-4 py-2">
-        <Link
-          to="/"
-          className={`font-body text-body-md leading-[1.3] px-[18px] py-[18px] transition-colors whitespace-nowrap ${
-            pathname === '/' ? 'text-light underline decoration-1 underline-offset-4' : 'text-light hover:underline hover:underline-offset-4 hover:decoration-1'
-          }`}
-        >
-          {nav.projekte}
-        </Link>
-        <Link
-          to="/about"
-          className={`font-body text-body-md leading-[1.3] px-[18px] py-[18px] transition-colors whitespace-nowrap ${
-            pathname === '/about' ? 'text-light underline decoration-1 underline-offset-4' : 'text-grey hover:text-light'
-          }`}
-        >
-          {nav.about}
-        </Link>
+    <header className="w-full flex justify-end px-8 py-6">
+      <nav className="flex items-center gap-6">
+        {tabs.map((tab) => (
+          <Link
+            key={tab.to}
+            to={tab.to}
+            className={`font-body text-[14px] leading-[1.3] transition-colors whitespace-nowrap ${
+              isActive(tab.to)
+                ? 'text-light'
+                : 'text-light/40 hover:text-light'
+            }`}
+          >
+            {tab.label}
+          </Link>
+        ))}
       </nav>
     </header>
   )
