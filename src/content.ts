@@ -1,11 +1,15 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// Contact — single source of truth.
-// Bewerbungen laufen NICHT über die Firmen-Adresse: lisa@fyta.de gehört FYTA,
-// ist für den Arbeitgeber sichtbar und stirbt mit dem Jobwechsel.
-// TODO(Lisa): private Adresse hier eintragen, dann ist sie überall ersetzt.
+// Contact — single source of truth für jeden mailto und Profil-Link.
+// Bewerbungen laufen bewusst nicht über lisa@fyta.de: die Adresse gehört FYTA,
+// ist für den Arbeitgeber einsehbar und stirbt mit dem Jobwechsel.
 // ─────────────────────────────────────────────────────────────────────────────
-export const CONTACT_EMAIL = 'lisa@fyta.de'
-export const LINKEDIN_URL = '' // TODO(Lisa): volle LinkedIn-URL eintragen
+export const CONTACT_EMAIL = 'lisacollmer@googlemail.com'
+
+// TODO(Lisa): eigene Profil-URL eintragen, Format https://www.linkedin.com/in/<name>
+// Nicht /feed/ — das ist der Startbildschirm und für andere nicht aufrufbar.
+// Vorher unter Profil → Öffentliches Profil und URL bearbeiten auf einen
+// sauberen Namen ohne Ziffern umstellen.
+export const LINKEDIN_URL = ''
 
 export const nav = {
   projekte: 'Projekte',

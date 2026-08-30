@@ -32,9 +32,9 @@ Erledigt in dieser Session:
 
 Offen, brauche deine Daten:
 
-- [ ] **Private E-Mail eintragen** → `CONTACT_EMAIL` in `src/content.ts`.
-      Aktuell steht dort noch `lisa@fyta.de`. Eine Zeile, ersetzt sie überall.
-- [ ] **LinkedIn-URL** → `LINKEDIN_URL` in `src/content.ts`
+- [x] Private E-Mail eingetragen (`lisacollmer@googlemail.com`)
+- [ ] **LinkedIn-URL** → `LINKEDIN_URL` in `src/content.ts`. Gebraucht wird die
+      Profil-URL im Format `https://www.linkedin.com/in/<name>`, nicht `/feed/`
 - [ ] **Sprachen** → `personal.languages` in `src/pages/Resume.tsx`
 - [ ] **Telefon** (optional) → `personal.phone` in `src/pages/Resume.tsx`
 - [ ] **Eigene Domain** kaufen, in Vercel unter Settings → Domains eintragen,
@@ -67,9 +67,7 @@ Sprachumschalter nur, wenn er nebenbei abfällt. Sonst Englisch only.
 - [ ] **Ergebnis-Bullets** pro Rolle in `Resume.tsx` (1 bis 3 je Station)
 - [ ] **PDF-Lebenslauf, eine Seite.** `/resume` → Button "Download PDF".
       Vorher prüfen, ob der Umbruch auf einer Seite landet.
-- [ ] **LinkedIn:** Headline, About-Text (gleiche Positionierung wie die
-      About-Seite), FYTA-Rolle mit denselben Bullets, Portfolio-Link,
-      "Open to work" auf Recruiter-only
+- [ ] **LinkedIn** — eigener Abschnitt unten
 - [ ] **Anschreiben-Template**, ein Absatz, anpassbar
 
 **Positionierung, überall gleich:** Du bist Head of Product Design und bewirbst
@@ -105,3 +103,80 @@ nichts:
 
 Figma-Prototyp-Links laden langsam, brechen auf Mobil und lassen sich nicht an
 Bewerbungsformulare anhängen. Die Website leistet dasselbe besser.
+
+---
+
+## LinkedIn
+
+Ja, gehört zwingend vor die erste Bewerbung. Zwei Gründe: Recruiter prüfen das
+Profil, bevor sie antworten, und LinkedIn ist zusätzlich ein Eingangskanal.
+Ein halbes Profil kostet Rückläufe, die du nie zu sehen bekommst.
+
+Reihenfolge: erst Profil, dann Easy Apply. Nicht umgekehrt.
+
+### Profil
+
+- [ ] **Öffentliche URL aufräumen.** Profil → Öffentliches Profil und URL
+      bearbeiten → auf `linkedin.com/in/lisacollmer` o. ä. ändern. Die
+      automatisch vergebene URL mit Ziffern sieht auf dem Lebenslauf schlecht aus.
+- [ ] **Profilsprache Englisch.** LinkedIn kann mehrere Profilsprachen führen.
+      Wenn die Suche englischsprachig läuft, muss das englische Profil das
+      Hauptprofil sein. Deutsch optional zusätzlich.
+- [ ] **Headline.** Der wichtigste Suchtreffer-Faktor im Profil. Wenn dort nur
+      "Head of Product Design" steht, tauchst du bei Recruiter-Suchen nach
+      "Product Designer" oder "Senior Product Designer" schlechter auf. Der
+      gesuchte Begriff muss wörtlich vorkommen. Grobes Muster:
+      `Senior Product Designer · Design Systems & complex product logic · Berlin`
+- [ ] **Standort** auf Berlin, plus die Regionen, in denen du suchst.
+- [ ] **About-Text.** Nur die ersten zwei Zeilen sind sichtbar, bevor
+      "mehr anzeigen" kommt. Das Wichtigste nach vorn. Inhaltlich dieselbe
+      Positionierung wie die About-Seite, nicht neu erfinden.
+- [ ] **Berufserfahrung.** Dieselben Ergebnis-Bullets wie im Lebenslauf.
+      Konsistenz zwischen CV, Portfolio und LinkedIn wird geprüft.
+- [ ] **Skills.** LinkedIn Recruiter filtert hart über dieses Feld, deshalb ist
+      es kein Deko-Abschnitt. Mindestens: Product Design, UX Design, UI Design,
+      Design Systems, Interaction Design, Prototyping, User Research, Figma.
+      Die drei angepinnten Skills zuerst.
+- [ ] **Featured / Im Fokus.** Portfolio-Link und ein bis zwei Case Studies
+      anpinnen. Das ist der einzige Ort auf LinkedIn, der wie ein Portfolio wirkt.
+- [ ] **Banner.** Freie Fläche. Ein Arbeitsvisual plus Portfolio-URL.
+- [ ] **Open to Work auf "nur Recruiter".** Der grüne Rahmen auf dem Foto ist
+      für alle sichtbar, also aus. Die Recruiter-Einstellung setzt dich in den
+      Open-to-Work-Filter von LinkedIn Recruiter, ein großer Eingangskanal.
+      Hinweis: nicht garantiert dicht gegenüber dem eigenen Arbeitgeber,
+      aber die deutlich bessere von zwei Optionen.
+- [ ] **Positionierung Head → Senior.** Dieselben zwei Lesarten wie beim
+      Lebenslauf aktiv schließen: Teamgröße nennen, Hands-on-Anteil deutlich machen.
+
+### Easy Apply
+
+Was es ist: Stellen mit blauem Button "Easy Apply" (Einfach bewerben) werden
+direkt auf LinkedIn eingereicht. Stellen mit "Apply" (Bewerben) leiten in das
+Bewerbungssystem der Firma weiter, mit eigenem Formular und meist Account.
+
+Was Easy Apply verschickt: dein Profil, einen hochgeladenen Lebenslauf als PDF
+und die Antworten auf die Screening-Fragen der Firma. Anschreiben meist nicht,
+gelegentlich als optionales Feld.
+
+Einmalig vorbereiten:
+
+- [ ] Profil fertig (Abschnitt oben)
+- [ ] PDF-Lebenslauf bereit. `/resume` → Button "Download PDF"
+- [ ] Unter Jobs → Einstellungen für Bewerbungen den Lebenslauf hochladen.
+      LinkedIn speichert bis zu vier Versionen, du wählst pro Bewerbung eine aus.
+- [ ] Telefonnummer hinterlegen, die wird bei fast jedem Easy Apply abgefragt
+- [ ] Antworten auf die Standardfragen einmal festlegen: Arbeitserlaubnis,
+      Gehaltsvorstellung, Kündigungsfrist, Umzugsbereitschaft
+
+Ablauf pro Stelle: Jobs → Suche → Filter "Einfach bewerben" → Stelle öffnen →
+Button klicken → Lebenslauf auswählen → Fragen beantworten → absenden.
+Zwei bis drei Minuten. Unter Jobs → Meine Jobs → Beworben siehst du alles wieder.
+
+**Einschätzung:** Easy Apply ist für dich billig und deshalb für alle anderen
+auch. Auf Senior-Stellen kommen entsprechend viele Bewerbungen an, die Quote ist
+niedrig. Sinnvolle Aufteilung der 5 bis 8 Bewerbungen pro Woche:
+
+- Easy Apply als Mengenkanal, schnell und breit
+- Für die 5 bis 10 Firmen, die du wirklich willst: direkt über die Firmenseite
+  bewerben und zusätzlich eine kurze Nachricht an die Design-Lead oder eine
+  Designerin im Team. Das schlägt Easy Apply deutlich.
