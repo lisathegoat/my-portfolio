@@ -8,11 +8,11 @@ import { CONTACT_EMAIL, LINKEDIN_URL, about } from '../content'
 // ausgefüllt. Nichts hier wird erfunden: eintragen, was stimmt.
 // ─────────────────────────────────────────────────────────────────────────────
 const personal = {
-  phone: '', // TODO(Lisa): optional. Auf DE-Lebensläufen üblich, kein Muss.
-  portfolioUrl: '', // TODO(Lisa): eigene Domain, sobald sie steht (z. B. lisacollmer.de)
-  // "Verhandlungssicher" abgeleitet aus: Arbeitssprache bei FYTA ist Englisch.
-  // TODO(Lisa): bestätigen oder auf "fließend" zurückstufen.
-  languages: ['Deutsch (Muttersprache)', 'Englisch (verhandlungssicher)'],
+  phone: '+49 170 4818651',
+  // TODO(Lisa): eintragen, sobald die Domain steht. koelmar.de ist nicht
+  // erreichbar (keine Nameserver), lisacollmer.de sieht frei aus.
+  portfolioUrl: '',
+  languages: ['Deutsch (Muttersprache)', 'Englisch (fließend)'],
 }
 
 const contactRow = [

@@ -38,10 +38,15 @@ Offen, brauche deine Daten:
 
 - [x] Private E-Mail eingetragen (`lisacollmer@googlemail.com`)
 - [x] LinkedIn-URL eingetragen (`LINKEDIN_URL` in `src/content.ts`)
-- [ ] **Sprachen** → `personal.languages` in `src/pages/Resume.tsx`
-- [ ] **Telefon** (optional) → `personal.phone` in `src/pages/Resume.tsx`
-- [ ] **Eigene Domain** kaufen, in Vercel unter Settings → Domains eintragen,
-      dann `personal.portfolioUrl` und die `og:`-Tags in `index.html` nachziehen
+- [x] Sprachen eingetragen: Deutsch (Muttersprache), Englisch (fließend)
+- [x] Telefon eingetragen
+- [ ] **Eigene Domain.** `koelmar.de` ist nicht erreichbar: keine Nameserver,
+      kein A-Record, kein MX. Die Adresse `lisa@koelmar.de` empfängt damit auch
+      keine Mail mehr. `lisacollmer.de` und `lisa-collmer.de` sehen frei aus,
+      `collmer.de` und `kollmar.de` sind vergeben.
+      Bei einem Registrar gegenprüfen (INWX, Netcup, Namecheap), kaufen, in
+      Vercel unter Settings → Domains eintragen, dann `personal.portfolioUrl`
+      in `Resume.tsx` und die `og:`-Tags in `index.html` nachziehen.
 - [ ] **HBK Saar** (10/2016 bis 02/2017, 5 Monate): kennzeichnen oder streichen
 
 ## Plan B — angepasst am 20.09.
@@ -191,8 +196,11 @@ Einmalig vorbereiten:
 - [ ] Unter Jobs → Einstellungen für Bewerbungen den Lebenslauf hochladen.
       LinkedIn speichert bis zu vier Versionen, du wählst pro Bewerbung eine aus.
 - [ ] Telefonnummer hinterlegen, die wird bei fast jedem Easy Apply abgefragt
-- [ ] Antworten auf die Standardfragen einmal festlegen: Arbeitserlaubnis,
-      Gehaltsvorstellung, Kündigungsfrist, Umzugsbereitschaft
+- [x] Standardantworten festgelegt:
+      - Kündigungsfrist: 3 Monate
+      - Gehaltsvorstellung: 78.000 bis 88.000 EUR brutto pro Jahr
+      - Arbeitserlaubnis: DE-Staatsbürgerin, keine Sponsoring-Frage
+      - Standort: Berlin, remote in Europa möglich
 
 Ablauf pro Stelle: Jobs → Suche → Filter "Einfach bewerben" → Stelle öffnen →
 Button klicken → Lebenslauf auswählen → Fragen beantworten → absenden.
