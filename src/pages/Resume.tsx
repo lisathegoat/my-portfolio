@@ -9,8 +9,9 @@ import { CONTACT_EMAIL, LINKEDIN_URL, about } from '../content'
 // ─────────────────────────────────────────────────────────────────────────────
 const personal = {
   phone: '+49 170 4818651',
-  // TODO(Lisa): eintragen, sobald die Domain steht. koelmar.de ist nicht
-  // erreichbar (keine Nameserver), lisacollmer.de sieht frei aus.
+  // PFLICHTFELD. Ohne Portfolio-Link ist ein Designer-Lebenslauf unvollständig.
+  // Bis die eigene Domain steht: die Vercel-URL des Projekts eintragen.
+  // (Vercel → Projekt my-portfolio → Domains → die .vercel.app-Adresse.)
   portfolioUrl: '',
   languages: ['Deutsch (Muttersprache)', 'Englisch (fließend)'],
 }
@@ -23,11 +24,9 @@ const contactRow = [
 ].filter(Boolean)
 
 // Skills kommen aus derselben Quelle wie die About-Seite, damit Lebenslauf und
-// Portfolio nicht auseinanderlaufen.
-const skillLine = about.skills
-  .filter((g) => g.category !== 'Context')
-  .map((g) => g.items.join(', '))
-  .join(' · ')
+// Portfolio nicht auseinanderlaufen. "Context" ist Portfolio-Sprache und
+// gehoert nicht in die Skill-Liste eines Lebenslaufs.
+const skillGroups = about.skills.filter((g) => g.category !== 'Context')
 
 type Entry = {
   period: string
@@ -172,7 +171,7 @@ export default function Resume() {
                 Lisa Collmer
               </h1>
               <p className="font-geist text-[17px] text-[#32404f]/70">
-                Product Designer · Berlin
+                Senior Product Designer · Berlin
               </p>
             </div>
             <button
@@ -187,6 +186,11 @@ export default function Resume() {
           <div className="flex flex-wrap gap-x-6 gap-y-1 font-geist text-[14px] text-[#32404f]/70">
             {contactRow.map((item) => <span key={item}>{item}</span>)}
           </div>
+          {import.meta.env.DEV && !personal.portfolioUrl && (
+            <p className="print:hidden font-mono text-[12px] uppercase tracking-[0.02em] text-[#e65f2e]">
+              Kein Portfolio-Link im Lebenslauf. personal.portfolioUrl in Resume.tsx setzen.
+            </p>
+          )}
         </header>
 
         {/* ── Profile ── */}
@@ -233,9 +237,18 @@ export default function Resume() {
         {/* ── Skills ── */}
         <section className="flex flex-col gap-4 pt-12">
           <SectionLabel>Skills & Tools</SectionLabel>
-          <p className="font-geist text-[15px] leading-[1.7] text-[#32404f]/70">
-            {skillLine}
-          </p>
+          <div className="flex flex-col gap-1.5">
+            {skillGroups.map((g) => (
+              <div key={g.category} className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-1 md:gap-6">
+                <p className="font-mono text-[12px] uppercase tracking-[0.02em] text-[#32404f]/50 md:pt-0.5">
+                  {g.category}
+                </p>
+                <p className="font-geist text-[15px] leading-[1.6] text-[#32404f]/70">
+                  {g.items.join(', ')}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
 
         {/* ── Languages — rendert erst, wenn personal.languages gefüllt ist ── */}

@@ -347,8 +347,11 @@ export const about = {
     'Ich suche eine Produktdesign-Rolle, in der ich komplexe Probleme von der Systemebene bis ins Detail gestalten kann.',
   ],
   skills: [
-    { category: 'Design', items: ['Product Design', 'Interface Design', 'Design Systems', 'Interaction Design', 'UX Research'] },
-    { category: 'Tools', items: ['Figma', 'Prototyping', 'Usability Testing', 'System Mapping'] },
+    // Reihenfolge ist Absicht: Recruiter und ATS gleichen die ersten Begriffe
+    // gegen die Stellenanzeige ab. Nur aufnehmen, was durch ein Projekt belegt ist.
+    { category: 'Design', items: ['Product Design', 'Interface Design', 'Interaction Design', 'Design Systems', 'Design Tokens', 'Information Architecture', 'UX Writing'] },
+    { category: 'Methoden', items: ['UX Research', 'Usability Testing', 'Prototyping', 'Wireframing', 'System Mapping', 'Design Handoff'] },
+    { category: 'Tools', items: ['Figma', 'FigJam'] },
     { category: 'Context', items: ['Mobile Apps', 'Hardware-nahe Produkte', 'B2C', 'Startups'] },
   ],
   education: [

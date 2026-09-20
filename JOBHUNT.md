@@ -330,3 +330,39 @@ Study kostet 6 bis 10 Stunden, die du vor dem 28.09. nicht hast.
   Konsolidierung danach ist halbe Arbeit. Die Fundstücke (7 Beinahe-Schwarz,
   57 Font-Deklarationen für 9 Rollen) gehören als ein Abschnitt in eine
   bestehende Case Study, wenn du die Bereinigung zeigen kannst.
+
+---
+
+## Lebenslauf-Review 20.09.
+
+**Kritischster Fund: es stand kein Portfolio-Link drauf.** `portfolioUrl` war
+leer, und leere Felder rendern nicht. Auf einem Designer-Lebenslauf ist das die
+wichtigste Zeile, und sie wäre stillschweigend mit verschickt worden. Es gibt
+jetzt eine Dev-Warnung auf der Seite, solange das Feld leer ist.
+
+- [ ] **Portfolio-URL eintragen.** Bis die eigene Domain steht, die
+      `.vercel.app`-Adresse nehmen: Vercel → Projekt `my-portfolio` → Domains.
+      Ein Lebenslauf ohne Portfolio geht nicht raus.
+
+Geändert:
+
+- **Kopfzeile jetzt "Senior Product Designer · Berlin"** statt "Product
+  Designer". Recruiter und ATS gleichen genau diese Zeile gegen die
+  Stellenbezeichnung ab. Das ist keine Falschangabe: der Titel deiner letzten
+  Stelle steht unverändert in der Berufserfahrung.
+- **Skills nach Design, Methoden und Tools gruppiert** statt einer langen Zeile.
+  Ein Fließtextblock wird beim Überfliegen übersprungen, Gruppen nicht.
+- **Begriffe ergänzt, die du belegen kannst:** Design Tokens (Design-System-
+  Audit), Information Architecture (Sensor-Systemlogik, Site → Zone → Sensor →
+  Plant im B2B-Projekt), UX Writing (Copy-Entscheidungen, siehe Terra), Design
+  Handoff (Handoff-Artefakte im B2B-Projekt), Wireframing.
+
+Bewusst nicht geändert:
+
+- **Zweispaltiges Raster Datum | Inhalt.** Beim Drucken folgt die Textebene der
+  DOM-Reihenfolge, also Zeitraum, Rolle, Bullets. Das lesen Bewerbungssysteme
+  sauber. Kein Grund, das Layout dafür aufzugeben.
+- **Zwei Seiten.** Für ein Bewerbungssystem irrelevant, für deine Erfahrung
+  normal.
+- **Bullets als Nominalphrasen.** Im deutschen Lebenslauf üblich und gut lesbar.
+  Beim Englisch-Durchgang auf Verb-first umstellen, dort ist das die Norm.
