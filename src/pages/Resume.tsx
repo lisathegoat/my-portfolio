@@ -10,8 +10,9 @@ import { CONTACT_EMAIL, LINKEDIN_URL, about } from '../content'
 const personal = {
   phone: '', // TODO(Lisa): optional. Auf DE-Lebensläufen üblich, kein Muss.
   portfolioUrl: '', // TODO(Lisa): eigene Domain, sobald sie steht (z. B. lisacollmer.de)
-  // TODO(Lisa): Niveaus selbst bestätigen, z. B. 'Deutsch (Muttersprache)', 'Englisch (fließend)'
-  languages: [] as string[],
+  // "Verhandlungssicher" abgeleitet aus: Arbeitssprache bei FYTA ist Englisch.
+  // TODO(Lisa): bestätigen oder auf "fließend" zurückstufen.
+  languages: ['Deutsch (Muttersprache)', 'Englisch (verhandlungssicher)'],
 }
 
 const contactRow = [
@@ -36,71 +37,88 @@ type Entry = {
   bullets?: React.ReactNode[]
 }
 
-// Reverse-chronological, straight from lebenslauf_Lisa.docx — titles, dates,
-// companies and places are verbatim.
-// TODO(Lisa): 1–3 Ergebnis-Bullets pro Rolle ergänzen (was gebaut, welche
-// Wirkung, welche Zahl). Werden für die PDF-Version ohnehin gebraucht.
+// Reverse-chronological, straight from lebenslauf_Lisa.docx. Titel, Daten,
+// Firmen und Orte sind verbatim. Die Bullets beschreiben Umfang und
+// Verantwortung, nicht Wirkungskennzahlen: bei FYTA gibt es kaum Event
+// Tracking, und die Support-Zahlen sind durch Hardware-Defekte verfälscht.
+// Erfundene Metriken wären im Gespräch sofort angreifbar.
 const experience: Entry[] = [
   {
-    period: '10/2022 – heute',
+    period: '10/2022 bis heute',
     role: 'Head of Product Design',
     org: 'FYTA',
     place: 'Berlin',
+    bullets: [
+      'Alleinige Designverantwortung für App, Website und Verpackung. Konzept, Research, UX und UI liegen durchgehend bei mir, von der Anforderung bis zum finalen Screen.',
+      'App von einem auf fünf unterstützte Sensor-Modelle umgebaut: Systemlogik, Onboarding, Fehlerfälle und Datenvisualisierung neu strukturiert.',
+      'Drei neue Sensorprodukte begleitet, von der Produktdefinition bis zum Launch.',
+      'Enge Zusammenarbeit mit Hardware und Firmware, um technische Machbarkeit und Nutzerbedarf zusammenzubringen.',
+      'Fachliche Führung einer Werkstudentin und mehrerer Praktikant:innen, inklusive Briefings und Design-Reviews.',
+      'Designprinzipien, Guidelines und Projektplanung aufgebaut, da vorher keine Designstruktur existierte.',
+    ],
   },
   {
-    period: '08/2021 – 09/2022',
+    period: '08/2021 bis 09/2022',
     role: 'Werkstudentin · Marketing',
     org: 'FYTA',
     place: 'Berlin',
   },
   {
-    period: '02/2020 – 07/2021',
+    period: '02/2020 bis 07/2021',
     role: 'Designerin',
     org: 'Loveto',
     place: 'Berlin',
+    bullets: [
+      'Nachhaltigkeitsberichte in Print und als interaktive Web-Versionen.',
+      'Branding, Illustration und digitales Layout für KfW, HOWOGE, Stadtreinigung Hamburg, Rügenwalder Mühle und Fröbel.',
+      'Website-Projekt "Gegen das Vergessen" eigenverantwortlich umgesetzt.',
+    ],
   },
   {
-    period: '08/2018 – 04/2019',
+    period: '08/2018 bis 04/2019',
     role: 'Werkstudentin',
     org: 'Loveto',
     place: 'Berlin',
   },
   {
-    period: '04/2017 – 05/2018',
+    period: '04/2017 bis 05/2018',
     role: 'Designer · Festanstellung',
     org: 'Eichmeister Kreativagentur',
     place: 'München',
+    bullets: [
+      'Brandingstrategien, Website- und Layoutdesign für Startups, mit wachsendem Anteil digitaler Projekte.',
+    ],
   },
 ]
 
 // Older internships condensed per current resume standards.
 const internships: Entry[] = [
-  { period: '05/2016 – 10/2016', role: 'Praktikum', org: 'Grünweiss Design', place: 'Hamburg' },
-  { period: '03/2014 – 09/2014', role: 'Praktikum · Praxissemester', org: 'Rocket & Wink', place: 'Hamburg' },
-  { period: '09/2011 – 02/2012', role: 'Vorpraktikum', org: 'ars 24, Fotografie Studio', place: 'München' },
+  { period: '05/2016 bis 10/2016', role: 'Praktikum', org: 'Grünweiss Design', place: 'Hamburg' },
+  { period: '03/2014 bis 09/2014', role: 'Praktikum · Praxissemester', org: 'Rocket & Wink', place: 'Hamburg' },
+  { period: '09/2011 bis 02/2012', role: 'Vorpraktikum', org: 'ars 24, Fotografie Studio', place: 'München' },
 ]
 
 const education: Entry[] = [
   {
-    period: '10/2019 – 07/2022',
+    period: '10/2019 bis 07/2022',
     role: 'M.A. Interface Design',
     org: 'Fachhochschule Potsdam',
     place: 'Potsdam · Abschluss 13.07.2022',
   },
   {
-    period: '10/2016 – 02/2017',
+    period: '10/2016 bis 02/2017',
     role: 'M.A. Visuelle Kommunikation',
     org: 'HBK Saar',
-    place: 'Saarbrücken',
+    place: 'Saarbrücken · Wechsel zu Interface Design, FH Potsdam',
   },
   {
-    period: '08/2013 – 12/2013',
+    period: '08/2013 bis 12/2013',
     role: 'Auslandssemester · Visuelle Kommunikation',
     org: 'Designskolen Kolding',
     place: 'Kolding, Dänemark',
   },
   {
-    period: '03/2012 – 02/2016',
+    period: '03/2012 bis 02/2016',
     role: 'B.A. Visuelle Kommunikation',
     org: 'Hochschule Pforzheim',
     place: 'Pforzheim',
@@ -176,12 +194,14 @@ export default function Resume() {
           <SectionLabel>Profil</SectionLabel>
           <p className="font-geist text-[16px] leading-[1.7] text-[#32404f]/75">
             Produktdesignerin mit Hintergrund in Visueller Kommunikation (B.A., Pforzheim)
-            und einem M.A. in Interface Design (FH Potsdam). Als Head of Product Design bei
-            FYTA, einem Berliner Sensor-Startup, habe ich ein gesamtes Sensor-Ökosystem
-            konzipiert und gestaltet: von der Systemlogik bis zum finalen UI. Meine Stärke
-            liegt dort, wo technische Komplexität und menschliche Nutzung in Einklang
-            gebracht werden müssen. Ich suche eine Produktdesign-Rolle, in der ich komplexe
-            Probleme von der Systemebene bis ins Detail gestalten kann.
+            und einem M.A. in Interface Design (FH Potsdam). Seit vier Jahren alleinige
+            Designerin bei FYTA, einem Berliner Sensor-Startup: App, Website und Verpackung
+            liegen vollständig bei mir, von der Systemlogik bis zum finalen Screen. In dieser
+            Zeit habe ich die App von einem auf fünf Sensor-Modelle umgebaut und drei neue
+            Produkte bis zum Launch begleitet. Meine Stärke liegt dort, wo technische
+            Komplexität und menschliche Nutzung in Einklang gebracht werden müssen. Ich suche
+            eine Produktdesign-Rolle mit starkem Hands-on-Anteil, in der ich komplexe Probleme
+            von der Systemebene bis ins Detail gestalten kann.
           </p>
         </section>
 
@@ -193,12 +213,13 @@ export default function Resume() {
           </div>
         </section>
 
-        {/* ── Internships ── */}
-        <section className="flex flex-col gap-6 pt-12">
+        {/* ── Internships — eine Zeile, Details gehören nicht auf einen Senior-CV ── */}
+        <section className="flex flex-col gap-3 pt-12">
           <SectionLabel>Frühere Praktika</SectionLabel>
-          <div className="flex flex-col gap-5">
-            {internships.map((e, i) => <EntryRow key={i} e={e} />)}
-          </div>
+          <p className="font-geist text-[14px] leading-[1.7] text-[#32404f]/60">
+            {internships.map((e) => `${e.org} (${e.place.split(' · ')[0]})`).join(' · ')}
+            {' · 2011 bis 2016'}
+          </p>
         </section>
 
         {/* ── Education ── */}
@@ -207,9 +228,6 @@ export default function Resume() {
           <div className="flex flex-col gap-5">
             {education.map((e, i) => <EntryRow key={i} e={e} />)}
           </div>
-          <p className="font-geist text-[13px] text-[#32404f]/45 mt-1">
-            Abitur (musischer Zweig), München, 2011
-          </p>
         </section>
 
         {/* ── Skills ── */}

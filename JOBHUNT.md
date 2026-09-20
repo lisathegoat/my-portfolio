@@ -3,6 +3,10 @@
 Ziel: Senior Product Designer. Erste Bewerbungen **Montag, 28.09.2026**.
 Kapazität: 2 Sessions pro Woche à 90 Minuten, neben dem 40h-Job.
 
+> **Stand 20.09.2026:** Zwischen dem 30.08. und heute ist nichts passiert.
+> Drei Wochen weg, acht Tage bis zum Termin. Der Termin bleibt. Phase 2
+> (Englisch) rutscht hinter den Start, siehe Plan B unten.
+
 **Regel:** Am 28.09. wird bewerben, egal in welchem Zustand alles ist.
 Antwortzeiten liegen bei 2 bis 6 Wochen. Jede Woche ohne Bewerbung ist eine
 Woche ohne Signal. Interview-Feedback verbessert das Portfolio schneller als
@@ -40,7 +44,21 @@ Offen, brauche deine Daten:
       dann `personal.portfolioUrl` und die `og:`-Tags in `index.html` nachziehen
 - [ ] **HBK Saar** (10/2016 bis 02/2017, 5 Monate): kennzeichnen oder streichen
 
-## Phase 2 — Englisch (Woche 2 bis 3, 07.09. bis 20.09.)
+## Plan B — angepasst am 20.09.
+
+Englisch schafft es nicht mehr vor den 28.09. Reihenfolge deshalb gedreht:
+
+1. **Diese Woche (21.09. bis 27.09.), ca. 4h.** Nur drei Dinge: LinkedIn-Profil,
+   Domain, PDF-Lebenslauf gegenlesen. Mehr nicht.
+2. **28.09.: bewerben.** Zielgruppe zuerst deutschsprachige Stellen in Berlin.
+   Das Portfolio ist deutsch, das passt zusammen. Kein Grund zu warten.
+3. **Ab Oktober, parallel zu den Bewerbungen:** eine Case Study pro Woche
+   übersetzen. Mitte Oktober ist das Portfolio englisch und der Markt offen.
+
+Bewerben und übersetzen laufen gleichzeitig. Nacheinander kostet nur Zeit,
+in der niemand von dir hört.
+
+## Phase 2 — Englisch (verschoben, läuft ab Oktober parallel)
 
 Englisch ist die größte einzelne Hebelwirkung. Der Berliner Senior-Markt läuft
 auf Englisch, deutsch-only halbiert die Anzahl erreichbarer Stellen.
@@ -59,11 +77,15 @@ Sprachumschalter nur, wenn er nebenbei abfällt. Sonst Englisch only.
 
 ## Phase 3 — Bewerbungs-Kit (Woche 3, 14.09. bis 20.09.)
 
-- [ ] **Zahlen sammeln.** 3 bis 5 echte Werte, die du belegen kannst:
-      Support-Tickets vor/nach Launch, Setup-Abbruchquote, Store-Rating,
-      Anzahl unterstützter Sensor-SKUs, Teamgröße. Gehen in Case Studies,
-      Lebenslauf und LinkedIn. Aktuell ist jede Wirkung nur ein Adjektiv.
-- [ ] **Ergebnis-Bullets** pro Rolle in `Resume.tsx` (1 bis 3 je Station)
+- [x] **Zahlen geklärt.** Es gibt kaum belastbare. Kein Event Tracking, und die
+      Support-Zahlen sind durch Hardware-Defekte der neuen Sensoren verfälscht.
+      Entscheidung: keine Wirkungskennzahlen behaupten. Stattdessen Umfang und
+      Verantwortung belegen, das ist überprüfbar: ein auf fünf Sensor-Modelle,
+      drei Produkt-Launches, vier Jahre alleinige Designerin, App plus Web plus
+      Verpackung.
+      Fehlendes Tracking ist im Gespräch kein Makel, sondern ein Thema: benennen,
+      was du nicht messen konntest, und was du als Erstes aufsetzen würdest.
+- [x] **Ergebnis-Bullets** pro Rolle in `Resume.tsx` geschrieben
 - [ ] **PDF-Lebenslauf, eine Seite.** `/resume` → Button "Download PDF".
       Vorher prüfen, ob der Umbruch auf einer Seite landet.
 - [ ] **LinkedIn** — eigener Abschnitt unten
@@ -219,3 +241,33 @@ Lebenslauf, LinkedIn und Case Studies gleichzeitig.
 - [ ] Sprachniveau Englisch, wie du es auf dem Lebenslauf angeben würdest
 - [ ] Kündigungsfrist
 - [ ] Gehaltsvorstellung (wird bei Easy Apply direkt abgefragt)
+
+---
+
+## Entscheidungen vom 20.09.
+
+**Titel.** "Head of Product Design" bleibt so auf dem Lebenslauf. Es ist dein
+echter Titel, Zeugnisse und Referenzen bestätigen ihn, und kleinreden schadet
+doppelt. "Design Lead" wäre weder Auf- noch Abstieg, nur ungenauer: Lead
+impliziert Führung von Designer:innen, du führst eine Werkstudentin.
+
+Das Problem ist nicht der Titel, sondern die fehlende Umfangszeile darunter.
+Die steht jetzt im ersten Bullet: alleinige Designverantwortung, Hands-on. Damit
+sind beide Fehllesarten geschlossen, ohne dass du dich kleiner machst.
+
+Auf LinkedIn sind das zwei verschiedene Felder:
+- **Positionsbezeichnung:** "Head of Product Design", faktisch
+- **Headline:** dort gehört "Senior Product Designer" hin, weil Recruiter danach
+  suchen und die Headline das Suchfeld ist
+
+**Loveto und Eichmeister.** Deine Einschätzung stimmt: nicht ins Portfolio. Auf
+den Lebenslauf gehören sie trotzdem, sonst entstehen Lücken. Jetzt drei bzw.
+eine Zeile, mit Kundennamen, weil KfW, HOWOGE und Stadtreinigung Hamburg für
+sich sprechen. Keine Case Studies daraus bauen.
+
+**HBK Saar.** Bleibt drin, schließt die Lücke zwischen B.A. und Eichmeister.
+Steht jetzt als "Wechsel zu Interface Design, FH Potsdam". Das ist die Wahrheit
+und klingt nach Entscheidung, nicht nach Abbruch.
+
+**Frühere Praktika.** Von einem eigenen Abschnitt auf eine Zeile eingedampft,
+Abitur gestrichen. Auf einem Senior-Lebenslauf tragen beide nichts.
