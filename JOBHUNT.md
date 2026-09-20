@@ -279,3 +279,54 @@ und klingt nach Entscheidung, nicht nach Abbruch.
 
 **Frühere Praktika.** Von einem eigenen Abschnitt auf eine Zeile eingedampft,
 Abitur gestrichen. Auf einem Senior-Lebenslauf tragen beide nichts.
+
+---
+
+## Case-Study-Review 20.09.
+
+Durchgesehen: alle zwölf Projektordner im Vault. Maßstab war deine Frage, ob ein
+Projekt Türen öffnet, die sonst zu bleiben. Nicht, ob es gute Arbeit ist.
+
+### Ergebnis: vier Case Studies reichen zum Bewerben. Vor dem 28.09. kommt nichts dazu.
+
+Die vorhandenen vier belegen dasselbe sauber und mehrfach: Systemlogik,
+Edge Cases, Consumer Mobile, Hardware-Nähe. Ein fünftes Projekt aus derselben
+Familie erhöht die Trefferquote nicht.
+
+### Eine Lücke ist echt: B2B und dichte Daten-UI
+
+Alles im Portfolio ist Consumer Mobile. Für B2B- und SaaS-Rollen, die du
+ausdrücklich willst, fehlt jeder Beleg für Tabellen, Filter, Rollen,
+mandantenfähige Informationsarchitektur. Das ist kein Stilthema: Recruiter für
+B2B filtern danach, und du wirst ohne Beleg nach hinten sortiert.
+
+**Bauen: FYTA B2B Dashboard.** Einziges Projekt, das diese Lücke schließt.
+Desktop-first, Site → Zone → Sensor → Plant, 50 bis 500+ Pflanzen über mehrere
+Standorte, Widget-System, Care Actions mit aktivitätsbasierter Inferenz,
+Visit Planner, Handoff an Frontend. Laufendes Projekt, Material ist frisch.
+
+**Zeitpunkt: Oktober, parallel zu den Bewerbungen.** Nicht vorher. Eine Case
+Study kostet 6 bis 10 Stunden, die du vor dem 28.09. nicht hast.
+
+**Reihenfolge ab 28.09.:**
+1. Consumer-, IoT- und Hardware-Rollen sofort bewerben, Portfolio ist dafür fertig.
+2. B2B Dashboard im Oktober bauen.
+3. Danach gezielt B2B- und SaaS-Rollen angehen.
+
+### Nicht bauen
+
+- **Terra Onboarding.** `case_study.md` ist fertig und stärker geschrieben als
+  alles, was live ist. Erzählt aber dieselbe Geschichte wie FYTA
+  Sensoranbindung: Consumer, Mobile, Onboarding, Sensor. Vier von fünf Case
+  Studies wären dann FYTA-Consumer.
+  **Aber:** beim Englisch-Durchgang die Struktur übernehmen, vor allem
+  "Skills Demonstrated" und die Stellen, an denen du deine eigene Argumentation
+  widerlegst. Das ist Senior-Signal und kostet nichts.
+- **Plant Onboarding, Self Calibration, VPD Monitoring, Terra Sleepmode.**
+  Gleiche Belegklasse wie vorhanden.
+- **Back Office.** Gute B2B-Arbeit, aber belegt nach dem Dashboard dasselbe
+  ein zweites Mal. Zurückhalten.
+- **Design System Audit.** Kein eigenständiges Projekt. Ein Audit ohne die
+  Konsolidierung danach ist halbe Arbeit. Die Fundstücke (7 Beinahe-Schwarz,
+  57 Font-Deklarationen für 9 Rollen) gehören als ein Abschnitt in eine
+  bestehende Case Study, wenn du die Bereinigung zeigen kannst.
