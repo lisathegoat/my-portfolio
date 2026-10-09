@@ -1,0 +1,12 @@
+#!/bin/sh
+# Hält die Download-PDFs synchron mit /resume. Läuft bei jedem Commit; rendert
+# nur neu, wenn eine Datei gestaged ist, die den Lebenslauf beeinflusst.
+CV_SOURCES='^(src/pages/Resume\.tsx|src/content\.ts|src/index\.css|tailwind\.config\.|public/fonts/|scripts/cv-pdf\.sh)'
+git diff --cached --name-only | grep -Eq "$CV_SOURCES" || exit 0
+
+echo "pre-commit: Lebenslauf geändert, PDFs werden neu erzeugt …"
+if ! npm run -s cv:pdf; then
+  echo "pre-commit: PDF-Erzeugung fehlgeschlagen. Commit abgebrochen." >&2
+  exit 1
+fi
+git add public/cv/*.pdf
