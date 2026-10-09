@@ -13,7 +13,10 @@ import { caseStudyHref } from '../../caseStudyVersions'
 const projects = [
   { ...caseStudies.fyta, aspectRatio: '16/9', wideCover: '/images/home/Onboarding_16x9.mp4',
     hue: 'rgba(140,158,86,0.45)' },
-  // { ...caseStudies.probe, aspectRatio: '8/5', wideCover: '' },
+  // Kein Wide-Cover-Video vorhanden — läuft auf meta.cover (cover.png) zurück.
+  // Sobald ein 16:9-Video existiert, hier als wideCover eintragen.
+  { ...caseStudies.probe, aspectRatio: '3/2', wideCover: '',
+    hue: 'rgba(120,150,150,0.42)' },
   { ...caseStudies.thesis, aspectRatio: '3/2', wideCover: '/images/home/01_Hero_LernApp.mp4',
     hue: 'rgba(120,140,200,0.42)' },
   { ...caseStudies.dataviz, aspectRatio: '3/2', wideCover: '',
@@ -21,6 +24,21 @@ const projects = [
   { ...caseStudies.scrollytelling, aspectRatio: '16/9', wideCover: '/images/home/Daten_der_Intersektionalitaet.mp4',
     hue: 'rgba(210,162,90,0.42)' },
 ]
+
+// Verteilt die Projekte auf zwei Spalten und hängt jedes an die aktuell kürzere.
+// Die Karten sind unterschiedlich hoch (aspectRatio), stures Alternieren liesse
+// bei ungerader Anzahl eine Spalte sichtbar früher enden.
+const columns = ((): (typeof projects)[] => {
+  const cols: (typeof projects)[] = [[], []]
+  const heights = [0, 0]
+  for (const p of projects) {
+    const [w, h] = p.aspectRatio.split('/').map(Number)
+    const target = heights[0] <= heights[1] ? 0 : 1
+    cols[target].push(p)
+    heights[target] += h / w + 0.12 // + Titelzeile unter dem Cover
+  }
+  return cols
+})()
 
 function CaseStudyGridCard({ project, onHover }: { project: typeof projects[number]; onHover: (hue: string | null, label: string | null, origin?: { x: number; y: number }) => void }) {
   const isExternal = project.slug.startsWith('http')
@@ -189,16 +207,13 @@ export default function HomeV2() {
       {/* ── Case Studies — two explicit columns so height pairs stay side by side ── */}
       <section className="px-8 pb-20">
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <div className="flex flex-col gap-6">
-            {[projects[0], projects[2]].map((p) => (
-              <CaseStudyGridCard key={p.slug} project={p} onHover={onHover} />
-            ))}
-          </div>
-          <div className="flex flex-col gap-6">
-            {[projects[1], projects[3]].map((p) => (
-              <CaseStudyGridCard key={p.slug} project={p} onHover={onHover} />
-            ))}
-          </div>
+          {columns.map((col, i) => (
+            <div key={i} className="flex flex-col gap-6">
+              {col.map((p) => (
+                <CaseStudyGridCard key={p.slug} project={p} onHover={onHover} />
+              ))}
+            </div>
+          ))}
         </div>
       </section>
 

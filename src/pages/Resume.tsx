@@ -1,15 +1,32 @@
 import NavV2 from '../components/v2/NavV2'
 import FooterV2 from '../components/v2/FooterV2'
+import { CONTACT_EMAIL, LINKEDIN_URL, about } from '../content'
 
-// Placeholder marker — anything not present in the source CV is flagged in the
-// accent colour so Lisa can spot and fill it. Never invent facts.
-function PH({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="text-[#e65f2e] font-mono text-[12px] uppercase tracking-[0.02em] print:text-[#b0480f]">
-      [{children}]
-    </span>
-  )
+// ─────────────────────────────────────────────────────────────────────────────
+// Persönliche Daten, die nicht im Repo stehen. Leere Felder werden schlicht
+// NICHT gerendert — die Seite ist damit jederzeit versandfertig, auch halb
+// ausgefüllt. Nichts hier wird erfunden: eintragen, was stimmt.
+// ─────────────────────────────────────────────────────────────────────────────
+const personal = {
+  phone: '+49 170 4818651',
+  // PFLICHTFELD. Ohne Portfolio-Link ist ein Designer-Lebenslauf unvollständig.
+  // Bis die eigene Domain steht: die Vercel-URL des Projekts eintragen.
+  // (Vercel → Projekt my-portfolio → Domains → die .vercel.app-Adresse.)
+  portfolioUrl: '',
+  languages: ['Deutsch (Muttersprache)', 'Englisch (fließend)'],
 }
+
+const contactRow = [
+  CONTACT_EMAIL,
+  personal.phone,
+  LINKEDIN_URL,
+  personal.portfolioUrl,
+].filter(Boolean)
+
+// Skills kommen aus derselben Quelle wie die About-Seite, damit Lebenslauf und
+// Portfolio nicht auseinanderlaufen. "Context" ist Portfolio-Sprache und
+// gehoert nicht in die Skill-Liste eines Lebenslaufs.
+const skillGroups = about.skills.filter((g) => g.category !== 'Context')
 
 type Entry = {
   period: string
@@ -19,76 +36,82 @@ type Entry = {
   bullets?: React.ReactNode[]
 }
 
-// Reverse-chronological, straight from lebenslauf_Lisa.docx — titles, dates,
-// companies and places are verbatim. Impact bullets are placeholders.
+// Reverse-chronological, straight from lebenslauf_Lisa.docx. Titel, Daten,
+// Firmen und Orte sind verbatim. Die Bullets beschreiben Umfang und
+// Verantwortung, nicht Wirkungskennzahlen: bei FYTA gibt es kaum Event
+// Tracking, und die Support-Zahlen sind durch Hardware-Defekte verfälscht.
+// Erfundene Metriken wären im Gespräch sofort angreifbar.
 const experience: Entry[] = [
   {
-    period: '10/2022 – heute',
+    period: '10/2022 bis heute',
     role: 'Head of Product Design',
     org: 'FYTA',
     place: 'Berlin',
     bullets: [
-      <PH>1–3 Ergebnis-Bullets: was gebaut, welche Wirkung, welche Zahl (z. B. „Onboarding für 4 neue Sensortypen konzipiert und shipped")</PH>,
+      'Verantwortete Konzept, Research, UX und UI für App, Website und Verpackung durchgehend allein, von der Anforderung bis zum finalen Screen.',
+      'Baute die App von einem auf fünf unterstützte Sensor-Modelle um: Systemlogik, Onboarding, Fehlerfälle und Datenvisualisierung neu strukturiert.',
+      'Begleitete drei neue Sensorprodukte von der Produktdefinition bis zum Launch.',
+      'Arbeitete eng mit Hardware und Firmware zusammen, um technische Machbarkeit und Nutzerbedarf zusammenzubringen.',
+      'Präsentierte Design-Entscheidungen und Trade-offs regelmäßig vor der Geschäftsführung, um Scope und Prioritäten abzustimmen.',
+      'Führte fachlich eine Werkstudentin und mehrere Praktikant:innen, inklusive Briefings und Design-Reviews.',
+      'Baute Designprinzipien, Guidelines und Projektplanung auf, da vorher keine Designstruktur existierte.',
     ],
   },
   {
-    period: '08/2021 – 09/2022',
+    period: '08/2021 bis 09/2022',
     role: 'Werkstudentin · Marketing',
     org: 'FYTA',
     place: 'Berlin',
-    bullets: [<PH>1–2 Bullets: Aufgaben/Ergebnis in dieser Rolle</PH>],
   },
   {
-    period: '02/2020 – 07/2021',
+    period: '02/2020 bis 07/2021',
     role: 'Designerin',
     org: 'Loveto',
     place: 'Berlin',
-    bullets: [<PH>1–2 Bullets: Projekte/Ergebnisse bei Loveto</PH>],
+    bullets: [
+      'Nachhaltigkeitsberichte in Print und als interaktive Web-Versionen.',
+      'Branding, Illustration und digitales Layout für KfW, HOWOGE, Stadtreinigung Hamburg, Rügenwalder Mühle und Fröbel.',
+      'Website-Projekt "Gegen das Vergessen" eigenverantwortlich umgesetzt.',
+    ],
   },
   {
-    period: '08/2018 – 04/2019',
+    period: '08/2018 bis 04/2019',
     role: 'Werkstudentin',
     org: 'Loveto',
     place: 'Berlin',
   },
   {
-    period: '04/2017 – 05/2018',
+    period: '04/2017 bis 05/2018',
     role: 'Designer · Festanstellung',
     org: 'Eichmeister Kreativagentur',
     place: 'München',
-    bullets: [<PH>optional: 1 Bullet zum Schwerpunkt der Agenturarbeit</PH>],
+    bullets: [
+      'Brandingstrategien, Website- und Layoutdesign für Startups, mit wachsendem Anteil digitaler Projekte.',
+    ],
   },
 ]
 
 // Older internships condensed per current resume standards.
 const internships: Entry[] = [
-  { period: '05/2016 – 10/2016', role: 'Praktikum', org: 'Grünweiss Design', place: 'Hamburg' },
-  { period: '03/2014 – 09/2014', role: 'Praktikum · Praxissemester', org: 'Rocket & Wink', place: 'Hamburg' },
-  { period: '09/2011 – 02/2012', role: 'Vorpraktikum', org: 'ars 24, Fotografie Studio', place: 'München' },
+  { period: '05/2016 bis 10/2016', role: 'Praktikum', org: 'Grünweiss Design', place: 'Hamburg' },
+  { period: '03/2014 bis 09/2014', role: 'Praktikum · Praxissemester', org: 'Rocket & Wink', place: 'Hamburg' },
 ]
 
 const education: Entry[] = [
   {
-    period: '10/2019 – 07/2022',
+    period: '10/2019 bis 07/2022',
     role: 'M.A. Interface Design',
     org: 'Fachhochschule Potsdam',
     place: 'Potsdam · Abschluss 13.07.2022',
   },
   {
-    period: '10/2016 – 02/2017',
+    period: '10/2016 bis 02/2017',
     role: 'M.A. Visuelle Kommunikation',
     org: 'HBK Saar',
-    place: 'Saarbrücken',
-    bullets: [<PH>Nur 5 Monate im CV — abgeschlossen, abgebrochen oder Wechsel nach Potsdam? Bitte klarstellen oder Eintrag entfernen</PH>],
+    place: 'Saarbrücken · Wechsel zu Interface Design, FH Potsdam',
   },
   {
-    period: '08/2013 – 12/2013',
-    role: 'Auslandssemester · Visuelle Kommunikation',
-    org: 'Designskolen Kolding',
-    place: 'Kolding, Dänemark',
-  },
-  {
-    period: '03/2012 – 02/2016',
+    period: '03/2012 bis 02/2016',
     role: 'B.A. Visuelle Kommunikation',
     org: 'Hochschule Pforzheim',
     place: 'Pforzheim',
@@ -142,7 +165,7 @@ export default function Resume() {
                 Lisa Collmer
               </h1>
               <p className="font-geist text-[17px] text-[#32404f]/70">
-                Product Designer · Berlin
+                Senior Product Designer · Berlin
               </p>
             </div>
             <button
@@ -155,20 +178,28 @@ export default function Resume() {
 
           {/* Contact row */}
           <div className="flex flex-wrap gap-x-6 gap-y-1 font-geist text-[14px] text-[#32404f]/70">
-            <span>lisa@fyta.de <PH>ggf. private E-Mail für Bewerbungen</PH></span>
-            <span><PH>Telefon</PH></span>
-            <span><PH>LinkedIn-URL</PH></span>
-            <span><PH>Portfolio-URL</PH></span>
+            {contactRow.map((item) => <span key={item}>{item}</span>)}
           </div>
+          {import.meta.env.DEV && !personal.portfolioUrl && (
+            <p className="print:hidden font-mono text-[12px] uppercase tracking-[0.02em] text-[#e65f2e]">
+              Kein Portfolio-Link im Lebenslauf. personal.portfolioUrl in Resume.tsx setzen.
+            </p>
+          )}
         </header>
 
         {/* ── Profile ── */}
         <section className="flex flex-col gap-4 pt-10">
           <SectionLabel>Profil</SectionLabel>
           <p className="font-geist text-[16px] leading-[1.7] text-[#32404f]/75">
-            Product Designer mit Hintergrund in Visueller Kommunikation und einem M.A. in
-            Interface Design. Aktuell bei FYTA, einem Berliner Sensor-Startup.{' '}
-            <PH>2–3 Sätze Profil in eigenen Worten: Spezialisierung, Arbeitsweise, wonach du suchst — hier faktisch ergänzen/überschreiben</PH>
+            Produktdesignerin mit Hintergrund in Visueller Kommunikation (B.A., Pforzheim)
+            und einem M.A. in Interface Design (FH Potsdam). Seit vier Jahren alleinige
+            Designerin bei FYTA, einem Berliner Sensor-Startup: App, Website und Verpackung
+            vollständig verantwortet, von der Systemlogik bis zum finalen Screen. App von
+            einem auf fünf Sensor-Modelle umgebaut und drei neue Produkte bis zum Launch
+            begleitet, in enger, interdisziplinärer Zusammenarbeit mit Hardware und Firmware.
+            Stärken liegen dort, wo technische Komplexität und menschliche Nutzung in Einklang
+            gebracht werden müssen. Auf der Suche nach einer Produktdesign-Rolle mit starkem
+            Hands-on-Anteil, die komplexe Probleme von der Systemebene bis ins Detail gestaltet.
           </p>
         </section>
 
@@ -180,12 +211,13 @@ export default function Resume() {
           </div>
         </section>
 
-        {/* ── Internships ── */}
-        <section className="flex flex-col gap-6 pt-12">
+        {/* ── Internships — eine Zeile, Details gehören nicht auf einen Senior-CV ── */}
+        <section className="flex flex-col gap-3 pt-12">
           <SectionLabel>Frühere Praktika</SectionLabel>
-          <div className="flex flex-col gap-5">
-            {internships.map((e, i) => <EntryRow key={i} e={e} />)}
-          </div>
+          <p className="font-geist text-[14px] leading-[1.7] text-[#32404f]/60">
+            {internships.map((e) => `${e.org} (${e.place.split(' · ')[0]})`).join(' · ')}
+            {' · 2014 bis 2016'}
+          </p>
         </section>
 
         {/* ── Education ── */}
@@ -194,26 +226,34 @@ export default function Resume() {
           <div className="flex flex-col gap-5">
             {education.map((e, i) => <EntryRow key={i} e={e} />)}
           </div>
-          <p className="font-geist text-[13px] text-[#32404f]/45 mt-1">
-            Abitur (musischer Zweig), München, 2011 <PH>auf Senior-Lebenslauf optional — behalten oder streichen?</PH>
-          </p>
         </section>
 
         {/* ── Skills ── */}
         <section className="flex flex-col gap-4 pt-12">
           <SectionLabel>Skills & Tools</SectionLabel>
-          <p className="font-geist text-[15px] leading-[1.7] text-[#32404f]/70">
-            <PH>Skills bestätigen/ergänzen — z. B. UI/UX Design, Design Systems, Interaction Design, Konzeption, Prototyping. Tools: Figma, o. Ä. Nur eintragen, was zutrifft</PH>
-          </p>
+          <div className="flex flex-col gap-1.5">
+            {skillGroups.map((g) => (
+              <div key={g.category} className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-1 md:gap-6">
+                <p className="font-mono text-[12px] uppercase tracking-[0.02em] text-[#32404f]/50 md:pt-0.5">
+                  {g.category}
+                </p>
+                <p className="font-geist text-[15px] leading-[1.6] text-[#32404f]/70">
+                  {g.items.join(', ')}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
 
-        {/* ── Languages ── */}
-        <section className="flex flex-col gap-4 pt-12">
-          <SectionLabel>Sprachen</SectionLabel>
-          <p className="font-geist text-[15px] leading-[1.7] text-[#32404f]/70">
-            <PH>Sprachen + Niveau eintragen, z. B. Deutsch (Muttersprache), Englisch (fließend)</PH>
-          </p>
-        </section>
+        {/* ── Languages — rendert erst, wenn personal.languages gefüllt ist ── */}
+        {personal.languages.length > 0 && (
+          <section className="flex flex-col gap-4 pt-12">
+            <SectionLabel>Sprachen</SectionLabel>
+            <p className="font-geist text-[15px] leading-[1.7] text-[#32404f]/70">
+              {personal.languages.join(' · ')}
+            </p>
+          </section>
+        )}
 
       </main>
 

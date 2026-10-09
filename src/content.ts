@@ -1,3 +1,15 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// Contact — single source of truth für jeden mailto und Profil-Link.
+// Bewerbungen laufen bewusst nicht über lisa@fyta.de: die Adresse gehört FYTA,
+// ist für den Arbeitgeber einsehbar und stirbt mit dem Jobwechsel.
+// ─────────────────────────────────────────────────────────────────────────────
+export const CONTACT_EMAIL = 'lisacollmer@googlemail.com'
+
+// TODO(Lisa): Vanity-URL aufräumen (Profil → Öffentliches Profil und URL
+// bearbeiten), dann hier nachziehen. Die Ziffernfolge ist automatisch vergeben
+// und steht später auf Lebenslauf und Portfolio.
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/lisa-collmer-79312315b/'
+
 export const nav = {
   projekte: 'Projekte',
   about: 'About',
@@ -17,14 +29,14 @@ export const home = {
   },
   footer: {
     projectsLabel: 'My Projects',
-    email: 'lisa@fyta.de',
+    email: CONTACT_EMAIL,
   },
 }
 
 export const footer = {
   name: 'Lisa',
   tagline: 'Product Designer · Berlin',
-  email: 'lisa@fyta.de',
+  email: CONTACT_EMAIL,
   linkedin: 'LinkedIn',
   copyright: '© 2025 Lisa',
 }
@@ -40,7 +52,6 @@ export const caseStudies = {
       role: 'Head of Product Design',
       status: 'Shipped',
       imageFolder: '/images/fyta-onboarding/',
-      cover: 'cover.png',
       coverVideo: 'cover_Onboarding_video.mp4',
     },
     intro: 'FYTA verbindet Pflanzenpflege mit sensorbasierten Daten — die App übersetzt Messwerte aus Boden, Licht und Umgebung in konkrete Pflegehinweise. Bis zur Einführung der neuen Sensoren kannte die App genau ein Modell: ein Sensor, eine Pflanze, ein Topf.\n\nAls Head of Product Design habe ich die Erweiterung des Sensor-Portfolios von Grund auf verantwortet — von der Systemlogik im Backend bis zum finalen UI. Das Projekt war kein Feature-Update. Es war der Umbau eines Einzelprodukts zu einem skalierbaren Ökosystem.',
@@ -322,18 +333,6 @@ export const caseStudies = {
     external: true,
   },
 
-  placeholder: {
-    slug: '#',
-    title: 'Nächstes Projekt',
-    shortTitle: 'Nächstes Projekt',
-    description: '[PLACEHOLDER — Projektbeschreibung folgt]',
-    tags: ['Konzeption'],
-    meta: {
-      role: '',
-      status: 'Coming soon',
-      imageFolder: '',
-    },
-  },
 }
 
 export const about = {
@@ -348,8 +347,12 @@ export const about = {
     'Ich suche eine Produktdesign-Rolle, in der ich komplexe Probleme von der Systemebene bis ins Detail gestalten kann.',
   ],
   skills: [
-    { category: 'Design', items: ['Product Design', 'Interface Design', 'Design Systems', 'Interaction Design', 'UX Research'] },
-    { category: 'Tools', items: ['Figma', 'Prototyping', 'Usability Testing', 'System Mapping'] },
+    // Reihenfolge ist Absicht: Recruiter und ATS gleichen die ersten Begriffe
+    // gegen die Stellenanzeige ab. Nur aufnehmen, was durch ein Projekt belegt ist.
+    { category: 'Design', items: ['Product Design', 'Interface Design', 'Interaction Design', 'Design Systems', 'Design Tokens', 'Information Architecture', 'UX Writing'] },
+    { category: 'Methoden', items: ['UX Research', 'Usability Testing', 'Prototyping', 'Wireframing', 'System Mapping', 'Design Handoff'] },
+    { category: 'Tools', items: ['Figma', 'FigJam'] },
+    { category: 'Zusammenarbeit', items: ['Stakeholder Management', 'Cross-funktionale Zusammenarbeit', 'Mentoring'] },
     { category: 'Context', items: ['Mobile Apps', 'Hardware-nahe Produkte', 'B2C', 'Startups'] },
   ],
   education: [
@@ -359,7 +362,7 @@ export const about = {
   contact: {
     headline: 'Kontakt',
     text: 'Auf der Suche nach einer neuen Produktdesign-Rolle. Offen für Gespräche.',
-    email: 'lisa@fyta.de',
+    email: CONTACT_EMAIL,
     emailLabel: 'E-Mail schreiben',
     linkedin: 'LinkedIn',
   },

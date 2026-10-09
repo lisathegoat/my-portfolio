@@ -35,7 +35,7 @@ export default function CaseStudyTemplate() {
       {/* ─── CS.Hero.Image ─── */}
       <div className="mb-xxl">
         <p className="section-label mb-4">CS.Hero.Image</p>
-        <CSHeroImage src="/images/fyta-onboarding/hero.jpg" alt="Hero" />
+        <CSHeroImage src="/images/fyta-onboarding/casestudy-11.png" alt="Hero" />
       </div>
 
       {/* ─── CS.Text.Intro ─── */}
@@ -91,7 +91,7 @@ export default function CaseStudyTemplate() {
       <CaseSection label="CS.Media.Split">
         <div className="flex flex-col gap-xxl">
           <CSMediaSplit
-            src="/images/fyta-onboarding/03_System_support.png"
+            src="/images/fyta-onboarding/casestudy-03.png"
             alt="System Support"
             heading="Systemunterstützung bei der Pflanzenauswahl"
             body="Ein Info-Screen vor der Auswahl erklärt die Substrat-Regel — bevor Nutzer:innen eine Entscheidung treffen, die das System nicht kommentarlos durchlassen kann."
@@ -112,19 +112,19 @@ export default function CaseStudyTemplate() {
           columns={3}
           screens={[
             {
-              src: '/images/fyta-onboarding/04.png',
+              src: '/images/fyta-onboarding/casestudy-04.png',
               alt: 'Pflanzenzuordnung',
               label: 'Pflanzenzuordnung',
               description: 'Info-Screen vor der Auswahl erklärt die Substrat-Regel.',
             },
             {
-              src: '/images/fyta-onboarding/05.png',
+              src: '/images/fyta-onboarding/casestudy-05.png',
               alt: 'Konflikt erkannt',
               label: 'Konflikt erkannt',
               description: 'Parametertabelle zeigt konkret, welche Messwerte betroffen wären.',
             },
             {
-              src: '/images/fyta-onboarding/06.png',
+              src: '/images/fyta-onboarding/casestudy-06.png',
               alt: 'Handlungsoptionen',
               label: 'Handlungsoptionen',
               description: 'Drei Wege: fortfahren, anpassen, oder neuen Topf anlegen.',
@@ -157,19 +157,19 @@ export default function CaseStudyTemplate() {
         <CSCardsDecision
           cards={[
             {
-              src: '/images/fyta-onboarding/04.png',
+              src: '/images/fyta-onboarding/casestudy-04.png',
               alt: 'Renderings',
               title: 'Produkt-Renderings statt Illustrationen',
               body: 'Nutzer:innen erkennen ihren Sensor sofort wieder. Renderings skalieren mit dem wachsenden Portfolio.',
             },
             {
-              src: '/images/fyta-onboarding/05.png',
+              src: '/images/fyta-onboarding/casestudy-05.png',
               alt: 'Wartezeit',
               title: 'Besetzte Wartezeit',
               body: 'Firmware-Updates dauern. Der Flow nutzt die Zeit: Nutzer:innen erfahren, was ihr Sensor kann.',
             },
             {
-              src: '/images/fyta-onboarding/06.png',
+              src: '/images/fyta-onboarding/casestudy-06.png',
               alt: 'Illustrationen',
               title: 'Illustrative Ebene',
               body: 'Manche Kontexte — Gartenbeet, Rasen, Hochbeet — brauchen mehr als ein Rendering.',
@@ -281,13 +281,13 @@ export default function CaseStudyTemplate() {
             {
               title: 'Sensorübersicht',
               body: '„My Devices" entkoppelt Sensoren erstmals von einzelnen Pflanzen.',
-              src: '/images/fyta-onboarding/07.png',
+              src: '/images/fyta-onboarding/casestudy-07.png',
               alt: 'Sensorübersicht',
             },
             {
               title: 'Erklärende Empty States',
               body: 'Ein leeres Profil ohne Sensor muss zeigen, was fehlt — und warum es relevant ist.',
-              src: '/images/fyta-onboarding/09.png',
+              src: '/images/fyta-onboarding/casestudy-09.png',
               alt: 'Empty States',
             },
             {
@@ -302,7 +302,7 @@ export default function CaseStudyTemplate() {
       {/* ─── CS.Media.StickyScroll ─── */}
       <CaseSection label="CS.Media.StickyScroll">
         <CSMediaStickyScroll
-          src="/images/fyta-onboarding/03_System_support.png"
+          src="/images/fyta-onboarding/casestudy-03.png"
           alt="Flow Steps"
           steps={[
             { heading: 'Pair with account', body: 'Bluetooth-Pairing — der erste Kontakt zwischen Sensor und App.' },
@@ -317,7 +317,7 @@ export default function CaseStudyTemplate() {
       <CaseSection label="CS.Media.BeforeAfter">
         <CSMediaBeforeAfter
           beforeSrc="/images/fyta-onboarding/01_Mental_Model.png"
-          afterSrc="/images/fyta-onboarding/03_System_support.png"
+          afterSrc="/images/fyta-onboarding/casestudy-03.png"
           alt="Old vs New"
           beforeLabel="Alt"
           afterLabel="Neu"
@@ -328,9 +328,9 @@ export default function CaseStudyTemplate() {
       <CaseSection label="CS.Media.Carousel">
         <CSMediaCarousel
           slides={[
-            { src: '/images/fyta-onboarding/04.png', alt: 'Screen 1', caption: 'Pflanzenzuordnung — Info-Screen vor der Auswahl.' },
-            { src: '/images/fyta-onboarding/05.png', alt: 'Screen 2', caption: 'Konflikt erkannt — Parametertabelle zeigt betroffene Messwerte.' },
-            { src: '/images/fyta-onboarding/06.png', alt: 'Screen 3', caption: 'Handlungsoptionen — Drei Wege, kein Verbot.' },
+            { src: '/images/fyta-onboarding/casestudy-04.png', alt: 'Screen 1', caption: 'Pflanzenzuordnung — Info-Screen vor der Auswahl.' },
+            { src: '/images/fyta-onboarding/casestudy-05.png', alt: 'Screen 2', caption: 'Konflikt erkannt — Parametertabelle zeigt betroffene Messwerte.' },
+            { src: '/images/fyta-onboarding/casestudy-06.png', alt: 'Screen 3', caption: 'Handlungsoptionen — Drei Wege, kein Verbot.' },
           ]}
         />
       </CaseSection>

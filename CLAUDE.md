@@ -5,25 +5,37 @@ React 18 + TypeScript + Vite 5 + React Router v6 + Tailwind CSS v3
 
 ## Routes
 
+V2 is the live site. V1, the template and the design system are dev-only —
+`App.tsx` mounts them behind `import.meta.env.DEV`, so production never exposes
+internal scaffolding. Unknown paths redirect to `/`.
+
+**Public (production):**
+
 | Path | Component | Notes |
 |------|-----------|-------|
-| `/` | `Home.tsx` | V1: dark bg, editorial layout |
-| `/v2` | `HomeV2.tsx` | V2: white bg, masonry grid, Tiempos headings |
+| `/` | `HomeV2.tsx` | White bg, masonry grid, Tiempos headings |
 | `/about` | `About.tsx` | |
-| `/resume` | `Resume.tsx` | |
-| `/projekte/fyta-sensor-onboarding` | `CaseStudyFyta.tsx` | FYTA case study |
-| `/projekte/soil-probe-diagnostic` | `CaseStudyProbe.tsx` | Probe case study |
-| `/projekte/inklusive-lern-app` | `CaseStudyThesis.tsx` | Thesis/learning app |
-| `/template` | `CaseStudyTemplate.tsx` | Reusable case study template |
-| `/design-system` | `DesignSystem.tsx` | Internal design tokens reference |
+| `/resume` | `Resume.tsx` | Print-styled, `window.print()` → PDF |
+| `/projekte/fyta-sensor-onboarding` | `v2/CaseStudyFyta.tsx` | |
+| `/projekte/soil-probe-diagnostic` | `v1/CaseStudyProbe.tsx` | No V2 yet, V1 serves the slug |
+| `/projekte/inklusive-lern-app` | `v2/CaseStudyThesis.tsx` | |
+| `/projekte/fyta-datenvisualisierung` | `v2/CaseStudyDataViz.tsx` | |
+
+**Dev-only:** `/v1`, `/projekte/*/v1`, `/template`, `/design-system`, `/lab`
+
+**Redirects:** `/v2` → `/`, `/projekte/*/v2` → clean slug, `*` → `/`
 
 External link (no route): `https://infovis.fh-potsdam.de/femscroll/daten/` — Scrollytelling/data vis project
 
 ## Design Versions
-- **V1** (`Home.tsx`): Dark (#1D1D1D), Neue Montreal body, Times italic headings, card-based grid
-- **V2** (`HomeV2.tsx`): White bg, TiemposText headings, Geist body, Geist Mono nav, 2-col masonry, CV table in hero
+- **V1** (`versions/HomeV1.tsx`): Dark (#1D1D1D), Neue Montreal body, Times italic headings, card-based grid. **Archived** — dev-only at `/v1`.
+- **V2** (`versions/HomeV2.tsx`): **Live.** White bg, TiemposText headings, Geist body, Geist Mono nav, 2-col masonry, CV table in hero.
 
-Both share `content.ts` as data source. Route-based switching, not branches.
+Both share `content.ts` as data source. Registries: `versions.ts` (home) and
+`caseStudyVersions.ts` (case studies). Set `devOnly: true` to archive a version.
+
+The home grid balances its two columns by cover aspect ratio, so adding or
+removing a project needs no layout edit.
 
 ## Font System
 
@@ -72,9 +84,22 @@ URL pattern: `https://www.figma.com/design/6KEXu2WGTURGjBKTBMIjNa/P_lovable?node
 - **No dashes, ever.** No em dash (—), no en dash (–), in any copy on this site (headings, body text, alt text, quotes). Use a period, comma, colon, or parentheses instead, restructuring the sentence if needed. This applies to all current and future copy — case studies, home pages, about, resume, everything.
 
 ## Known Issues
-- `public/images/fyta-onboarding/01_erweiterung.png` — broken export (~1.4KB), needs re-export from Figma
-- `public/images/fyta-onboarding/casestudy-01.png` — broken export (~1.4KB), needs re-export from Figma
-- No wide cover video for Probe Diagnostic case study
+- **Job hunt blockers** — see `JOBHUNT.md` for the full checklist. Open: private
+  e-mail (`CONTACT_EMAIL` in `content.ts`), LinkedIn URL, own domain, languages
+  on the CV, impact bullets per role.
+- Probe Diagnostic still renders the V1 (dark) treatment while home and the
+  other case studies are V2 (white). Visual break for anyone clicking through.
+- No wide cover video for Probe Diagnostic — home falls back to `cover.png`.
+- ~48 em dashes in `content.ts` copy violate the no-dashes rule below. Cheapest
+  fix is during the English translation pass, not as a separate sweep.
+- Date ranges on `/resume` use en dashes (`10/2022 – heute`). Decide whether the
+  no-dashes rule applies to date ranges or whether they are an exception.
+
+## Contact Data
+`CONTACT_EMAIL` and `LINKEDIN_URL` in `src/content.ts` are the single source for
+every mailto and profile link. `personal` at the top of `Resume.tsx` holds phone,
+portfolio URL and languages. Empty fields simply do not render, so the CV page is
+always presentable, even half filled.
 
 ## Deployment
 Vercel (connect via `vercel` CLI, framework preset: Vite, production branch: `main`).
@@ -83,3 +108,7 @@ Vercel (connect via `vercel` CLI, framework preset: Vite, production branch: `ma
 - `main` = production
 - Feature branches: `feature/[name]`, `fix/[name]`
 - Each branch gets a Vercel preview URL
+
+# Project Rules
+
+Apply the claude-roast skill to every response and show the prompt score.

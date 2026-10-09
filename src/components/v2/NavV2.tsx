@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 
 const tabs = [
-  { label: 'Work', to: '/v2' },
+  { label: 'Work', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Resume', to: '/resume' },
 ]
@@ -11,7 +11,7 @@ const tabs = [
 export default function NavV2({ active = 'Work' }: { active?: string }) {
   return (
     <header className="w-full px-6 md:px-[60px] h-16 flex items-center justify-between border-b border-[#32404f]/10">
-      <Link to="/v2" className="flex items-baseline gap-3 md:gap-4">
+      <Link to="/" className="flex items-baseline gap-3 md:gap-4">
         <span className="font-mono text-[13px] md:text-[15px] uppercase tracking-[0.02em] text-[#32404f]">
           Lisa Collmer
         </span>
