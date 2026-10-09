@@ -112,3 +112,10 @@ Vercel (connect via `vercel` CLI, framework preset: Vite, production branch: `ma
 # Project Rules
 
 Apply the claude-roast skill to every response and show the prompt score.
+
+## CV PDFs
+`public/cv/Lisa-Collmer-CV-{DE,EN}.pdf` are the files behind the "Download PDF"
+button. A pre-commit hook (`.githooks/pre-commit`, enabled by `npm install` via
+the `prepare` script) re-renders them with headless Chrome whenever a commit
+touches `Resume.tsx`, `content.ts`, `index.css`, Tailwind config or fonts.
+Manual run: `npm run cv:pdf`. Needs Google Chrome installed locally.
