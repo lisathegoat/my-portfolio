@@ -48,12 +48,13 @@ const experience: Entry[] = [
     org: 'FYTA',
     place: 'Berlin',
     bullets: [
-      'Alleinige Designverantwortung für App, Website und Verpackung. Konzept, Research, UX und UI liegen durchgehend bei mir, von der Anforderung bis zum finalen Screen.',
-      'App von einem auf fünf unterstützte Sensor-Modelle umgebaut: Systemlogik, Onboarding, Fehlerfälle und Datenvisualisierung neu strukturiert.',
-      'Drei neue Sensorprodukte begleitet, von der Produktdefinition bis zum Launch.',
-      'Enge Zusammenarbeit mit Hardware und Firmware, um technische Machbarkeit und Nutzerbedarf zusammenzubringen.',
-      'Fachliche Führung einer Werkstudentin und mehrerer Praktikant:innen, inklusive Briefings und Design-Reviews.',
-      'Designprinzipien, Guidelines und Projektplanung aufgebaut, da vorher keine Designstruktur existierte.',
+      'Verantwortete Konzept, Research, UX und UI für App, Website und Verpackung durchgehend allein, von der Anforderung bis zum finalen Screen.',
+      'Baute die App von einem auf fünf unterstützte Sensor-Modelle um: Systemlogik, Onboarding, Fehlerfälle und Datenvisualisierung neu strukturiert.',
+      'Begleitete drei neue Sensorprodukte von der Produktdefinition bis zum Launch.',
+      'Arbeitete eng mit Hardware und Firmware zusammen, um technische Machbarkeit und Nutzerbedarf zusammenzubringen.',
+      'Präsentierte Design-Entscheidungen und Trade-offs regelmäßig vor der Geschäftsführung, um Scope und Prioritäten abzustimmen.',
+      'Führte fachlich eine Werkstudentin und mehrere Praktikant:innen, inklusive Briefings und Design-Reviews.',
+      'Baute Designprinzipien, Guidelines und Projektplanung auf, da vorher keine Designstruktur existierte.',
     ],
   },
   {
@@ -94,7 +95,6 @@ const experience: Entry[] = [
 const internships: Entry[] = [
   { period: '05/2016 bis 10/2016', role: 'Praktikum', org: 'Grünweiss Design', place: 'Hamburg' },
   { period: '03/2014 bis 09/2014', role: 'Praktikum · Praxissemester', org: 'Rocket & Wink', place: 'Hamburg' },
-  { period: '09/2011 bis 02/2012', role: 'Vorpraktikum', org: 'ars 24, Fotografie Studio', place: 'München' },
 ]
 
 const education: Entry[] = [
@@ -109,12 +109,6 @@ const education: Entry[] = [
     role: 'M.A. Visuelle Kommunikation',
     org: 'HBK Saar',
     place: 'Saarbrücken · Wechsel zu Interface Design, FH Potsdam',
-  },
-  {
-    period: '08/2013 bis 12/2013',
-    role: 'Auslandssemester · Visuelle Kommunikation',
-    org: 'Designskolen Kolding',
-    place: 'Kolding, Dänemark',
   },
   {
     period: '03/2012 bis 02/2016',
@@ -200,12 +194,12 @@ export default function Resume() {
             Produktdesignerin mit Hintergrund in Visueller Kommunikation (B.A., Pforzheim)
             und einem M.A. in Interface Design (FH Potsdam). Seit vier Jahren alleinige
             Designerin bei FYTA, einem Berliner Sensor-Startup: App, Website und Verpackung
-            liegen vollständig bei mir, von der Systemlogik bis zum finalen Screen. In dieser
-            Zeit habe ich die App von einem auf fünf Sensor-Modelle umgebaut und drei neue
-            Produkte bis zum Launch begleitet. Meine Stärke liegt dort, wo technische
-            Komplexität und menschliche Nutzung in Einklang gebracht werden müssen. Ich suche
-            eine Produktdesign-Rolle mit starkem Hands-on-Anteil, in der ich komplexe Probleme
-            von der Systemebene bis ins Detail gestalten kann.
+            vollständig verantwortet, von der Systemlogik bis zum finalen Screen. App von
+            einem auf fünf Sensor-Modelle umgebaut und drei neue Produkte bis zum Launch
+            begleitet, in enger, interdisziplinärer Zusammenarbeit mit Hardware und Firmware.
+            Stärken liegen dort, wo technische Komplexität und menschliche Nutzung in Einklang
+            gebracht werden müssen. Auf der Suche nach einer Produktdesign-Rolle mit starkem
+            Hands-on-Anteil, die komplexe Probleme von der Systemebene bis ins Detail gestaltet.
           </p>
         </section>
 
@@ -222,7 +216,7 @@ export default function Resume() {
           <SectionLabel>Frühere Praktika</SectionLabel>
           <p className="font-geist text-[14px] leading-[1.7] text-[#32404f]/60">
             {internships.map((e) => `${e.org} (${e.place.split(' · ')[0]})`).join(' · ')}
-            {' · 2011 bis 2016'}
+            {' · 2014 bis 2016'}
           </p>
         </section>
 

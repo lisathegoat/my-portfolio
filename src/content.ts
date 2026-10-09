@@ -352,6 +352,7 @@ export const about = {
     { category: 'Design', items: ['Product Design', 'Interface Design', 'Interaction Design', 'Design Systems', 'Design Tokens', 'Information Architecture', 'UX Writing'] },
     { category: 'Methoden', items: ['UX Research', 'Usability Testing', 'Prototyping', 'Wireframing', 'System Mapping', 'Design Handoff'] },
     { category: 'Tools', items: ['Figma', 'FigJam'] },
+    { category: 'Zusammenarbeit', items: ['Stakeholder Management', 'Cross-funktionale Zusammenarbeit', 'Mentoring'] },
     { category: 'Context', items: ['Mobile Apps', 'Hardware-nahe Produkte', 'B2C', 'Startups'] },
   ],
   education: [
