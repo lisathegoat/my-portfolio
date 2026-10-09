@@ -234,12 +234,15 @@ export default function Resume() {
                   </button>
                 ))}
               </div>
-              <button
-                onClick={() => window.print()}
+              {/* Echter Download statt window.print(). Die PDFs liegen fertig in
+                  public/cv/ und werden mit `npm run cv:pdf` neu erzeugt. */}
+              <a
+                href={`/cv/Lisa-Collmer-CV-${lang.toUpperCase()}.pdf`}
+                download
                 className="rounded-full bg-[#32404f] px-5 py-2 font-mono text-[12px] uppercase tracking-[0.04em] text-[#fafcfd] hover:bg-[#e65f2e] transition-colors duration-200"
               >
                 {t.download}
-              </button>
+              </a>
             </div>
           </div>
 
