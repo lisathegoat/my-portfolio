@@ -131,3 +131,9 @@
     display: none;
   }
 }
+
+/* Lebenslauf-PDF: A4, schmale Ränder, Hintergrundfarben nicht drucken. */
+@page {
+  size: A4;
+  margin: 14mm 16mm;
+}
