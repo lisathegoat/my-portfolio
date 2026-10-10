@@ -1,3 +1,13 @@
+# ⚠️ LAB COPY: design exploration, NOT the live site
+
+- This folder (`my-portfolio-lab`) is for exploring a new design from scratch.
+- Branch: `explore/new-design`. Never merge into `main` and never deploy to production
+  unless Lisa explicitly decides the new design replaces V2.
+- The live site lives in `../my-portfolio` (branch `main`). Do not edit it from a lab session.
+- Restore point for live V2: git tag `v2-safe-2026-10`.
+- Content (texts, images) may be changed freely here. Drift from live is accepted.
+- `_source-assets/` was copied from the live folder on 2026-10-10 (not in git).
+
 # Lisa's Portfolio
 
 ## Stack
