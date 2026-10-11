@@ -5,7 +5,7 @@ React 18 + TypeScript + Vite 5 + React Router v6 + Tailwind CSS v3
 
 ## Routes
 
-V2 is the live site. V1, the template and the design system are dev-only —
+V2 is the live site. The template and the design system are dev-only:
 `App.tsx` mounts them behind `import.meta.env.DEV`, so production never exposes
 internal scaffolding. Unknown paths redirect to `/`.
 
@@ -17,21 +17,21 @@ internal scaffolding. Unknown paths redirect to `/`.
 | `/about` | `About.tsx` | |
 | `/resume` | `Resume.tsx` | Print-styled, `window.print()` → PDF |
 | `/projekte/fyta-sensor-onboarding` | `v2/CaseStudyFyta.tsx` | |
-| `/projekte/soil-probe-diagnostic` | `v1/CaseStudyProbe.tsx` | No V2 yet, V1 serves the slug |
+| `/projekte/soil-probe-diagnostic` | `v2/CaseStudyProbe.tsx` | |
 | `/projekte/inklusive-lern-app` | `v2/CaseStudyThesis.tsx` | |
 | `/projekte/fyta-datenvisualisierung` | `v2/CaseStudyDataViz.tsx` | |
 
-**Dev-only:** `/v1`, `/projekte/*/v1`, `/template`, `/design-system`, `/lab`
+**Dev-only:** `/template`, `/design-system`, `/lab`
 
-**Redirects:** `/v2` → `/`, `/projekte/*/v2` → clean slug, `*` → `/`
+**Redirects:** `/v2` → `/`, `/projekte/*/v2` → clean slug, `*` → `/` (old `/v1` URLs land home via `*`)
 
 External link (no route): `https://infovis.fh-potsdam.de/femscroll/daten/` — Scrollytelling/data vis project
 
 ## Design Versions
-- **V1** (`versions/HomeV1.tsx`): Dark (#1D1D1D), Neue Montreal body, Times italic headings, card-based grid. **Archived** — dev-only at `/v1`.
+- **V1** (dark): **removed 2026-10-11.** Recoverable from git tag `v2-safe-2026-10`.
 - **V2** (`versions/HomeV2.tsx`): **Live.** White bg, TiemposText headings, Geist body, Geist Mono nav, 2-col masonry, CV table in hero.
 
-Both share `content.ts` as data source. Registries: `versions.ts` (home) and
+`content.ts` is the data source. Registries: `versions.ts` (home) and
 `caseStudyVersions.ts` (case studies). Set `devOnly: true` to archive a version.
 
 The home grid balances its two columns by cover aspect ratio, so adding or
@@ -87,8 +87,6 @@ URL pattern: `https://www.figma.com/design/6KEXu2WGTURGjBKTBMIjNa/P_lovable?node
 - **Job hunt blockers** — see `JOBHUNT.md` for the full checklist. Open: private
   e-mail (`CONTACT_EMAIL` in `content.ts`), LinkedIn URL, own domain, languages
   on the CV, impact bullets per role.
-- Probe Diagnostic still renders the V1 (dark) treatment while home and the
-  other case studies are V2 (white). Visual break for anyone clicking through.
 - No wide cover video for Probe Diagnostic — home falls back to `cover.png`.
 - ~48 em dashes in `content.ts` copy violate the no-dashes rule below. Cheapest
   fix is during the English translation pass, not as a separate sweep.
