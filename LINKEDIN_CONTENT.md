@@ -92,8 +92,8 @@ Redesign & Design System
 • Aufbau eines Design Systems zur Sicherstellung von Konsistenz über alle Screens und Features.
 
 Systemskalierung
-• Umbau der App von einem auf fünf unterstützte Sensor-Modelle: Neustrukturierung von Systemlogik, Onboarding, Fehlerfällen und Datenvisualisierung.
-• Begleitung von drei neuen Sensorprodukten, von der Produktdefinition bis zum Launch.
+• Ausbau der App von einem auf fünf unterstützte Produkte (vier Sensor-Modelle und der Hub): Neustrukturierung von Systemlogik, Onboarding, Fehlerfällen und Datenvisualisierung.
+• Begleitung von drei neuen Sensoren, von der Produktdefinition bis zum Launch.
 
 Cross-funktionale Zusammenarbeit
 • Enge Zusammenarbeit mit Hardware und Firmware, zur Abstimmung von technischer Machbarkeit und Nutzerbedarf.
@@ -119,8 +119,8 @@ Redesign & Design System
 • Built a design system to ensure consistency across all screens and features.
 
 System Scaling
-• Rebuilt the app from one to five supported sensor models: restructured system logic, onboarding, error states, and data visualization.
-• Guided three new sensor products from product definition through launch.
+• Extended the app from one to five supported products (four sensor models and the hub): restructured system logic, onboarding, error states, and data visualization.
+• Took three new sensors from product definition to launch.
 
 Cross-Functional Collaboration
 • Close collaboration with hardware and firmware to align technical feasibility with user needs.

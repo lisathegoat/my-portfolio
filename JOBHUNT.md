@@ -85,9 +85,11 @@ Sprachumschalter nur, wenn er nebenbei abfällt. Sonst Englisch only.
 - [x] **Zahlen geklärt.** Es gibt kaum belastbare. Kein Event Tracking, und die
       Support-Zahlen sind durch Hardware-Defekte der neuen Sensoren verfälscht.
       Entscheidung: keine Wirkungskennzahlen behaupten. Stattdessen Umfang und
-      Verantwortung belegen, das ist überprüfbar: ein auf fünf Sensor-Modelle,
-      drei Produkt-Launches, vier Jahre alleinige Designerin, App plus Web plus
-      Verpackung.
+      Verantwortung belegen, das ist überprüfbar: App von einem auf fünf
+      unterstützte Produkte (vier Sensor-Modelle und der Hub), drei neue
+      Sensoren bis zum Launch, vier Jahre alleinige Designerin, App plus Web
+      plus Verpackung. Diese Formulierung gilt überall gleich (CV, LinkedIn,
+      Portfolio).
       Fehlendes Tracking ist im Gespräch kein Makel, sondern ein Thema: benennen,
       was du nicht messen konntest, und was du als Erstes aufsetzen würdest.
 - [x] **Ergebnis-Bullets** pro Rolle in `Resume.tsx` geschrieben

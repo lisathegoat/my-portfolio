@@ -137,3 +137,11 @@
   size: A4;
   margin: 14mm 16mm;
 }
+
+/* Die dunkle Body-Farbe (V1-Erbe) blitzt sonst als 1px-Linie oben und unten im PDF durch. */
+@media print {
+  html,
+  body {
+    background: #fff;
+  }
+}

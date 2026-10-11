@@ -22,6 +22,7 @@ type Entry = {
   role: string
   org: string
   place: string
+  about?: string
   bullets?: string[]
 }
 
@@ -29,7 +30,10 @@ type Entry = {
 // Daten, Firmen und Orte sind verbatim aus lebenslauf_Lisa.docx. Die Bullets
 // beschreiben Umfang und Verantwortung, nicht Wirkungskennzahlen: bei FYTA gibt
 // es kaum Event Tracking, erfundene Metriken wären im Gespräch angreifbar.
-// EN-Bullets sind Verb-first, wie im englischen Lebenslauf üblich.
+// DE ist bewusst Nominalstil ("Umbau der App", "Anleitung einer Werkstudentin"),
+// Verbstil klingt im Deutschen komisch. EN ist Verb-first.
+// Kanonische Zahlen (überall gleich, auch LinkedIn und JOBHUNT.md): fünf
+// unterstützte Produkte = vier Sensor-Modelle + der Hub, drei neue Sensoren.
 const copy = {
   de: {
     headline: 'Senior Product Designer · Berlin',
@@ -43,8 +47,7 @@ const copy = {
       languages: 'Sprachen',
     },
     profile:
-      'Produktdesignerin mit Hintergrund in Visueller Kommunikation (B.A., Pforzheim) und einem M.A. in Interface Design (FH Potsdam). Seit vier Jahren alleinige Designerin bei FYTA, einem Berliner Sensor-Startup: App, Website und Verpackung vollständig verantwortet, von der Systemlogik bis zum finalen Screen. App von einem auf fünf Sensor-Modelle umgebaut und drei neue Produkte bis zum Launch begleitet, in enger Zusammenarbeit mit Hardware und Firmware. Stärken liegen dort, wo technische Komplexität und menschliche Nutzung in Einklang gebracht werden müssen. Auf der Suche nach einer Produktdesign-Rolle mit starkem Hands-on-Anteil.',
-    internshipsYears: '2014 bis 2016',
+      'Produktdesignerin mit Hintergrund in Visueller Kommunikation (B.A., Pforzheim) und einem M.A. in Interface Design (FH Potsdam). Seit vier Jahren alleinige Designerin bei FYTA, einem Berliner Sensor-Startup: App, Website und Verpackung vollständig verantwortet, von der Systemlogik bis zur finalen Umsetzung. App von einem auf fünf unterstützte Produkte (vier Sensor-Modelle und der Hub) ausgebaut, in enger Zusammenarbeit mit Hardware und Firmware. Stärken liegen dort, wo technische Komplexität und menschliche Nutzung in Einklang gebracht werden müssen.',
     languages: ['Deutsch (Muttersprache)', 'Englisch (fließend)'],
     skillCategory: (c: string) => c,
     skillItem: (s: string) => s,
@@ -54,26 +57,37 @@ const copy = {
         role: 'Head of Product Design',
         org: 'FYTA',
         place: 'Berlin',
+        about: 'Berliner Startup, das Pflanzenpflege mit sensorbasierter Technologie verbindet.',
         bullets: [
-          'Verantwortete Konzept, Research, UX und UI für App, Website und Verpackung durchgehend allein, von der Anforderung bis zum finalen Screen.',
-          'Baute die App von einem auf fünf unterstützte Sensor-Modelle um: Systemlogik, Onboarding, Fehlerfälle und Datenvisualisierung neu strukturiert.',
-          'Begleitete drei neue Sensorprodukte von der Produktdefinition bis zum Launch.',
-          'Arbeitete eng mit Hardware und Firmware zusammen, um technische Machbarkeit und Nutzerbedarf zusammenzubringen.',
-          'Präsentierte Design-Entscheidungen und Trade-offs regelmäßig vor der Geschäftsführung, um Scope und Prioritäten abzustimmen.',
-          'Führte fachlich eine Werkstudentin und mehrere Praktikant:innen, inklusive Briefings und Design-Reviews.',
-          'Baute Designprinzipien, Guidelines und Projektplanung auf, da vorher keine Designstruktur existierte.',
+          'Alleinige Verantwortung für Konzept, Research, UX und UI von App, Website und Verpackung, von der Anforderung bis zur finalen Umsetzung.',
+          'Vollständiges Redesign der App und Aufbau eines Design Systems für Konsistenz über alle Screens und Features.',
+          'Ausbau der App von einem auf fünf unterstützte Produkte (vier Sensor-Modelle und der Hub): Neustrukturierung von Systemlogik, Onboarding, Fehlerfällen und Datenvisualisierung.',
+          'Begleitung von drei neuen Sensoren, von der Produktdefinition bis zum Launch.',
+          'Enge Zusammenarbeit mit Hardware und Firmware zur Abstimmung von technischer Machbarkeit und Nutzerbedarf.',
+          'Regelmäßige Präsentation von Design-Entscheidungen und Trade-offs vor der Geschäftsführung zur Abstimmung von Scope und Prioritäten.',
+          'Fachliche Anleitung einer Werkstudentin und mehrerer Praktikant:innen, inklusive Briefings und Design-Reviews.',
+          'Aufbau von Designprinzipien, Guidelines und Projektplanung, da vorher keine Designstruktur existierte.',
         ],
       },
-      { period: '08/2021 bis 09/2022', role: 'Werkstudentin · Marketing', org: 'FYTA', place: 'Berlin' },
+      {
+        period: '08/2021 bis 09/2022',
+        role: 'Werkstudentin · Marketing',
+        org: 'FYTA',
+        place: 'Berlin',
+        bullets: [
+          'Gestaltung von Webshop und Landingpages, Anpassung von Shopify- und WordPress-Theme über CSS und kleine HTML-Snippets, Aufbau des FYTA-Magazins.',
+          'Visuelle Konzeption und Umsetzung von Social-Media-Kampagnen, Produktion von Videos für Social-Media-Advertising.',
+        ],
+      },
       {
         period: '02/2020 bis 07/2021',
         role: 'Designerin',
         org: 'Loveto',
         place: 'Berlin',
         bullets: [
-          'Nachhaltigkeitsberichte in Print und als interaktive Web-Versionen.',
-          'Branding, Illustration und digitales Layout für KfW, HOWOGE, Stadtreinigung Hamburg, Rügenwalder Mühle und Fröbel.',
-          'Website-Projekt "Gegen das Vergessen" eigenverantwortlich umgesetzt.',
+          'Entwicklung visueller Konzepte aus Kunden-Briefings, häufig als finale Umsetzung ausgewählt.',
+          'Gestaltung von Nachhaltigkeitsberichten in Print und als interaktive Web-Versionen, Branding, Illustration und digitales Layout für Unternehmens- und Institutionskunden.',
+          'Betreuung von Kundenprojekten, teilweise eigenständige Abstimmung mit Kund:innen.',
         ],
       },
       { period: '08/2018 bis 04/2019', role: 'Werkstudentin', org: 'Loveto', place: 'Berlin' },
@@ -86,12 +100,11 @@ const copy = {
       },
     ] as Entry[],
     internships: [
-      { org: 'Grünweiss Design', place: 'Hamburg' },
-      { org: 'Rocket & Wink', place: 'Hamburg' },
+      { org: 'Grünweiss Design', place: 'Hamburg', period: '05/2016 bis 10/2016' },
+      { org: 'Rocket & Wink', place: 'Hamburg', period: '03/2014 bis 09/2014' },
     ],
     education: [
       { period: '10/2019 bis 07/2022', role: 'M.A. Interface Design', org: 'Fachhochschule Potsdam', place: 'Potsdam' },
-      { period: '10/2016 bis 02/2017', role: 'M.A. Visuelle Kommunikation', org: 'HBK Saar', place: 'Saarbrücken · Wechsel zu Interface Design, FH Potsdam' },
       { period: '03/2012 bis 02/2016', role: 'B.A. Visuelle Kommunikation', org: 'Hochschule Pforzheim', place: 'Pforzheim' },
     ] as Entry[],
   },
@@ -107,8 +120,7 @@ const copy = {
       languages: 'Languages',
     },
     profile:
-      'Product designer with a background in visual communication (B.A., Pforzheim) and an M.A. in Interface Design (FH Potsdam). For four years the sole designer at FYTA, a Berlin plant sensor startup, owning app, website and packaging end to end, from system logic to final screen. Rebuilt the app from one to five supported sensor models and took three new products to launch, working closely with hardware and firmware. Strongest where technical complexity has to meet everyday use. Looking for a hands-on product design role.',
-    internshipsYears: '2014 to 2016',
+      'Product designer with a background in visual communication (B.A., Pforzheim) and an M.A. in Interface Design (FH Potsdam). For four years the sole designer at FYTA, a Berlin plant sensor startup, owning app, website and packaging end to end, from system logic to final execution. Extended the app from one to five supported products (four sensor models and the hub), working closely with hardware and firmware. Strongest where technical complexity has to meet everyday use.',
     languages: ['German (native)', 'English (fluent)'],
     skillCategory: (c: string) => ({ Methoden: 'Methods', Zusammenarbeit: 'Collaboration' } as Record<string, string>)[c] ?? c,
     skillItem: (s: string) => (s === 'Cross-funktionale Zusammenarbeit' ? 'Cross-functional collaboration' : s),
@@ -118,26 +130,37 @@ const copy = {
         role: 'Head of Product Design',
         org: 'FYTA',
         place: 'Berlin',
+        about: 'Berlin startup combining plant care with sensor-based technology.',
         bullets: [
-          'Owned concept, research, UX and UI for app, website and packaging as the sole designer, from requirement to final screen.',
-          'Rebuilt the app from one to five supported sensor models, restructuring system logic, onboarding, error handling and data visualisation.',
-          'Took three new sensor products from product definition to launch.',
+          'Owned concept, research, UX and UI for app, website and packaging as the sole designer, from requirement to final execution.',
+          'Completely redesigned the app and built a design system for consistency across all screens and features.',
+          'Extended the app from one to five supported products (four sensor models and the hub), restructuring system logic, onboarding, error handling and data visualisation.',
+          'Took three new sensors from product definition to launch.',
           'Worked closely with hardware and firmware to align technical feasibility with user needs.',
           'Presented design decisions and trade-offs to leadership on a regular basis to agree on scope and priorities.',
           'Mentored a working student and several interns through briefings and design reviews.',
           'Set up design principles, guidelines and project planning where no design structure existed before.',
         ],
       },
-      { period: '08/2021 to 09/2022', role: 'Working Student · Marketing', org: 'FYTA', place: 'Berlin' },
+      {
+        period: '08/2021 to 09/2022',
+        role: 'Working Student · Marketing',
+        org: 'FYTA',
+        place: 'Berlin',
+        bullets: [
+          'Designed the webshop and landing pages, customised the Shopify and WordPress themes through CSS and small HTML snippets, and set up the FYTA Magazine.',
+          'Conceived and executed social media campaigns and produced videos for social media advertising.',
+        ],
+      },
       {
         period: '02/2020 to 07/2021',
         role: 'Designer',
         org: 'Loveto',
         place: 'Berlin',
         bullets: [
-          'Designed sustainability reports in print and as interactive web versions.',
-          'Created branding, illustration and digital layouts for KfW, HOWOGE, Stadtreinigung Hamburg, Rügenwalder Mühle and Fröbel.',
-          'Delivered the website project "Gegen das Vergessen" independently.',
+          'Developed visual concepts from client briefs, frequently selected as the final direction.',
+          'Designed sustainability reports in print and as interactive web versions, plus branding, illustration and digital layouts for corporate and institutional clients.',
+          'Managed client projects, partly coordinating directly with clients independently.',
         ],
       },
       { period: '08/2018 to 04/2019', role: 'Working Student', org: 'Loveto', place: 'Berlin' },
@@ -150,51 +173,81 @@ const copy = {
       },
     ] as Entry[],
     internships: [
-      { org: 'Grünweiss Design', place: 'Hamburg' },
-      { org: 'Rocket & Wink', place: 'Hamburg' },
+      { org: 'Grünweiss Design', place: 'Hamburg', period: '05/2016 to 10/2016' },
+      { org: 'Rocket & Wink', place: 'Hamburg', period: '03/2014 to 09/2014' },
     ],
     education: [
       { period: '10/2019 to 07/2022', role: 'M.A. Interface Design', org: 'University of Applied Sciences Potsdam', place: 'Potsdam' },
-      { period: '10/2016 to 02/2017', role: 'M.A. Visual Communication', org: 'HBK Saar', place: 'Saarbrücken · transferred to Interface Design, FH Potsdam' },
       { period: '03/2012 to 02/2016', role: 'B.A. Visual Communication', org: 'Pforzheim University', place: 'Pforzheim' },
     ] as Entry[],
   },
 }
 
-const contactRow = [CONTACT_EMAIL, personal.phone, LINKEDIN_URL, personal.portfolioUrl].filter(Boolean)
+// Reihenfolge: Portfolio zuerst, dort fällt bei Designer-Stellen die Entscheidung.
+// Alles echte Links, damit sie im PDF klickbar bleiben.
+const contactLinks = [
+  { label: personal.portfolioUrl, href: `https://${personal.portfolioUrl}` },
+  { label: LINKEDIN_URL.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, ''), href: LINKEDIN_URL },
+  { label: CONTACT_EMAIL, href: `mailto:${CONTACT_EMAIL}` },
+  { label: personal.phone, href: `tel:${personal.phone.replace(/\s/g, '')}` },
+].filter((l) => l.label)
 
 // "Context" ist Portfolio-Sprache und gehoert nicht in die Skill-Liste eines Lebenslaufs.
 const skillGroups = about.skills.filter((g) => g.category !== 'Context')
 
-// Druck: alles eine Stufe kleiner und enger, damit der Lebenslauf auf eine
-// A4-Seite passt. Bildschirm bleibt unverändert luftig.
-function EntryRow({ e }: { e: Entry }) {
+// Zweitrangiger Text liegt überall bei mindestens 75% (≥ 4.5:1 auf Weiß, WCAG AA).
+// Druck: alles eine Stufe kleiner, damit der Lebenslauf auf eine A4-Seite passt.
+// Eine Textspalte, Datum in der Rollenzeile: Parser (Greenhouse, Personio)
+// trennen sonst Datum und Rolle voneinander.
+function EntryRow({ e, compact = false }: { e: Entry; compact?: boolean }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-[140px_1fr] print:grid-cols-[110px_1fr] gap-1 md:gap-6 print:gap-4 break-inside-avoid">
-      <p className="font-mono text-[12px] print:text-[9px] uppercase tracking-[0.02em] text-[#32404f]/50 md:pt-0.5">{e.period}</p>
-      <div className="flex flex-col gap-1 print:gap-0">
-        <div className="flex flex-wrap items-baseline gap-x-2">
-          <h3 className="font-tiempos text-[18px] print:text-[12.5px] tracking-[-0.01em] text-[#32404f]">{e.role}</h3>
-          <span className="font-geist text-[15px] print:text-[10.5px] text-[#32404f]/70">· {e.org}</span>
-          <span className="font-geist text-[14px] print:text-[10px] text-[#32404f]/45">· {e.place}</span>
+    <div className="break-inside-avoid">
+      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between print:block print:leading-[1.25] gap-x-4 gap-y-0.5">
+        <div className="flex flex-wrap items-baseline gap-x-2 min-w-0 print:inline">
+          <h3
+            className={
+              compact
+                ? 'font-tiempos text-[16px] print:text-[12px] print:inline print:mr-2 text-[#32404f]/85'
+                : 'font-tiempos text-[18px] print:text-[13.5px] print:inline print:mr-2 tracking-[-0.01em] text-[#32404f]'
+            }
+          >
+            {e.role}
+          </h3>
+          <span className="font-geist text-[15px] print:text-[12px] text-[#32404f]/75">
+            · {e.org} · {e.place}
+          </span>
         </div>
-        {e.bullets && (
-          <ul className="flex flex-col gap-1 print:gap-0 mt-1 print:mt-0.5">
-            {e.bullets.map((b, i) => (
-              <li key={i} className="font-geist text-[15px] print:text-[10px] leading-[1.6] print:leading-[1.4] text-[#32404f]/70">{b}</li>
-            ))}
-          </ul>
-        )}
+        <p className="font-mono text-[12px] print:text-[10px] uppercase tracking-[0.02em] text-[#32404f]/75 whitespace-nowrap shrink-0 print:inline print:ml-2 print:before:content-['·'] print:before:mr-2">{e.period}</p>
       </div>
+      {e.about && (
+        <p className="font-geist text-[14px] print:text-[11.5px] italic text-[#32404f]/75 mt-0.5">{e.about}</p>
+      )}
+      {e.bullets && (
+        <ul className="flex flex-col gap-1 print:gap-[2px] mt-1.5 print:mt-1 list-disc pl-4 marker:text-[#32404f]/60">
+          {e.bullets.map((b, i) => (
+            <li key={i} className="font-geist text-[15px] print:text-[12px] leading-[1.6] print:leading-[1.35] text-[#32404f]/80">{b}</li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-mono text-[13px] print:text-[9.5px] uppercase tracking-[0.04em] text-[#32404f]/50 pb-3 print:pb-1 border-b border-[#32404f]/10">
+    <h2 className="font-mono text-[13px] print:text-[10px] uppercase tracking-[0.04em] text-[#32404f]/75 pb-3 print:pb-1 border-b border-[#32404f]/10">
       {children}
     </h2>
+  )
+}
+
+function RunInLabel({ children, fixed = false }: { children: React.ReactNode; fixed?: boolean }) {
+  return (
+    <span
+      className={`font-mono text-[12px] print:text-[10px] uppercase tracking-[0.02em] text-[#32404f]/75 mr-2 ${fixed ? 'inline-block indent-0 w-[108px] print:w-[96px]' : ''}`}
+    >
+      {children}
+    </span>
   )
 }
 
@@ -213,13 +266,13 @@ export default function Resume() {
       <main className="max-w-[820px] mx-auto px-8 pt-20 md:pt-28 pb-24 print:p-0 print:max-w-none">
 
         {/* ── Header ── */}
-        <header className="flex flex-col gap-6 print:gap-2 pb-10 print:pb-3 border-b border-[#32404f]/10">
+        <header className="flex flex-col gap-6 print:gap-1.5 pb-10 print:pb-2.5 border-b border-[#32404f]/10">
           <div className="flex items-start justify-between gap-6">
             <div className="flex flex-col gap-2 print:gap-0.5">
-              <h1 className="font-tiempos text-[clamp(30px,4vw,44px)] print:text-[24px] tracking-[-0.02em] leading-[1.05]">
+              <h1 className="font-tiempos text-[clamp(30px,4vw,44px)] print:text-[26px] tracking-[-0.02em] leading-[1.05]">
                 Lisa Collmer
               </h1>
-              <p className="font-geist text-[17px] print:text-[12px] text-[#32404f]/70">{t.headline}</p>
+              <p className="font-geist text-[17px] print:text-[13px] text-[#32404f]/75">{t.headline}</p>
             </div>
             <div className="print:hidden shrink-0 flex items-center gap-3">
               <div className="flex rounded-full border border-[#32404f]/15 p-0.5 font-mono text-[12px] uppercase tracking-[0.04em]">
@@ -228,7 +281,7 @@ export default function Resume() {
                     key={l}
                     onClick={() => setParams(l === 'en' ? { lang: 'en' } : {}, { replace: true })}
                     aria-pressed={lang === l}
-                    className={`rounded-full px-3 py-1.5 transition-colors duration-200 ${lang === l ? 'bg-[#32404f] text-[#fafcfd]' : 'text-[#32404f]/60 hover:text-[#32404f]'}`}
+                    className={`rounded-full px-3 py-1.5 transition-colors duration-200 ${lang === l ? 'bg-[#32404f] text-[#fafcfd]' : 'text-[#32404f]/75 hover:text-[#32404f]'}`}
                   >
                     {l}
                   </button>
@@ -246,28 +299,26 @@ export default function Resume() {
             </div>
           </div>
 
-          <div className="flex flex-wrap gap-x-6 print:gap-x-4 gap-y-1 font-geist text-[14px] print:text-[10px] text-[#32404f]/70">
-            {contactRow.map((item) => <span key={item}>{item}</span>)}
+          <div className="flex flex-wrap gap-x-6 print:gap-x-3 gap-y-1 font-geist text-[14px] print:text-[11px] text-[#32404f]/80">
+            {contactLinks.map((l) => (
+              <a key={l.href} href={l.href} className="hover:underline print:no-underline">{l.label}</a>
+            ))}
           </div>
         </header>
 
         <section className="flex flex-col gap-4 print:gap-1.5 pt-10 print:pt-3">
           <SectionLabel>{t.labels.profile}</SectionLabel>
-          <p className="font-geist text-[16px] print:text-[10px] leading-[1.7] print:leading-[1.45] text-[#32404f]/75">{t.profile}</p>
+          <p className="font-geist text-[16px] print:text-[12px] leading-[1.7] print:leading-[1.4] text-[#32404f]/80">{t.profile}</p>
         </section>
 
         <section className="flex flex-col gap-6 print:gap-2 pt-12 print:pt-3">
           <SectionLabel>{t.labels.experience}</SectionLabel>
           <div className="flex flex-col gap-7 print:gap-2">
-            {t.experience.map((e, i) => <EntryRow key={i} e={e} />)}
+            {t.experience.map((e, i) => <EntryRow key={i} e={e} compact={!e.bullets} />)}
           </div>
-        </section>
-
-        <section className="flex flex-col gap-3 print:gap-1 pt-12 print:pt-3">
-          <SectionLabel>{t.labels.internships}</SectionLabel>
-          <p className="font-geist text-[14px] print:text-[10px] leading-[1.7] text-[#32404f]/60">
-            {t.internships.map((e) => `${e.org} (${e.place})`).join(' · ')}
-            {` · ${t.internshipsYears}`}
+          <p className="font-geist text-[14px] print:text-[11.5px] leading-[1.6] text-[#32404f]/75">
+            <RunInLabel>{t.labels.internships}</RunInLabel>
+            {t.internships.map((e) => `${e.org} (${e.place}) ${e.period}`).join(' · ')}
           </p>
         </section>
 
@@ -280,23 +331,18 @@ export default function Resume() {
 
         <section className="flex flex-col gap-4 print:gap-1.5 pt-12 print:pt-3">
           <SectionLabel>{t.labels.skills}</SectionLabel>
-          <div className="flex flex-col gap-1.5 print:gap-0.5">
+          <div className="flex flex-col gap-1.5 print:gap-[2px]">
             {skillGroups.map((g) => (
-              <div key={g.category} className="grid grid-cols-1 md:grid-cols-[140px_1fr] print:grid-cols-[110px_1fr] gap-1 md:gap-6 print:gap-4">
-                <p className="font-mono text-[12px] print:text-[9px] uppercase tracking-[0.02em] text-[#32404f]/50 md:pt-0.5">
-                  {t.skillCategory(g.category)}
-                </p>
-                <p className="font-geist text-[15px] print:text-[10px] leading-[1.6] print:leading-[1.4] text-[#32404f]/70">
-                  {g.items.map(t.skillItem).join(', ')}
-                </p>
-              </div>
+              <p key={g.category} className="pl-[116px] -indent-[116px] print:pl-[104px] print:-indent-[104px] font-geist text-[15px] print:text-[12px] leading-[1.6] print:leading-[1.35] text-[#32404f]/80">
+                <RunInLabel fixed>{t.skillCategory(g.category)}</RunInLabel>
+                {g.items.map(t.skillItem).join(', ')}
+              </p>
             ))}
+            <p className="pl-[116px] -indent-[116px] print:pl-[104px] print:-indent-[104px] font-geist text-[15px] print:text-[12px] leading-[1.6] print:leading-[1.35] text-[#32404f]/80">
+              <RunInLabel fixed>{t.labels.languages}</RunInLabel>
+              {t.languages.join(' · ')}
+            </p>
           </div>
-        </section>
-
-        <section className="flex flex-col gap-4 print:gap-1 pt-12 print:pt-3">
-          <SectionLabel>{t.labels.languages}</SectionLabel>
-          <p className="font-geist text-[15px] print:text-[10px] leading-[1.7] text-[#32404f]/70">{t.languages.join(' · ')}</p>
         </section>
 
       </main>
