@@ -1,5 +1,6 @@
 import { versions } from '../versions'
 import LabPreviewCard from '../components/LabPreviewCard'
+import FigmaClip from '../components/FigmaClip'
 
 // Dev-only version gallery — never routed in production (see App.tsx).
 export default function Lab() {
@@ -15,6 +16,12 @@ export default function Lab() {
             <LabPreviewCard key={v.id} version={v} />
           ))}
         </div>
+
+        <h2 className="font-title-italic text-title-sm text-light mt-20 mb-2">Motion test</h2>
+        <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-grey mb-8">
+          Figma animation exported as video · probe diagnosing screen
+        </p>
+        <FigmaClip name="probe-diagnosing" caption="Probe test · Diagnosing" />
       </div>
     </div>
   )
