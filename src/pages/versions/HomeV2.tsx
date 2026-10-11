@@ -110,11 +110,11 @@ function CaseStudyGridCard({ project, onHover }: { project: typeof projects[numb
 }
 
 const cvEntries = [
-  { year: '2024', role: 'Head of Product Design', company: 'FYTA' },
+  { year: '2024', role: 'Senior Product Designer', company: 'FYTA' },
   { year: '2022', role: 'Produkt Designer', company: 'FYTA' },
   { year: '2022', role: 'Master of Arts', company: 'FH Potsdam' },
   { year: '2020', role: 'Grafik & Digital Designerin', company: 'Loveto' },
-  { year: '2018', role: 'Grafik & Digital Designerin', company: 'FH Eichmeister Kreativagentur' },
+  { year: '2017', role: 'Grafik & Digital Designerin', company: 'Eichmeister Kreativagentur' },
 ]
 
 export default function HomeV2() {

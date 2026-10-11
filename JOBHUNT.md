@@ -3,6 +3,28 @@
 Ziel: Senior Product Designer. Erste Bewerbungen **Montag, 28.09.2026**.
 Kapazität: 2 Sessions pro Woche à 90 Minuten, neben dem 40h-Job.
 
+> **Stand 11.10.2026:** No applications sent yet. The 28.09 deadline slipped by
+> two weeks. Smallest step that still counts: send the first application with the
+> Systems CV as soon as the open facts below are answered. Do not wait for the
+> perfect version.
+>
+> Decisions 11.10 (they supersede the 20.09 title decision below):
+> - Title is **Senior Product Designer**. "Head of Product Design" is removed
+>   everywhere (CV, About, case studies, hero table).
+> - Client names (KfW, HOWOGE, Stadtreinigung Hamburg, Ruegenwalder Muehle,
+>   Froebel) stay on the website CV, worded "clients including". Not on LinkedIn.
+> - No job-search wording on the public website (About, contact, CV profile).
+> - Targets: larger companies, systems-heavy products. Startups only for a high
+>   offer. Variants to build: Systems (default) and Ownership (end to end).
+> - Canonical scope wording: one to five supported sensor models (added Beam
+>   Gen 2, Mini, Sphere, Terra), three new sensor products (Mini, Sphere, Terra).
+>   Design system shipped 2023, implemented in code. Native iOS and Android
+>   moved to Flutter, design handover to an external dev team.
+>
+> Open facts (ask Lisa, never infer): date promoted to Senior and the first
+> contract title; app user numbers (5,000 to 11,000 is unverified, remind her to
+> bring the source); hub counted or not.
+
 > **Stand 20.09.2026:** Zwischen dem 30.08. und heute ist nichts passiert.
 > Drei Wochen weg, acht Tage bis zum Termin. Der Termin bleibt. Phase 2
 > (Englisch) rutscht hinter den Start, siehe Plan B unten.

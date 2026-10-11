@@ -33,7 +33,8 @@ type Entry = {
 // DE ist bewusst Nominalstil ("Umbau der App", "Anleitung einer Werkstudentin"),
 // Verbstil klingt im Deutschen komisch. EN ist Verb-first.
 // Kanonische Zahlen (überall gleich, auch LinkedIn und JOBHUNT.md): fünf
-// unterstützte Produkte = vier Sensor-Modelle + der Hub, drei neue Sensoren.
+// unterstützte Sensor-Modelle (Beam Gen 1 bestand, neu: Beam Gen 2, Mini,
+// Sphere, Terra), davon drei neue Produktlinien (Mini, Sphere, Terra).
 const copy = {
   de: {
     headline: 'Senior Product Designer · Berlin',
@@ -47,23 +48,24 @@ const copy = {
       languages: 'Sprachen',
     },
     profile:
-      'Produktdesignerin mit Hintergrund in Visueller Kommunikation (B.A., Pforzheim) und einem M.A. in Interface Design (FH Potsdam). Seit vier Jahren alleinige Designerin bei FYTA, einem Berliner Sensor-Startup: App, Website und Verpackung vollständig verantwortet, von der Systemlogik bis zur finalen Umsetzung. App von einem auf fünf unterstützte Produkte (vier Sensor-Modelle und der Hub) ausgebaut, in enger Zusammenarbeit mit Hardware und Firmware. Stärken liegen dort, wo technische Komplexität und menschliche Nutzung in Einklang gebracht werden müssen.',
+      'Produktdesignerin mit Hintergrund in Visueller Kommunikation (B.A., Pforzheim) und einem M.A. in Interface Design (FH Potsdam). Seit vier Jahren alleinige Designerin bei FYTA, einem Berliner Sensor-Startup: App, Website und Verpackung vollständig verantwortet, von der Systemlogik bis zur finalen Umsetzung. Stärken liegen dort, wo technische Komplexität und menschliche Nutzung in Einklang gebracht werden müssen.',
     languages: ['Deutsch (Muttersprache)', 'Englisch (fließend)'],
     skillCategory: (c: string) => c,
     skillItem: (s: string) => s,
     experience: [
       {
         period: '10/2022 bis heute',
-        role: 'Head of Product Design',
+        role: 'Senior Product Designer',
         org: 'FYTA',
         place: 'Berlin',
         about: 'Berliner Startup, das Pflanzenpflege mit sensorbasierter Technologie verbindet.',
         bullets: [
           'Alleinige Verantwortung für Konzept, Research, UX und UI von App, Website und Verpackung, von der Anforderung bis zur finalen Umsetzung.',
-          'Vollständiges Redesign der App und Aufbau eines Design Systems für Konsistenz über alle Screens und Features.',
-          'Ausbau der App von einem auf fünf unterstützte Produkte (vier Sensor-Modelle und der Hub): Neustrukturierung von Systemlogik, Onboarding, Fehlerfällen und Datenvisualisierung.',
-          'Begleitung von drei neuen Sensoren, von der Produktdefinition bis zum Launch.',
-          'Enge Zusammenarbeit mit Hardware und Firmware zur Abstimmung von technischer Machbarkeit und Nutzerbedarf.',
+          'Vollständiges Redesign der App und Aufbau eines Design Systems, 2023 ausgeliefert und im Code umgesetzt.',
+          'Ausbau der App von einem auf fünf unterstützte Sensor-Modelle (neu: Beam Gen 2, Mini, Sphere, Terra): Neustrukturierung von Systemlogik, Onboarding, Fehlerfällen und Datenvisualisierung.',
+          'Begleitung von drei neuen Sensorprodukten (Mini, Sphere, Terra), von der Produktdefinition bis zum Launch.',
+          'Begleitung der Design-Übergabe der gesamten App an ein externes Entwicklungsteam beim Wechsel von nativem iOS und Android auf Flutter.',
+          'Enge Zusammenarbeit mit CTO, Frontend- und Backend-Entwicklung, Hardware und Firmware, Data Science und Pflanzenwissenschaft zur Abstimmung von technischer Machbarkeit und Nutzerbedarf.',
           'Regelmäßige Präsentation von Design-Entscheidungen und Trade-offs vor der Geschäftsführung zur Abstimmung von Scope und Prioritäten.',
           'Fachliche Anleitung einer Werkstudentin und mehrerer Praktikant:innen, inklusive Briefings und Design-Reviews.',
           'Aufbau von Designprinzipien, Guidelines und Projektplanung, da vorher keine Designstruktur existierte.',
@@ -86,7 +88,7 @@ const copy = {
         place: 'Berlin',
         bullets: [
           'Entwicklung visueller Konzepte aus Kunden-Briefings, häufig als finale Umsetzung ausgewählt.',
-          'Gestaltung von Nachhaltigkeitsberichten in Print und als interaktive Web-Versionen, Branding, Illustration und digitales Layout für Unternehmens- und Institutionskunden.',
+          'Gestaltung von Nachhaltigkeitsberichten in Print und als interaktive Web-Versionen, Branding, Illustration und digitales Layout für Kunden wie KfW, HOWOGE, Stadtreinigung Hamburg, Rügenwalder Mühle und Fröbel.',
           'Betreuung von Kundenprojekten, teilweise eigenständige Abstimmung mit Kund:innen.',
         ],
       },
@@ -120,23 +122,24 @@ const copy = {
       languages: 'Languages',
     },
     profile:
-      'Product designer with a background in visual communication (B.A., Pforzheim) and an M.A. in Interface Design (FH Potsdam). For four years the sole designer at FYTA, a Berlin plant sensor startup, owning app, website and packaging end to end, from system logic to final execution. Extended the app from one to five supported products (four sensor models and the hub), working closely with hardware and firmware. Strongest where technical complexity has to meet everyday use.',
+      'Product designer with a background in visual communication (B.A., Pforzheim) and an M.A. in Interface Design (FH Potsdam). For four years the sole designer at FYTA, a Berlin plant sensor startup, owning app, website and packaging end to end, from system logic to final execution. Strongest where technical complexity has to meet everyday use.',
     languages: ['German (native)', 'English (fluent)'],
     skillCategory: (c: string) => ({ Methoden: 'Methods', Zusammenarbeit: 'Collaboration' } as Record<string, string>)[c] ?? c,
     skillItem: (s: string) => (s === 'Cross-funktionale Zusammenarbeit' ? 'Cross-functional collaboration' : s),
     experience: [
       {
         period: '10/2022 to present',
-        role: 'Head of Product Design',
+        role: 'Senior Product Designer',
         org: 'FYTA',
         place: 'Berlin',
         about: 'Berlin startup combining plant care with sensor-based technology.',
         bullets: [
           'Owned concept, research, UX and UI for app, website and packaging as the sole designer, from requirement to final execution.',
-          'Completely redesigned the app and built a design system for consistency across all screens and features.',
-          'Extended the app from one to five supported products (four sensor models and the hub), restructuring system logic, onboarding, error handling and data visualisation.',
-          'Took three new sensors from product definition to launch.',
-          'Worked closely with hardware and firmware to align technical feasibility with user needs.',
+          'Completely redesigned the app and built a design system, shipped in 2023 and implemented in code.',
+          'Extended the app from one to five supported sensor models (added Beam Gen 2, Mini, Sphere and Terra), restructuring system logic, onboarding, error handling and data visualisation.',
+          'Took three new sensor products (Mini, Sphere, Terra) from product definition to launch.',
+          'Guided the design handover of the complete app to an external development team during the move from native iOS and Android to Flutter.',
+          'Worked closely with the CTO, front-end and back-end developers, hardware and firmware, data scientists and plant scientists to align technical feasibility with user needs.',
           'Presented design decisions and trade-offs to leadership on a regular basis to agree on scope and priorities.',
           'Mentored a working student and several interns through briefings and design reviews.',
           'Set up design principles, guidelines and project planning where no design structure existed before.',
@@ -159,7 +162,7 @@ const copy = {
         place: 'Berlin',
         bullets: [
           'Developed visual concepts from client briefs, frequently selected as the final direction.',
-          'Designed sustainability reports in print and as interactive web versions, plus branding, illustration and digital layouts for corporate and institutional clients.',
+          'Designed sustainability reports in print and as interactive web versions, plus branding, illustration and digital layouts for clients including KfW, HOWOGE, Stadtreinigung Hamburg, Rügenwalder Mühle and Fröbel.',
           'Managed client projects, partly coordinating directly with clients independently.',
         ],
       },
@@ -217,7 +220,7 @@ function EntryRow({ e, compact = false }: { e: Entry; compact?: boolean }) {
             · {e.org} · {e.place}
           </span>
         </div>
-        <p className="font-mono text-[12px] print:text-[10px] uppercase tracking-[0.02em] text-[#32404f]/75 whitespace-nowrap shrink-0 print:inline print:ml-2 print:before:content-['·'] print:before:mr-2">{e.period}</p>
+        <p className="font-mono text-[12px] print:text-[10px] uppercase tracking-[0.02em] text-[#c84a1a] whitespace-nowrap shrink-0 print:inline print:ml-2 print:before:content-['·'] print:before:mr-2">{e.period}</p>
       </div>
       {e.about && (
         <p className="font-geist text-[14px] print:text-[11.5px] italic text-[#32404f]/75 mt-0.5">{e.about}</p>

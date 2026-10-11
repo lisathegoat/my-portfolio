@@ -27,7 +27,7 @@ export default function CaseStudyTemplate() {
     <CaseStudyLayout
       title="Component Template — Case Study Baukasten"
       meta={{
-        role: 'Head of Product Design',
+        role: 'Senior Product Designer',
         tags: ['UI/UX', 'Design System', 'Konzeption'],
         status: 'Template',
       }}
