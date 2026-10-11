@@ -1,5 +1,4 @@
 import type { ComponentType } from 'react'
-import HomeV1 from './pages/versions/HomeV1'
 import HomeV2 from './pages/versions/HomeV2'
 
 export interface VersionEntry {
@@ -22,13 +21,5 @@ export const versions: VersionEntry[] = [
     label: 'V2',
     description: 'White, masonry grid — live',
     component: HomeV2,
-  },
-  {
-    id: 'v1',
-    path: '/v1',
-    label: 'V1',
-    description: 'Dark, editorial hero — archived exploration',
-    devOnly: true,
-    component: HomeV1,
   },
 ]

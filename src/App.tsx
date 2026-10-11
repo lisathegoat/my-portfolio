@@ -11,7 +11,7 @@ import { caseStudyVersions, liveCaseStudy } from './caseStudyVersions'
 const isDev = import.meta.env.DEV
 
 // Production surface is deliberately small: home, about, resume, the case
-// studies. Explorations (V1), the component template and the design system
+// studies. The component template and the design system
 // reference are dev-only — a recruiter should never land on internal scaffolding.
 export default function App() {
   return (
@@ -26,10 +26,10 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/resume" element={<Resume />} />
 
-        {/* Public case study routes — V2 treatment where it exists, else V1. */}
+        {/* Public case study routes. */}
         {caseStudyVersions.map((cs) => {
           const Live = liveCaseStudy(cs)
-          return Live ? <Route key={cs.slug} path={cs.slug} element={<Live />} /> : null
+          return <Route key={cs.slug} path={cs.slug} element={<Live />} />
         })}
 
         {/* Old versioned URLs may already be shared or indexed — keep them alive. */}
@@ -40,12 +40,6 @@ export default function App() {
 
         {isDev && (
           <>
-            {caseStudyVersions
-              .filter((cs) => cs.v1)
-              .map((cs) => {
-                const V1 = cs.v1!
-                return <Route key={`${cs.slug}/v1`} path={`${cs.slug}/v1`} element={<V1 />} />
-              })}
             <Route path="/template" element={<CaseStudyTemplate />} />
             <Route path="/design-system" element={<DesignSystem />} />
             <Route path="/lab" element={<Lab />} />
