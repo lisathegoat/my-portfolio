@@ -74,7 +74,9 @@ Core Skills
 
 ## 4. Erfahrung / Experience
 
-### FYTA · Senior Product Designer · Okt 2022–heute · Berlin
+### FYTA · Senior Product Designer · Feb 2024–heute · Berlin
+
+(Zweite Position unter FYTA anlegen: Produktdesignerin · Okt 2022–Jan 2024. Beschreibung nur bei der aktuellen Position, nicht doppeln.)
 
 **DE:**
 ```
@@ -92,12 +94,12 @@ Redesign & Design System
 • Aufbau eines Design Systems, 2023 ausgeliefert und im Code umgesetzt.
 
 Systemskalierung
-• Ausbau der App von einem auf fünf unterstützte Sensor-Modelle (neu: Beam Gen 2, Mini, Sphere, Terra): Neustrukturierung von Systemlogik, Onboarding, Fehlerfällen und Datenvisualisierung.
+• Ausbau der App von einem auf fünf unterstützte Sensor-Modelle (vier neu: Beam Gen 2, Mini, Sphere, Terra): Neustrukturierung von Systemlogik, Onboarding, Fehlerfällen und Datenvisualisierung.
 • Begleitung von drei neuen Sensorprodukten (Mini, Sphere, Terra), von der Produktdefinition bis zum Launch.
-• Begleitung der Design-Übergabe der gesamten App an ein externes Entwicklungsteam beim Wechsel von nativem iOS und Android auf Flutter.
+• Dokumentation der gesamten App und Begleitung der Übergabe an ein externes Entwicklungsteam gemeinsam mit dem CTO beim Wechsel von nativem iOS und Android auf Flutter.
 
 Cross-funktionale Zusammenarbeit
-• Enge Zusammenarbeit mit Hardware und Firmware, zur Abstimmung von technischer Machbarkeit und Nutzerbedarf.
+• Cross-funktionale Zusammenarbeit mit CTO, Frontend- und Backend-Entwicklung, Hardware und Firmware, Data Science und Pflanzenwissenschaft, zur Abstimmung von technischer Machbarkeit und Nutzerbedarf.
 
 Teamführung & Struktur
 • Fachliche Einführung und Anleitung einer Werkstudentin sowie mehrerer Praktikant:innen, inklusive Briefings und Design-Reviews.
@@ -120,12 +122,12 @@ Redesign & Design System
 • Built a design system, shipped in 2023 and implemented in code.
 
 System Scaling
-• Extended the app from one to five supported sensor models (added Beam Gen 2, Mini, Sphere and Terra): restructured system logic, onboarding, error states, and data visualization.
+• Extended the app from one to five supported sensor models (four new: Beam Gen 2, Mini, Sphere and Terra): restructured system logic, onboarding, error states, and data visualization.
 • Took three new sensor products (Mini, Sphere, Terra) from product definition to launch.
-• Guided the design handover of the complete app to an external development team during the move from native iOS and Android to Flutter.
+• Created the complete documentation for the app and, together with the CTO, guided its handover to an external development team during the move from native iOS and Android to Flutter.
 
 Cross-Functional Collaboration
-• Close collaboration with hardware and firmware to align technical feasibility with user needs.
+• Worked cross-functionally with the CTO, front-end and back-end developers, hardware and firmware, data scientists and plant scientists to align technical feasibility with user needs.
 
 Team Leadership & Structure
 • Onboarded and guided a working student and several interns, including briefings and design reviews.
@@ -295,7 +297,7 @@ EN: Branding Strategy, Web Design, Layout Design, Graphic Design
 ## Offen — vor dem Eintragen klären
 
 1. Headline final wählen (Abschnitt 1)
-2. Aktueller LinkedIn-Titel „Produktdesigner" → auf „Senior Product Designer" ändern
+2. Aktueller LinkedIn-Titel „Produktdesigner" → zwei Positionen unter FYTA anlegen: Senior Product Designer (ab Feb 2024) und Produktdesignerin (Okt 2022–Jan 2024)
 3. Aktueller Loveto-Titel „Grafikdesigner" → auf „Designerin" ändern
 4. Eichmeister-Daten auf LinkedIn falsch (Apr 2016–Feb 2026) → ersetzen mit Apr 2017–Mai 2018
 5. Ausbildung auf LinkedIn komplett leer → beide Einträge ergänzen

@@ -49,12 +49,12 @@ export const caseStudies = {
     description: 'Von einem Einzelprodukt zu einem skalierbaren Sensor-Ökosystem — Systemlogik, Edge Cases und ein Onboarding, das mit dem Produkt mitwächst.',
     tags: ['UI/UX', 'Design System', 'Konzeption'],
     meta: {
-      role: 'Senior Product Designer',
+      role: 'Product Designer',
       status: 'Shipped',
       imageFolder: '/images/fyta-onboarding/',
       coverVideo: 'cover_Onboarding_video.mp4',
     },
-    intro: 'FYTA verbindet Pflanzenpflege mit sensorbasierten Daten — die App übersetzt Messwerte aus Boden, Licht und Umgebung in konkrete Pflegehinweise. Bis zur Einführung der neuen Sensoren kannte die App genau ein Modell: ein Sensor, eine Pflanze, ein Topf.\n\nAls Senior Product Designer habe ich die Erweiterung des Sensor-Portfolios von Grund auf verantwortet, von der Systemlogik im Backend bis zum finalen UI. Das Projekt war kein Feature-Update. Es war der Umbau eines Einzelprodukts zu einem skalierbaren Ökosystem.',
+    intro: 'FYTA verbindet Pflanzenpflege mit sensorbasierten Daten — die App übersetzt Messwerte aus Boden, Licht und Umgebung in konkrete Pflegehinweise. Bis zur Einführung der neuen Sensoren kannte die App genau ein Modell: ein Sensor, eine Pflanze, ein Topf.\n\nIch habe die Erweiterung des Sensor-Portfolios von Grund auf verantwortet, von der Systemlogik im Backend bis zum finalen UI. Das Projekt war kein Feature-Update. Es war der Umbau eines Einzelprodukts zu einem skalierbaren Ökosystem.',
     research: 'Für die neuen Sensoren gab es keine Nutzer:innen, die man hätte befragen können — das Produkt existierte noch nicht. Die Recherche stützte sich auf zwei Quellen.\n\nErstens: Support-Tickets aus der Beam-Ära. Sie zeigten, wo das bestehende Onboarding grundsätzlich scheitert — die meisten Probleme entstanden nicht durch defekte Hardware, sondern durch Setups, die das UI unbemerkt zugelassen hatte. Nutzer:innen konnten nicht unterscheiden, ob ein Sensor nicht kalibriert war oder schlicht nicht korrekt eingesteckt. Die App ließ beides durch.\n\nZweitens: Enge Zusammenarbeit mit dem Tech-Team. Es kannte Backend-seitige Constraints, die im UI nie adressiert worden waren: Substratkompatibilität als harte Voraussetzung für zuverlässige Messwerte, ein Pairing-Timeout von 60 Sekunden, Firmware-Update als Pflichtschritt vor dem ersten Einsatz.\n\nDas Ergebnis dieser Analyse war kein Konzept — es war ein Flowchart. Alle Abhängigkeiten, Inkompatibilitäten und Sonderfälle wurden zuerst als Systemlogik sichtbar gemacht, bevor der erste Screen entworfen wurde.',
     oldFlowReview: {
       intro: 'Ausgangspunkt war der bestehende Beam-Onboarding-Flow. Eine strukturierte Analyse zeigte, wo das UI grundlegende UX-Prinzipien verletzt — und warum dieser Flow nicht auf neue Sensortypen skaliert.',
@@ -195,7 +195,7 @@ export const caseStudies = {
     description: 'Defekte Bodenstäbe liefern plausible aber falsche Messwerte. Ein algorithmisch getriggerter Self-Service-Flow, der Nutzer:innen das Problem selbst lösen lässt — ohne Supportanfrage.',
     tags: ['UI/UX', 'System Design', 'Self-Service UX', 'Hardware'],
     meta: {
-      role: 'Senior Product Designer',
+      role: 'Product Designer',
       status: 'Shipped',
       imageFolder: '/images/probe-diagnostic/',
       cover: 'cover.png',
@@ -279,7 +279,7 @@ export const caseStudies = {
     description: 'Fünf Parameter neu gestaltet: Wie ich Sensordaten so kontextualisiere, dass Nutzer:innen verstehen, warum ihre Pflanze genau das braucht.',
     tags: ['UI/UX', 'Data Visualization', 'Design System'],
     meta: {
-      role: 'Senior Product Designer',
+      role: 'Product Designer',
       status: 'Shipped',
       imageFolder: '/images/dataVis/',
       cover: 'cover.png',

@@ -23,6 +23,7 @@ type Entry = {
   org: string
   place: string
   about?: string
+  earlier?: { role: string; period: string }[]
   bullets?: string[]
 }
 
@@ -54,18 +55,19 @@ const copy = {
     skillItem: (s: string) => s,
     experience: [
       {
-        period: '10/2022 bis heute',
+        period: '02/2024 bis heute',
         role: 'Senior Product Designer',
         org: 'FYTA',
         place: 'Berlin',
+        earlier: [{ role: 'Produktdesignerin', period: '10/2022 bis 01/2024' }],
         about: 'Berliner Startup, das Pflanzenpflege mit sensorbasierter Technologie verbindet.',
         bullets: [
           'Alleinige Verantwortung für Konzept, Research, UX und UI von App, Website und Verpackung, von der Anforderung bis zur finalen Umsetzung.',
           'Vollständiges Redesign der App und Aufbau eines Design Systems, 2023 ausgeliefert und im Code umgesetzt.',
-          'Ausbau der App von einem auf fünf unterstützte Sensor-Modelle (neu: Beam Gen 2, Mini, Sphere, Terra): Neustrukturierung von Systemlogik, Onboarding, Fehlerfällen und Datenvisualisierung.',
+          'Ausbau der App von einem auf fünf unterstützte Sensor-Modelle (vier neu: Beam Gen 2, Mini, Sphere, Terra): Neustrukturierung von Systemlogik, Onboarding, Fehlerfällen und Datenvisualisierung.',
           'Begleitung von drei neuen Sensorprodukten (Mini, Sphere, Terra), von der Produktdefinition bis zum Launch.',
-          'Begleitung der Design-Übergabe der gesamten App an ein externes Entwicklungsteam beim Wechsel von nativem iOS und Android auf Flutter.',
-          'Enge Zusammenarbeit mit CTO, Frontend- und Backend-Entwicklung, Hardware und Firmware, Data Science und Pflanzenwissenschaft zur Abstimmung von technischer Machbarkeit und Nutzerbedarf.',
+          'Dokumentation der gesamten App und Begleitung der Übergabe an ein externes Entwicklungsteam gemeinsam mit dem CTO beim Wechsel von nativem iOS und Android auf Flutter.',
+          'Cross-funktionale Zusammenarbeit mit CTO, Frontend- und Backend-Entwicklung, Hardware und Firmware, Data Science und Pflanzenwissenschaft zur Abstimmung von technischer Machbarkeit und Nutzerbedarf.',
           'Regelmäßige Präsentation von Design-Entscheidungen und Trade-offs vor der Geschäftsführung zur Abstimmung von Scope und Prioritäten.',
           'Fachliche Anleitung einer Werkstudentin und mehrerer Praktikant:innen, inklusive Briefings und Design-Reviews.',
           'Aufbau von Designprinzipien, Guidelines und Projektplanung, da vorher keine Designstruktur existierte.',
@@ -128,18 +130,19 @@ const copy = {
     skillItem: (s: string) => (s === 'Cross-funktionale Zusammenarbeit' ? 'Cross-functional collaboration' : s),
     experience: [
       {
-        period: '10/2022 to present',
+        period: '02/2024 to present',
         role: 'Senior Product Designer',
         org: 'FYTA',
         place: 'Berlin',
+        earlier: [{ role: 'Product Designer', period: '10/2022 to 01/2024' }],
         about: 'Berlin startup combining plant care with sensor-based technology.',
         bullets: [
           'Owned concept, research, UX and UI for app, website and packaging as the sole designer, from requirement to final execution.',
           'Completely redesigned the app and built a design system, shipped in 2023 and implemented in code.',
-          'Extended the app from one to five supported sensor models (added Beam Gen 2, Mini, Sphere and Terra), restructuring system logic, onboarding, error handling and data visualisation.',
+          'Extended the app from one to five supported sensor models (four new: Beam Gen 2, Mini, Sphere and Terra), restructuring system logic, onboarding, error handling and data visualisation.',
           'Took three new sensor products (Mini, Sphere, Terra) from product definition to launch.',
-          'Guided the design handover of the complete app to an external development team during the move from native iOS and Android to Flutter.',
-          'Worked closely with the CTO, front-end and back-end developers, hardware and firmware, data scientists and plant scientists to align technical feasibility with user needs.',
+          'Created the complete documentation for the app and, together with the CTO, guided its handover to an external development team during the move from native iOS and Android to Flutter.',
+          'Worked cross-functionally with the CTO, front-end and back-end developers, hardware and firmware, data scientists and plant scientists to align technical feasibility with user needs.',
           'Presented design decisions and trade-offs to leadership on a regular basis to agree on scope and priorities.',
           'Mentored a working student and several interns through briefings and design reviews.',
           'Set up design principles, guidelines and project planning where no design structure existed before.',
@@ -196,32 +199,44 @@ const contactLinks = [
 ].filter((l) => l.label)
 
 // "Context" ist Portfolio-Sprache und gehoert nicht in die Skill-Liste eines Lebenslaufs.
-const skillGroups = about.skills.filter((g) => g.category !== 'Context')
+// "Zusammenarbeit" steht auf dem Lebenslauf in den FYTA-Bullets, nicht als Wortliste.
+const skillGroups = about.skills.filter((g) => g.category !== 'Context' && g.category !== 'Zusammenarbeit')
 
 // Zweitrangiger Text liegt überall bei mindestens 75% (≥ 4.5:1 auf Weiß, WCAG AA).
 // Druck: alles eine Stufe kleiner, damit der Lebenslauf auf eine A4-Seite passt.
 // Eine Textspalte, Datum in der Rollenzeile: Parser (Greenhouse, Personio)
 // trennen sonst Datum und Rolle voneinander.
+function HeadingRow({ role, org, place, period, compact }: { role: string; org: string; place: string; period: string; compact: boolean }) {
+  return (
+    <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between print:block print:leading-[1.25] gap-x-4 gap-y-0.5">
+      <div className="flex flex-wrap items-baseline gap-x-2 min-w-0 print:inline">
+        <h3
+          className={
+            compact
+              ? 'font-tiempos text-[16px] print:text-[12px] print:inline print:mr-2 text-[#32404f]/85'
+              : 'font-tiempos text-[18px] print:text-[13.5px] print:inline print:mr-2 tracking-[-0.01em] text-[#32404f]'
+          }
+        >
+          {role}
+        </h3>
+        <span className="font-geist text-[15px] print:text-[12px] text-[#32404f]/75">
+          · {org} · {place}
+        </span>
+      </div>
+      <p className="font-mono text-[12px] print:text-[10px] uppercase tracking-[0.02em] text-[#c84a1a] whitespace-nowrap shrink-0 print:inline print:ml-2 print:before:content-['·'] print:before:mr-2">{period}</p>
+    </div>
+  )
+}
+
 function EntryRow({ e, compact = false }: { e: Entry; compact?: boolean }) {
   return (
     <div className="break-inside-avoid">
-      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between print:block print:leading-[1.25] gap-x-4 gap-y-0.5">
-        <div className="flex flex-wrap items-baseline gap-x-2 min-w-0 print:inline">
-          <h3
-            className={
-              compact
-                ? 'font-tiempos text-[16px] print:text-[12px] print:inline print:mr-2 text-[#32404f]/85'
-                : 'font-tiempos text-[18px] print:text-[13.5px] print:inline print:mr-2 tracking-[-0.01em] text-[#32404f]'
-            }
-          >
-            {e.role}
-          </h3>
-          <span className="font-geist text-[15px] print:text-[12px] text-[#32404f]/75">
-            · {e.org} · {e.place}
-          </span>
+      <HeadingRow role={e.role} org={e.org} place={e.place} period={e.period} compact={compact} />
+      {e.earlier?.map((r) => (
+        <div key={r.role + r.period} className="mt-0.5 print:mt-0">
+          <HeadingRow role={r.role} org={e.org} place={e.place} period={r.period} compact />
         </div>
-        <p className="font-mono text-[12px] print:text-[10px] uppercase tracking-[0.02em] text-[#c84a1a] whitespace-nowrap shrink-0 print:inline print:ml-2 print:before:content-['·'] print:before:mr-2">{e.period}</p>
-      </div>
+      ))}
       {e.about && (
         <p className="font-geist text-[14px] print:text-[11.5px] italic text-[#32404f]/75 mt-0.5">{e.about}</p>
       )}

@@ -21,9 +21,16 @@ Kapazität: 2 Sessions pro Woche à 90 Minuten, neben dem 40h-Job.
 >   Design system shipped 2023, implemented in code. Native iOS and Android
 >   moved to Flutter, design handover to an external dev team.
 >
-> Open facts (ask Lisa, never infer): date promoted to Senior and the first
-> contract title; app user numbers (5,000 to 11,000 is unverified, remind her to
-> bring the source); hub counted or not.
+> Facts confirmed 11.10: promoted to Senior Product Designer in 02/2024; first
+> title Product Designer from 10/2022 (taken from the old LinkedIn title and the
+> hero table, Lisa to confirm the exact wording). Beam Gen 1 and the hub existed
+> before, the four other sensors are new. She created the full app documentation
+> and guided the handover to the external dev team together with the CTO. The app
+> is available in English and German, French and Spanish are planned (not on the
+> CV until live).
+>
+> Open facts (ask Lisa, never infer): app user numbers (5,000 to 11,000 is
+> unverified, remind her to bring the source).
 
 > **Stand 20.09.2026:** Zwischen dem 30.08. und heute ist nichts passiert.
 > Drei Wochen weg, acht Tage bis zum Termin. Der Termin bleibt. Phase 2
