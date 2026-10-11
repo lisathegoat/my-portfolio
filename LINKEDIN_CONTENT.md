@@ -40,7 +40,7 @@ Format: Bullets als „•", keine Markdown-Zeichen — LinkedIn rendert kein Ma
 ```
 Produktdesignerin mit Hintergrund in Visueller Kommunikation und Illustration. Mein Gespür für visuelle Klarheit setze ich heute in Systemlogik um: nicht nur, wie etwas aussieht, sondern wie es funktioniert.
 
-Seit vier Jahren bei FYTA, heute als Head of Product Design verantwortlich für zentrale Design-Entscheidungen, von der Systemlogik bis zum finalen UI.
+Seit vier Jahren bei FYTA, heute als Senior Product Designer verantwortlich für zentrale Design-Entscheidungen, von der Systemlogik bis zum finalen UI.
 
 Kernkompetenzen
 • Product Design, Interface Design, Interaction Design
@@ -57,7 +57,7 @@ Kernkompetenzen
 ```
 Product designer with a background in visual communication and illustration. Today I put that eye for visual clarity into systems: not just how something looks, but how it works.
 
-Four years at FYTA, now as Head of Product Design, responsible for key design decisions, from system logic to final UI.
+Four years at FYTA, now as Senior Product Designer, responsible for key design decisions, from system logic to final UI.
 
 Core Skills
 • Product Design, Interface Design, Interaction Design
@@ -74,7 +74,9 @@ Core Skills
 
 ## 4. Erfahrung / Experience
 
-### FYTA · Head of Product Design · Okt 2022–heute · Berlin
+### FYTA · Senior Product Designer · Feb 2024–heute · Berlin
+
+(Zweite Position unter FYTA anlegen: Produktdesignerin · Okt 2022–Jan 2024. Beschreibung nur bei der aktuellen Position, nicht doppeln.)
 
 **DE:**
 ```
@@ -89,14 +91,15 @@ Physische Markenpräsenz
 
 Redesign & Design System
 • Vollständiges Redesign der App.
-• Aufbau eines Design Systems zur Sicherstellung von Konsistenz über alle Screens und Features.
+• Aufbau eines Design Systems, 2023 ausgeliefert und im Code umgesetzt.
 
 Systemskalierung
-• Umbau der App von einem auf fünf unterstützte Sensor-Modelle: Neustrukturierung von Systemlogik, Onboarding, Fehlerfällen und Datenvisualisierung.
-• Begleitung von drei neuen Sensorprodukten, von der Produktdefinition bis zum Launch.
+• Ausbau der App von einem auf fünf unterstützte Sensor-Modelle (vier neu: Beam Gen 2, Mini, Sphere, Terra): Neustrukturierung von Systemlogik, Onboarding, Fehlerfällen und Datenvisualisierung.
+• Begleitung von drei neuen Sensorprodukten (Mini, Sphere, Terra), von der Produktdefinition bis zum Launch.
+• Dokumentation der gesamten App und Begleitung der Übergabe an ein externes Entwicklungsteam gemeinsam mit dem CTO beim Wechsel von nativem iOS und Android auf Flutter.
 
 Cross-funktionale Zusammenarbeit
-• Enge Zusammenarbeit mit Hardware und Firmware, zur Abstimmung von technischer Machbarkeit und Nutzerbedarf.
+• Cross-funktionale Zusammenarbeit mit CTO, Frontend- und Backend-Entwicklung, Hardware und Firmware, Data Science und Pflanzenwissenschaft, zur Abstimmung von technischer Machbarkeit und Nutzerbedarf.
 
 Teamführung & Struktur
 • Fachliche Einführung und Anleitung einer Werkstudentin sowie mehrerer Praktikant:innen, inklusive Briefings und Design-Reviews.
@@ -116,14 +119,15 @@ Physical Brand Presence
 
 Redesign & Design System
 • Complete redesign of the app.
-• Built a design system to ensure consistency across all screens and features.
+• Built a design system, shipped in 2023 and implemented in code.
 
 System Scaling
-• Rebuilt the app from one to five supported sensor models: restructured system logic, onboarding, error states, and data visualization.
-• Guided three new sensor products from product definition through launch.
+• Extended the app from one to five supported sensor models (four new: Beam Gen 2, Mini, Sphere and Terra): restructured system logic, onboarding, error states, and data visualization.
+• Took three new sensor products (Mini, Sphere, Terra) from product definition to launch.
+• Created the complete documentation for the app and, together with the CTO, guided its handover to an external development team during the move from native iOS and Android to Flutter.
 
 Cross-Functional Collaboration
-• Close collaboration with hardware and firmware to align technical feasibility with user needs.
+• Worked cross-functionally with the CTO, front-end and back-end developers, hardware and firmware, data scientists and plant scientists to align technical feasibility with user needs.
 
 Team Leadership & Structure
 • Onboarded and guided a working student and several interns, including briefings and design reviews.
@@ -249,7 +253,7 @@ Branding & Web Design for Startups
 
 Kuratiert, nicht alles überall — nur was pro Rolle belegt ist, stärkste zuerst.
 
-**FYTA · Head of Product Design**
+**FYTA · Senior Product Designer**
 DE: Product Design, Design Systems, UX Research, Prototyping, Information Architecture, Figma, Verpackungsdesign, Retail & POS-Design, Cross-funktionale Zusammenarbeit, Mentoring
 EN: Product Design, Design Systems, UX Research, Prototyping, Information Architecture, Figma, Packaging Design, Retail & POS Design, Cross-Functional Collaboration, Mentoring
 
@@ -293,7 +297,7 @@ EN: Branding Strategy, Web Design, Layout Design, Graphic Design
 ## Offen — vor dem Eintragen klären
 
 1. Headline final wählen (Abschnitt 1)
-2. Aktueller LinkedIn-Titel „Produktdesigner" → auf „Head of Product Design" ändern
+2. Aktueller LinkedIn-Titel „Produktdesigner" → zwei Positionen unter FYTA anlegen: Senior Product Designer (ab Feb 2024) und Produktdesignerin (Okt 2022–Jan 2024)
 3. Aktueller Loveto-Titel „Grafikdesigner" → auf „Designerin" ändern
 4. Eichmeister-Daten auf LinkedIn falsch (Apr 2016–Feb 2026) → ersetzen mit Apr 2017–Mai 2018
 5. Ausbildung auf LinkedIn komplett leer → beide Einträge ergänzen

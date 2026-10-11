@@ -49,12 +49,12 @@ export const caseStudies = {
     description: 'Von einem Einzelprodukt zu einem skalierbaren Sensor-Ökosystem — Systemlogik, Edge Cases und ein Onboarding, das mit dem Produkt mitwächst.',
     tags: ['UI/UX', 'Design System', 'Konzeption'],
     meta: {
-      role: 'Head of Product Design',
+      role: 'Product Designer',
       status: 'Shipped',
       imageFolder: '/images/fyta-onboarding/',
       coverVideo: 'cover_Onboarding_video.mp4',
     },
-    intro: 'FYTA verbindet Pflanzenpflege mit sensorbasierten Daten — die App übersetzt Messwerte aus Boden, Licht und Umgebung in konkrete Pflegehinweise. Bis zur Einführung der neuen Sensoren kannte die App genau ein Modell: ein Sensor, eine Pflanze, ein Topf.\n\nAls Head of Product Design habe ich die Erweiterung des Sensor-Portfolios von Grund auf verantwortet — von der Systemlogik im Backend bis zum finalen UI. Das Projekt war kein Feature-Update. Es war der Umbau eines Einzelprodukts zu einem skalierbaren Ökosystem.',
+    intro: 'FYTA verbindet Pflanzenpflege mit sensorbasierten Daten — die App übersetzt Messwerte aus Boden, Licht und Umgebung in konkrete Pflegehinweise. Bis zur Einführung der neuen Sensoren kannte die App genau ein Modell: ein Sensor, eine Pflanze, ein Topf.\n\nIch habe die Erweiterung des Sensor-Portfolios von Grund auf verantwortet, von der Systemlogik im Backend bis zum finalen UI. Das Projekt war kein Feature-Update. Es war der Umbau eines Einzelprodukts zu einem skalierbaren Ökosystem.',
     research: 'Für die neuen Sensoren gab es keine Nutzer:innen, die man hätte befragen können — das Produkt existierte noch nicht. Die Recherche stützte sich auf zwei Quellen.\n\nErstens: Support-Tickets aus der Beam-Ära. Sie zeigten, wo das bestehende Onboarding grundsätzlich scheitert — die meisten Probleme entstanden nicht durch defekte Hardware, sondern durch Setups, die das UI unbemerkt zugelassen hatte. Nutzer:innen konnten nicht unterscheiden, ob ein Sensor nicht kalibriert war oder schlicht nicht korrekt eingesteckt. Die App ließ beides durch.\n\nZweitens: Enge Zusammenarbeit mit dem Tech-Team. Es kannte Backend-seitige Constraints, die im UI nie adressiert worden waren: Substratkompatibilität als harte Voraussetzung für zuverlässige Messwerte, ein Pairing-Timeout von 60 Sekunden, Firmware-Update als Pflichtschritt vor dem ersten Einsatz.\n\nDas Ergebnis dieser Analyse war kein Konzept — es war ein Flowchart. Alle Abhängigkeiten, Inkompatibilitäten und Sonderfälle wurden zuerst als Systemlogik sichtbar gemacht, bevor der erste Screen entworfen wurde.',
     oldFlowReview: {
       intro: 'Ausgangspunkt war der bestehende Beam-Onboarding-Flow. Eine strukturierte Analyse zeigte, wo das UI grundlegende UX-Prinzipien verletzt — und warum dieser Flow nicht auf neue Sensortypen skaliert.',
@@ -195,7 +195,7 @@ export const caseStudies = {
     description: 'Defekte Bodenstäbe liefern plausible aber falsche Messwerte. Ein algorithmisch getriggerter Self-Service-Flow, der Nutzer:innen das Problem selbst lösen lässt — ohne Supportanfrage.',
     tags: ['UI/UX', 'System Design', 'Self-Service UX', 'Hardware'],
     meta: {
-      role: 'Head of Product Design',
+      role: 'Product Designer',
       status: 'Shipped',
       imageFolder: '/images/probe-diagnostic/',
       cover: 'cover.png',
@@ -279,7 +279,7 @@ export const caseStudies = {
     description: 'Fünf Parameter neu gestaltet: Wie ich Sensordaten so kontextualisiere, dass Nutzer:innen verstehen, warum ihre Pflanze genau das braucht.',
     tags: ['UI/UX', 'Data Visualization', 'Design System'],
     meta: {
-      role: 'Head of Product Design',
+      role: 'Product Designer',
       status: 'Shipped',
       imageFolder: '/images/dataVis/',
       cover: 'cover.png',
@@ -338,21 +338,20 @@ export const caseStudies = {
 export const about = {
   intro: 'Gutes Design fällt nicht auf — es funktioniert einfach.',
   bioShort:
-    'Ich bin Produktdesignerin in Berlin. Nach meinem B.A. in Visueller Kommunikation in Pforzheim und meinem M.A. in Interface Design an der FH Potsdam habe ich in verschiedenen Design-Agenturen und Studios gearbeitet, bevor ich als Head of Product Design zu FYTA gewechselt bin.',
+    'Ich bin Produktdesignerin in Berlin. Nach meinem B.A. in Visueller Kommunikation in Pforzheim und meinem M.A. in Interface Design an der FH Potsdam habe ich in verschiedenen Design-Agenturen und Studios gearbeitet, bevor ich zu FYTA gekommen bin.',
   bio: [
     'Diese Überzeugung treibt mich an: Komplexität so zu durchdenken und zu strukturieren, dass sie für Nutzer:innen unsichtbar wird.',
-    'Ich bin Produktdesignerin in Berlin. Nach meinem B.A. in Visueller Kommunikation in Pforzheim und meinem M.A. in Interface Design an der FH Potsdam habe ich in verschiedenen Design-Agenturen und Studios gearbeitet, bevor ich als Head of Product Design zu FYTA gewechselt bin — einem Berliner Startup, das Pflanzenpflege mit sensorbasierter Technologie verbindet. Dort habe ich ein gesamtes Sensor-Ökosystem konzipiert und gestaltet: von der Systemlogik bis zum finalen UI.',
+    'Ich bin Produktdesignerin in Berlin. Nach meinem B.A. in Visueller Kommunikation in Pforzheim und meinem M.A. in Interface Design an der FH Potsdam habe ich in verschiedenen Design-Agenturen und Studios gearbeitet, bevor ich zu FYTA gekommen bin, einem Berliner Startup, das Pflanzenpflege mit sensorbasierter Technologie verbindet. Dort habe ich ein gesamtes Sensor-Ökosystem konzipiert und gestaltet: von der Systemlogik bis zum finalen UI.',
     'Meine Stärken liegen in Produktdesign, Interface Design und Design Systems — besonders dann, wenn technische Komplexität und menschliche Nutzung in Einklang gebracht werden müssen.',
     'Wenn ich nicht designe, bin ich im Garten oder kümmere mich um meine Pflanzen — was erklären mag, warum mich ein Sensor-Startup so begeistert hat. Ich spiele Squash und interessiere mich für Interior Design, weil gute Räume und gute Interfaces dasselbe leisten: Sie schaffen Ordnung, ohne dass man sie spürt.',
-    'Ich suche eine Produktdesign-Rolle, in der ich komplexe Probleme von der Systemebene bis ins Detail gestalten kann.',
   ],
   skills: [
     // Reihenfolge ist Absicht: Recruiter und ATS gleichen die ersten Begriffe
     // gegen die Stellenanzeige ab. Nur aufnehmen, was durch ein Projekt belegt ist.
     { category: 'Design', items: ['Product Design', 'Interface Design', 'Interaction Design', 'Design Systems', 'Design Tokens', 'Information Architecture', 'UX Writing'] },
     { category: 'Methoden', items: ['UX Research', 'Usability Testing', 'Prototyping', 'Wireframing', 'System Mapping', 'Design Handoff'] },
-    { category: 'Tools', items: ['Figma', 'FigJam'] },
-    { category: 'Zusammenarbeit', items: ['Stakeholder Management', 'Cross-funktionale Zusammenarbeit', 'Mentoring'] },
+    { category: 'Tools', items: ['Figma', 'FigJam', 'Adobe Creative Cloud', 'Claude', 'Claude Code', 'Claude Design'] },
+    { category: 'Zusammenarbeit', items: ['Cross-funktionale Zusammenarbeit', 'Mentoring'] },
     { category: 'Context', items: ['Mobile Apps', 'Hardware-nahe Produkte', 'B2C', 'Startups'] },
   ],
   education: [
@@ -361,7 +360,7 @@ export const about = {
   ],
   contact: {
     headline: 'Kontakt',
-    text: 'Auf der Suche nach einer neuen Produktdesign-Rolle. Offen für Gespräche.',
+    text: 'Kontakt per E-Mail oder LinkedIn.',
     email: CONTACT_EMAIL,
     emailLabel: 'E-Mail schreiben',
     linkedin: 'LinkedIn',

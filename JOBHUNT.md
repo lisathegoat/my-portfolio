@@ -3,6 +3,35 @@
 Ziel: Senior Product Designer. Erste Bewerbungen **Montag, 28.09.2026**.
 Kapazität: 2 Sessions pro Woche à 90 Minuten, neben dem 40h-Job.
 
+> **Stand 11.10.2026:** No applications sent yet. The 28.09 deadline slipped by
+> two weeks. Smallest step that still counts: send the first application with the
+> Systems CV as soon as the open facts below are answered. Do not wait for the
+> perfect version.
+>
+> Decisions 11.10 (they supersede the 20.09 title decision below):
+> - Title is **Senior Product Designer**. "Head of Product Design" is removed
+>   everywhere (CV, About, case studies, hero table).
+> - Client names (KfW, HOWOGE, Stadtreinigung Hamburg, Ruegenwalder Muehle,
+>   Froebel) stay on the website CV, worded "clients including". Not on LinkedIn.
+> - No job-search wording on the public website (About, contact, CV profile).
+> - Targets: larger companies, systems-heavy products. Startups only for a high
+>   offer. Variants to build: Systems (default) and Ownership (end to end).
+> - Canonical scope wording: one to five supported sensor models (added Beam
+>   Gen 2, Mini, Sphere, Terra), three new sensor products (Mini, Sphere, Terra).
+>   Design system shipped 2023, implemented in code. Native iOS and Android
+>   moved to Flutter, design handover to an external dev team.
+>
+> Facts confirmed 11.10: promoted to Senior Product Designer in 02/2024; first
+> title Product Designer from 10/2022 (taken from the old LinkedIn title and the
+> hero table, Lisa to confirm the exact wording). Beam Gen 1 and the hub existed
+> before, the four other sensors are new. She created the full app documentation
+> and guided the handover to the external dev team together with the CTO. The app
+> is available in English and German, French and Spanish are planned (not on the
+> CV until live).
+>
+> Open facts (ask Lisa, never infer): app user numbers (5,000 to 11,000 is
+> unverified, remind her to bring the source).
+
 > **Stand 20.09.2026:** Zwischen dem 30.08. und heute ist nichts passiert.
 > Drei Wochen weg, acht Tage bis zum Termin. Der Termin bleibt. Phase 2
 > (Englisch) rutscht hinter den Start, siehe Plan B unten.
@@ -85,9 +114,11 @@ Sprachumschalter nur, wenn er nebenbei abfällt. Sonst Englisch only.
 - [x] **Zahlen geklärt.** Es gibt kaum belastbare. Kein Event Tracking, und die
       Support-Zahlen sind durch Hardware-Defekte der neuen Sensoren verfälscht.
       Entscheidung: keine Wirkungskennzahlen behaupten. Stattdessen Umfang und
-      Verantwortung belegen, das ist überprüfbar: ein auf fünf Sensor-Modelle,
-      drei Produkt-Launches, vier Jahre alleinige Designerin, App plus Web plus
-      Verpackung.
+      Verantwortung belegen, das ist überprüfbar: App von einem auf fünf
+      unterstützte Produkte (vier Sensor-Modelle und der Hub), drei neue
+      Sensoren bis zum Launch, vier Jahre alleinige Designerin, App plus Web
+      plus Verpackung. Diese Formulierung gilt überall gleich (CV, LinkedIn,
+      Portfolio).
       Fehlendes Tracking ist im Gespräch kein Makel, sondern ein Thema: benennen,
       was du nicht messen konntest, und was du als Erstes aufsetzen würdest.
 - [x] **Ergebnis-Bullets** pro Rolle in `Resume.tsx` geschrieben
