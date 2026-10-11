@@ -49,8 +49,12 @@ const copy = {
       languages: 'Sprachen',
     },
     profile:
-      'Produktdesignerin mit Hintergrund in Visueller Kommunikation (B.A., Pforzheim) und einem M.A. in Interface Design (FH Potsdam). Seit vier Jahren alleinige Designerin bei FYTA, einem Berliner Sensor-Startup: App, Website und Verpackung vollständig verantwortet, von der Systemlogik bis zur finalen Umsetzung. Stärken liegen dort, wo technische Komplexität und menschliche Nutzung in Einklang gebracht werden müssen.',
+      'Produktdesignerin mit Hintergrund in Visueller Kommunikation (B.A., Pforzheim) und einem M.A. in Interface Design (FH Potsdam). Seit vier Jahren alleinige Designerin bei FYTA, einem Berliner Sensor-Startup: App, Website und Verpackung vollständig verantwortet, von der Systemlogik bis zur finalen Umsetzung.',
     languages: ['Deutsch (Muttersprache)', 'Englisch (fließend)'],
+    ai: {
+      label: 'KI-Workflows',
+      text: 'Eigene Design-Wissensbasis (Obsidian) mit Entscheidungslogs, Prinzipien und Prompts.',
+    },
     skillCategory: (c: string) => c,
     skillItem: (s: string) => s,
     experience: [
@@ -60,7 +64,6 @@ const copy = {
         org: 'FYTA',
         place: 'Berlin',
         earlier: [{ role: 'Produktdesignerin', period: '10/2022 bis 01/2024' }],
-        about: 'Berliner Startup, das Pflanzenpflege mit sensorbasierter Technologie verbindet.',
         bullets: [
           'Alleinige Verantwortung für Konzept, Research, UX und UI von App, Website und Verpackung, von der Anforderung bis zur finalen Umsetzung.',
           'Vollständiges Redesign der App und Aufbau eines Design Systems, 2023 ausgeliefert und im Code umgesetzt.',
@@ -124,8 +127,12 @@ const copy = {
       languages: 'Languages',
     },
     profile:
-      'Product designer with a background in visual communication (B.A., Pforzheim) and an M.A. in Interface Design (FH Potsdam). For four years the sole designer at FYTA, a Berlin plant sensor startup, owning app, website and packaging end to end, from system logic to final execution. Strongest where technical complexity has to meet everyday use.',
+      'Product designer with a background in visual communication (B.A., Pforzheim) and an M.A. in Interface Design (FH Potsdam). For four years the sole designer at FYTA, a Berlin plant sensor startup, owning app, website and packaging end to end, from system logic to final execution.',
     languages: ['German (native)', 'English (fluent)'],
+    ai: {
+      label: 'AI workflows',
+      text: 'Self-built design knowledge base (Obsidian) with decision logs, principles and prompts.',
+    },
     skillCategory: (c: string) => ({ Methoden: 'Methods', Zusammenarbeit: 'Collaboration' } as Record<string, string>)[c] ?? c,
     skillItem: (s: string) => (s === 'Cross-funktionale Zusammenarbeit' ? 'Cross-functional collaboration' : s),
     experience: [
@@ -135,7 +142,6 @@ const copy = {
         org: 'FYTA',
         place: 'Berlin',
         earlier: [{ role: 'Product Designer', period: '10/2022 to 01/2024' }],
-        about: 'Berlin startup combining plant care with sensor-based technology.',
         bullets: [
           'Owned concept, research, UX and UI for app, website and packaging as the sole designer, from requirement to final execution.',
           'Completely redesigned the app and built a design system, shipped in 2023 and implemented in code.',
@@ -356,6 +362,10 @@ export default function Resume() {
                 {g.items.map(t.skillItem).join(', ')}
               </p>
             ))}
+            <p className="pl-[116px] -indent-[116px] print:pl-[104px] print:-indent-[104px] font-geist text-[15px] print:text-[12px] leading-[1.6] print:leading-[1.35] text-[#32404f]/80">
+              <RunInLabel fixed>{t.ai.label}</RunInLabel>
+              {t.ai.text}
+            </p>
             <p className="pl-[116px] -indent-[116px] print:pl-[104px] print:-indent-[104px] font-geist text-[15px] print:text-[12px] leading-[1.6] print:leading-[1.35] text-[#32404f]/80">
               <RunInLabel fixed>{t.labels.languages}</RunInLabel>
               {t.languages.join(' · ')}

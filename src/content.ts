@@ -350,7 +350,7 @@ export const about = {
     // gegen die Stellenanzeige ab. Nur aufnehmen, was durch ein Projekt belegt ist.
     { category: 'Design', items: ['Product Design', 'Interface Design', 'Interaction Design', 'Design Systems', 'Design Tokens', 'Information Architecture', 'UX Writing'] },
     { category: 'Methoden', items: ['UX Research', 'Usability Testing', 'Prototyping', 'Wireframing', 'System Mapping', 'Design Handoff'] },
-    { category: 'Tools', items: ['Figma', 'FigJam'] },
+    { category: 'Tools', items: ['Figma', 'FigJam', 'Adobe Creative Cloud', 'Claude', 'Claude Code', 'Claude Design'] },
     { category: 'Zusammenarbeit', items: ['Cross-funktionale Zusammenarbeit', 'Mentoring'] },
     { category: 'Context', items: ['Mobile Apps', 'Hardware-nahe Produkte', 'B2C', 'Startups'] },
   ],
